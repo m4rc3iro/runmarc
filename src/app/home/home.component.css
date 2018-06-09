@@ -1,0 +1,11 @@
+.home-container {
+  height: 100%;
+  width: 100%;
+  padding: 50px 25px 50px 25px;
+  overflow: auto;
+
+  font-family: "Effra", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: rgb(50,50,50);
+  line-height: 1.6em;
+}
