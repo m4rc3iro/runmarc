@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
+  newComment: string = '';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onKeyPress(value: string) {
+    this.newComment = value;
   }
 
 }
