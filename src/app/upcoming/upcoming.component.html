@@ -13,65 +13,128 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <tr class="row100 body">
+                    <tr class="row100 body" (click)="expanded0 = !expanded0;">
                         <td class="cell100 column1">Transylvania 80K</td>
                         <td class="cell100 column2">16.05.2018</td>
                         <td class="cell100 column3">Romania</td>
                     </tr>
-                    <tr class="row100 body">
+                    <tr class="race-details-wrapper" [ngClass]="{'show' : expanded0}">
+                      <td colspan="3">
+                        <div class="race-details">
+                          <div class="other-data">Other technical data:</div>
+                          <div class="row-info">
+                            <span class="label first">Distance: </span>85.6 km
+                            <span class="label">Elevation gain: </span>+4.979 meters
+                            <span class="label">Official website: </span><a href="http://www.transylvania100k.com/">http://www.transylvania100k.com/</a>
+                          </div>
+                          <div class="row-info">
+                            <div class="route-map" (click)="expandedRouteMap0 = !expandedRouteMap0;">
+                              <span class="label first">Route Map: </span>
+                              <img class="route-image" src="/assets/transylvania-route-map.jpg"/>
+                            </div>
+                            <!--  popup race map code -->
+                            <div class="popup" [ngClass]="{'show-popup' : expandedRouteMap0}">
+                              <div class="popup__block">
+                                <img class="popup-image" src="/assets/transylvania-route-map.jpg"/>
+                                <button class="close" (click)="expandedRouteMap0 = !expandedRouteMap0;" [ngClass]="{'popup__close' : expandedRouteMap0}"></button>
+                              </div>
+                            </div>
+                            <div class="route-profile" (click)="expandedRouteProfile0 = !expandedRouteProfile0;">
+                              <span class="label first">Route Profile: </span>
+                              <img class="route-image" src="/assets/transylvania-route-profile.jpg"/>
+                            </div>
+                            <!--  popup race profile code -->
+                            <div class="popup" [ngClass]="{'show-popup' : expandedRouteProfile0}">
+                              <div class="popup__block">
+                                <img class="popup-image" src="/assets/transylvania-route-profile.jpg"/>
+                                <button class="close" (click)="expandedRouteProfile0 = !expandedRouteProfile0;" [ngClass]="{'popup__close' : expandedRouteProfile0}"></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="row100 body" (click)="expanded1 = !expanded1;">
                         <td class="cell100 column1">Eiger Ultra Trail E101</td>
                         <td class="cell100 column2">15.07.2018</td>
                         <td class="cell100 column3">Switzerland</td>
                     </tr>
-                    <tr class="row100 body">
+                    <tr class="race-details-wrapper" [ngClass]="{'show' : expanded1}">
+                      <td colspan="3">
+                        <div class="race-details">
+                          <div class="other-data">Other technical data:</div>
+                          <div class="row-info">
+                            <span class="label first">Distance: </span>101 km
+                            <span class="label">Elevation gain: </span> +6.700 meters
+                            <span class="label">Official website: </span><a href="https://www.eigerultratrail.ch/en/">https://www.eigerultratrail.ch/</a>
+                          </div>
+                          <div class="row-info">
+                            <div class="route-map" (click)="expandedRouteMap1 = !expandedRouteMap1;">
+                              <span class="label first">Route Map: </span>
+                              <img class="route-image" src="/assets/eigerMap_E101.jpg"/>
+                            </div>
+                            <!--  popup race map code -->
+                            <div class="popup" [ngClass]="{'show-popup' : expandedRouteMap1}">
+                              <div class="popup__block">
+                                <img class="popup-image" src="/assets/eigerMap_E101.jpg"/>
+                                <button class="close" (click)="expandedRouteMap1 = !expandedRouteMap1;" [ngClass]="{'popup__close' : expandedRouteMap1}"></button>
+                              </div>
+                            </div>
+                            <div class="route-profile" (click)="expandedRouteProfile1 = !expandedRouteProfile1;">
+                              <span class="label first">Route Profile: </span>
+                              <img class="route-image" src="/assets/eigerProfile_E101.jpg"/>
+                            </div>
+                            <!--  popup race profile code -->
+                            <div class="popup" [ngClass]="{'show-popup' : expandedRouteProfile1}">
+                              <div class="popup__block">
+                                <img class="popup-image" src="/assets/eigerProfile_E101.jpg"/>
+                                <button class="close" (click)="expandedRouteProfile1 = !expandedRouteProfile1;" [ngClass]="{'popup__close' : expandedRouteProfile1}"></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="row100 body" (click)="expanded2 = !expanded2;">
                         <td class="cell100 column1">UTMB CCC</td>
                         <td class="cell100 column2">31.08.2018</td>
                         <td class="cell100 column3">France</td>
                     </tr>
-                    <tr class="row100 body">
-                        <td class="cell100 column1">Ultra Pirineu</td>
-                        <td class="cell100 column2">29.09.2018</td>
-                        <td class="cell100 column3">Catalonia</td>
-                    </tr>
-                    <tr class="row100 body">
-                        <td class="cell100 column1">Transylvania 80K</td>
-                        <td class="cell100 column2">16.05.2018</td>
-                        <td class="cell100 column3">Romania</td>
-                    </tr>
-                    <tr class="row100 body">
-                        <td class="cell100 column1">Eiger Ultra Trail E101</td>
-                        <td class="cell100 column2">15.07.2018</td>
-                        <td class="cell100 column3">Switzerland</td>
-                    </tr>
-                    <tr class="row100 body">
-                        <td class="cell100 column1">UTMB CCC</td>
-                        <td class="cell100 column2">31.08.2018</td>
-                        <td class="cell100 column3">France</td>
-                    </tr>
-                    <tr class="row100 body">
-                        <td class="cell100 column1">Ultra Pirineu</td>
-                        <td class="cell100 column2">29.09.2018</td>
-                        <td class="cell100 column3">Catalonia</td>
-                    </tr>
-                    <tr class="row100 body">
-                        <td class="cell100 column1">Transylvania 80K</td>
-                        <td class="cell100 column2">16.05.2018</td>
-                        <td class="cell100 column3">Romania</td>
-                    </tr>
-                    <tr class="row100 body">
-                        <td class="cell100 column1">Eiger Ultra Trail E101</td>
-                        <td class="cell100 column2">15.07.2018</td>
-                        <td class="cell100 column3">Switzerland</td>
-                    </tr>
-                    <tr class="row100 body">
-                        <td class="cell100 column1">UTMB CCC</td>
-                        <td class="cell100 column2">31.08.2018</td>
-                        <td class="cell100 column3">France</td>
-                    </tr>
-                    <tr class="row100 body">
-                        <td class="cell100 column1">Ultra Pirineu</td>
-                        <td class="cell100 column2">29.09.2018</td>
-                        <td class="cell100 column3">Catalonia</td>
+                    <tr class="race-details-wrapper" [ngClass]="{'show' : expanded2}">
+                      <td colspan="3">
+                        <div class="race-details">
+                          <div class="other-data">Other technical data:</div>
+                          <div class="row-info">
+                            <span class="label first">Distance: </span>101 km
+                            <span class="label">Elevation gain: </span> +6.100 meters
+                            <span class="label">Official website: </span><a href="http://utmbmontblanc.com/en/">http://utmbmontblanc.com/</a>
+                          </div>
+                          <div class="row-info">
+                            <div class="route-map" (click)="expandedRouteMap2 = !expandedRouteMap2;">
+                              <span class="label first">Route Map: </span>
+                              <img class="route-image" src="/assets/CCCcarte2018.jpg"/>
+                            </div>
+                            <!--  popup race map code -->
+                            <div class="popup" [ngClass]="{'show-popup' : expandedRouteMap2}">
+                              <div class="popup__block">
+                                <img class="popup-image" src="/assets/CCCcarte2018.jpg"/>
+                                <button class="close" (click)="expandedRouteMap2 = !expandedRouteMap2;" [ngClass]="{'popup__close' : expandedRouteMap2}"></button>
+                              </div>
+                            </div>
+                            <div class="route-profile" (click)="expandedRouteProfile2 = !expandedRouteProfile2;">
+                              <span class="label first">Route Profile: </span>
+                              <img class="route-image" src="/assets/2018_ccc_profil.png"/>
+                            </div>
+                            <!--  popup race profile code -->
+                            <div class="popup" [ngClass]="{'show-popup' : expandedRouteProfile2}">
+                              <div class="popup__block">
+                                <img class="popup-image" src="/assets/2018_ccc_profil.png"/>
+                                <button class="close" (click)="expandedRouteProfile2 = !expandedRouteProfile2;" [ngClass]="{'popup__close' : expandedRouteProfile1}"></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
                     </tr>
                 </tbody>
             </table>
