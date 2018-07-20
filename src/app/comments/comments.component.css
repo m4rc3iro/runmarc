@@ -1,50 +1,33 @@
 .comments-container {
   height: 100%;
   width: 100%;
+  /* padding-top: 50px; */
+  /* overflow: auto; */
+}
+
+.right-container {
+  width: 100%;
+  height: 100%;
+  background: #ffef96;
   padding-top: 50px;
+  overflow: auto;
 }
 
 .left-container {
   position: fixed;
-  background: #333;
-  color: #eee;
+  background: white;
   height: 100%;
   position: fixed;
   top: 0;
   margin-top: 40px;
   bottom: 0;
-  left: -603px;
-  width: 600px;
+  left: calc(-50vw - 1px);
+  width: 50vw;
   transform: translateX(0%);
-  transition: .3s ease-out;
-  /* overflow: auto; */
-  border: 1px solid #f94125;
+  transition: .5s ease-out;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
 }
 
-/* .panel-wrap {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  transform: translateX(100%);
-  transition: .3s ease-out;
-}
-.panel {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1em;
-} */
-
-/* simulate panel state control --
-this can also be triggered by a
-class name added to the body tag.
-Just using a checkbox sibling here
-for simplicity
-*/
 .left-container-on {
   transform: translateX(100%);
 }
@@ -52,7 +35,7 @@ for simplicity
 .pull-wrapper {
   position: absolute;
   top: 35%;
-  left: 600px;
+  left: 50vw;
   height: 79px;
   width: 60px;
   background: url("/assets/pull.png");
@@ -60,16 +43,31 @@ for simplicity
   cursor: pointer;
 }
 
-.push {
-  background: url("/assets/push.png");
-  background-size: 100%;
-  height: 77px;
-  width: 78px;
+.pull {
+  position: absolute;
+  top: 35%;
+  left: 50vw;
+  background: #c94c4c;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 0 rgba(0,0,0,.3);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  font-family: "Mono space", "HelveticaNeue-Light", "Helvetica Neue Light";
+  word-spacing: 8px;
+  letter-spacing: 2px;
+  color: white;
+  font-size: 13px;
+  padding: 10px 5px 5px 5px;
 }
 
 .feedback-text {
   padding-left: 5%;
   font-family: 'Comfortaa';
+  margin-top: 10%;
 }
 
 .feedback-text > p {
@@ -78,10 +76,10 @@ for simplicity
 
 .feedback-box {
   background: #fff;
-  /* border: 1px solid #e0e0e0; */
-  border: 1px solid #f94125;
+  border: 1px solid #e0e0e0;
+  /* border: 1px solid #f94125; */
   border-radius: 3px;
-  margin-top: 25px;
+  margin-top: 10%;
   margin-left: 5%;
   margin-right: 5%;
   padding: 10px 10px 0 10px;
@@ -112,16 +110,6 @@ for simplicity
     max-height: 76px;
     overflow: hidden;
     margin-bottom: 10px;
-}
-
-.g-recaptcha-response{
-  width: 250px;
-  height: 40px;
-  border: 1px solid #c1c1c1;
-  margin: 10px 25px;
-  padding: 0px;
-  resize: none;
-  display: none;
 }
 
 *, *:active, *:focus {
@@ -181,8 +169,6 @@ for simplicity
   height: 30px;
   padding: 4px 20px 5px 20px;
   font-weight: bold;
-  border-width: 1px;
-  border-style: solid;
   text-decoration: none;
   border-radius: 3px;
   -webkit-user-select: none;
@@ -191,24 +177,29 @@ for simplicity
   user-select: none;
 }
 
-.button:hover {
+.disabled {
+  border-color: #529ecc;
   background: #529ecc;
+  cursor: default;
 }
 
-.right-container {
-  width: 100%;
-  height: 100%;
+.button:hover {
+  background: #529ecc;
 }
 
 ul {
   list-style-type: none;
   padding-left: 0px;
   text-align: center;
-  font-family: 'Karla';
+  font-family: 'Comfortaa';
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  color: rgb(50,50,50);
+  line-height: 1.6em;
 }
 
 ul > li {
-  padding: 25px 85px 25px 85px;
+  padding: 25px 15% 25px 15%;
 }
 
 h1, h2, h3 {

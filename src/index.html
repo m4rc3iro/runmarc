@@ -7,6 +7,25 @@
   <link rel="icon" type="image/x-icon" href="assets/logo-solo-red.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <script type="text/javascript">
+      function recaptcha_callback() {
+          var submitCommentButton = document.getElementById('submit-comment');
+          submitCommentButton.removeAttribute('disabled');
+          submitCommentButton.classList.remove('disabled');
+      };
+
+      function recaptcha_expired_callback() {
+          var submitCommentButton = document.getElementById('submit-comment');
+          submitCommentButton.setAttribute('disabled', 'disabled');
+          submitCommentButton.classList.add('disabled');
+      };
+
+      function recaptcha_error_callback() {
+          recaptcha_expired_callback();
+      };
+ </script>
 </head>
 <body>
     <app-root></app-root>

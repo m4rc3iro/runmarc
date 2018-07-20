@@ -2,23 +2,14 @@
   <div class="left-container" [ngClass]="{'left-container-on' : showCommentBox}">
     <section class="feedback-text">
       <h3>Leave your comment!</h3>
-      <p>
-        Feel free to drop a comment below if you liked this website and I will add it on the wall.
-      </p>
+      <p>Feel free to drop a comment below if you liked this website and I will add it on the wall.</p>
     </section>
     <div class="feedback-box">
-      <form>
+      <form action="?" method="POST">
         <div class="comment-wrapper">
           <textarea #comment class="comment" maxlength="500" (keyup)="onKeyPress(comment.value)"></textarea>
           <div class="captcha_wrapper">
-            <div class="g-recaptcha" id="g-recaptcha" data-sitekey="6LcaLgATAAAAAMfyoZjBXW33zuRRJq9pFvsE9HJJ">
-              <div style="width: 304px; height: 78px;">
-                <div>
-                  <iframe src="https://www.google.com/recaptcha/api2/anchor?ar=2&amp;k=6LcaLgATAAAAAMfyoZjBXW33zuRRJq9pFvsE9HJJ&amp;co=aHR0cHM6Ly93d3cudHVtYmxyLmNvbTo0NDM.&amp;hl=en-GB&amp;type=image&amp;v=v1528135568984&amp;theme=light&amp;size=normal&amp;cb=b6ylgfysevru" width="304" height="78" role="presentation" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
-                </div>
-                <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"></textarea>
-              </div>
-            </div>
+            <div class="g-recaptcha" data-sitekey="6LfoY2UUAAAAAArZE2IikiGXVrKz4InovhPpPalk" data-callback="recaptcha_callback" data-expired-callback="recaptcha_expired_callback" data-error-callback="recaptcha_error_callback"></div>
           </div>
           <div class="character_counter">
             <span id="characters_remaining">{{500 - newComment.length}}</span>
@@ -26,7 +17,7 @@
         </div>
         <div class="footer">
           <div class="button-wrapper">
-            <button type="submit" class="button">Send</button>
+            <button id="submit-comment" type="submit" class="button disabled" disabled>Send</button>
           </div>
         </div>
       </form>
@@ -34,7 +25,9 @@
     <section class="feedback-text">
       <p>For any questions or enquires, feel free to drop an email to <span style="color:#f94125">runmarc@gmail.com</span> and I will answer you as soon as possible.</p>
     </section>
-    <div class="pull-wrapper" (click)="showCommentBox = !showCommentBox;" [ngClass]="{'push' : showCommentBox}"></div>
+    <div class="pull" (click)="showCommentBox = !showCommentBox;" [ngClass]="{'push' : showCommentBox}">
+      <span class="vertical-text">Leave a comment!</span>
+    </div>
   </div>
   <div class="right-container">
     <ul>
