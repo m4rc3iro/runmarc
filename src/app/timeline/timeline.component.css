@@ -141,6 +141,10 @@ a:hover {
   padding-bottom: 40px;
   padding-right: 25px;
 }
+.timeline-content p {
+  font-family: "Comfortaa";
+  font-size: 13px;
+}
 .timeline-content p:last-child {
   margin-bottom: 0;
 }
