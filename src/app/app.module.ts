@@ -10,6 +10,7 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { ProfileComponent } from './profile/profile.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { CommentsComponent } from './comments/comments.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
     {   path: '', component: IntroductionComponent},
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     TimelineComponent,
     ProfileComponent,
     IntroductionComponent,
-    CommentsComponent
+    CommentsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,32 @@
+.footer {
+  background-color: #d96459;
+  font-family: "maven Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+  height: 30px;
+  z-index: 4;
+}
+
+.navigation-links {
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 5px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: yellow;
+}
