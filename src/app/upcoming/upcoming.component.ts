@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpcomingComponent implements OnInit {
 
+  expand0: boolean;
+  expand1: boolean;
+  expand2: boolean;
+
   constructor() { }
 
   ngOnInit() {

@@ -15,14 +15,14 @@ import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
     {   path: '', component: IntroductionComponent},
-    {   path: 'home', component: HomeComponent},
-    {   path: 'upcoming', component: UpcomingComponent},
-    {   path: 'timeline', component: TimelineComponent},
-    {   path: 'profile', component: ProfileComponent},
-    {   path: 'comments', component: CommentsComponent},
+    // enable for versions > 0.0.1
+    // {   path: 'home', component: HomeComponent},
+    // {   path: 'upcoming', component: UpcomingComponent},
+    // {   path: 'timeline', component: TimelineComponent},
+    // {   path: 'profile', component: ProfileComponent},
+    // {   path: 'comments', component: CommentsComponent},
     {   path: '', redirectTo: 'introduction', pathMatch: 'full' }
 ];
-
 
 @NgModule({
   declarations: [
