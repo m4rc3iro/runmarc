@@ -5,9 +5,9 @@
       </div>
       <div class="about-me-container">
         <h1>Marc Eiro</h1>
-        <h2><span class="label">Sex:</span> Male</h2>
-        <h2><span class="label">Age:</span> 34 years old (1984)</h2>
-        <h2><span class="label">Nationality:</span> Spain</h2>
+        <h2><span class="label">Sex: </span>{{aboutMeData.sex}}</h2>
+        <h2><span class="label">Age: </span>{{aboutMeData.age}} years old (1984)</h2>
+        <h2><span class="label">Nationality: </span>{{aboutMeData.nationality}}</h2>
       </div>
     </header>
     <div class="results">
@@ -26,77 +26,45 @@
           <label for="tab4"><i class="fas fa-chart-bar"></i>&nbsp;&nbsp;&nbsp;Statistics</label>
 
           <section id="content1">
-            <p>Only the five best results of the last 36 months are taken into account in the calculation of the ITRA performance index.</p>
+            <div class="info-msg">
+              <i class="fa fa-info-circle"></i>
+              Only the five best results of the last 36 months are taken into account in the calculation of the ITRA performance index.
+            </div>
+            <br/>
             <h1>Overall</h1>
             <table cellspacing="0">
             	<thead>
             		<tr>
             			<th>Trail Category</th>
             			<th>Cotation (/ 1000)</th>
-            			<th>Men's best cotation</th>
+            			<th>Men's Best Cotation</th>
             		</tr>
             	</thead>
             	<tbody>
-            		<tr>
-            			<td>General</td>
-            			<td>611</td>
-            			<td>951</td>
-            		</tr>
-            		<tr class="even">
-            			<td>XXL</td>
-            			<td>-</td>
-            			<td>918</td>
-            		</tr>
-                <tr>
-            			<td>XL</td>
-            			<td>508</td>
-            			<td>908</td>
-            		</tr>
-            		<tr class="even">
-            			<td>L</td>
-            			<td>577</td>
-            			<td>919</td>
-            		</tr>
-                <tr>
-            			<td>M</td>
-            			<td>591</td>
-            			<td>941</td>
-            		</tr>
-            		<tr class="even">
-            			<td>S</td>
-            			<td>609</td>
-            			<td>916</td>
-            		</tr>
-                <tr>
-            			<td>XS</td>
-            			<td>-</td>
-            			<td>909</td>
+                <tr *ngFor="let performance of performanceGeneralData; let even = even" [ngClass]="{even: even}">
+                  <td>{{performance.type}}</td>
+            			<td>{{performance.cotation}}</td>
+            			<td>{{performance.menBestCotation}}</td>
             		</tr>
             	</tbody>
             </table>
-            <br/><br/><br/>
+            <br/>
             <h1>Detailed</h1>
             <table cellspacing="0">
             	<thead>
             		<tr>
                   <th>Date</th>
-      						<th>Name of the race</th>
+      						<th>Name of the Race</th>
       						<th>Distance / D+</th>
-      						<th>Time</th>
-      						<th>Rank.</th>
-      						<th>Rank. M</th>
       						<th>Score</th>
             		</tr>
             	</thead>
             	<tbody>
-            		<tr *ngFor="let performance of performanceDetail; let even = even" [ngClass]="{even: even}">
-                  <td>{{performance.date}}</td>
-            			<td>{{performance.nameOfRace}}</td>
-            			<td>{{performance.distance}}</td>
-            			<td>{{performance.time}}</td>
-            			<td>{{performance.rank}}</td>
-            			<td>{{performance.rankM}}</td>
-            			<td>{{performance.score}}</td>
+            		<tr *ngFor="let trackRecord of performanceDetailedData; let even = even" [ngClass]="{even: even}">
+                  <td>{{trackRecord.date | date:'EEE, MMMM d, yyyy'}}</td>
+            			<td>{{trackRecord.nameOfRace}}</td>
+            			<td>{{trackRecord.distance}}</td>
+            			<td>{{trackRecord.score}}</td>
             		</tr>
             	</tbody>
             </table>
@@ -106,60 +74,25 @@
             	<thead>
             		<tr>
             			<th>Date</th>
-            			<th>Name of the race</th>
+            			<th>Name of the Race</th>
             			<th>Distance / D+</th>
                   <th>Country</th>
                   <th>Status</th>
                   <th>Time</th>
                   <th>Ranking</th>
                   <th>Ranking Male</th>
-                  <th>Score</th>
             		</tr>
             	</thead>
             	<tbody>
-            		<tr>
-            			<td>2018- 05-19</td>
-            			<td>Transylvania One Hundred 2018 - 80K</td>
-            			<td>85.9km / 4850m+</td>
-                  <td>Romania</td>
-            			<td>Finisher</td>
-            			<td>15:06:06</td>
-                  <td>8 / 53</td>
-                  <td>8</td>
-                  <td>595</td>
-            		</tr>
-            		<tr class="even">
-                  <td>2017-	08-13</td>
-            			<td>Trail Des Fantomes 2017 - 48 Km</td>
-            			<td>49.5km / 1500m+</td>
-                  <td>Belgium</td>
-            			<td>Finisher</td>
-            			<td>05:38:21</td>
-                  <td>17 / 210</td>
-                  <td>17</td>
-                  <td>632</td>
-            		</tr>
-                <tr class="even">
-                  <td>07-15</td>
-            			<td>Trail Vielha-Molieres 3010 2017 - Maratón</td>
-            			<td>40.7km / 4000m+</td>
-                  <td>Spain</td>
-            			<td>Finisher</td>
-            			<td>09:02:23</td>
-                  <td>79 / 308</td>
-                  <td>76</td>
-                  <td>571</td>
-            		</tr>
-                <tr class="even">
-                  <td>06-23</td>
-            			<td>The North Face Lavaredo Ultra Trail 2017 - Lavaredo Ultra Trail</td>
-            			<td>119.4km / 6450m+</td>
-                  <td>Italy</td>
-            			<td>Finisher</td>
-            			<td>21:16:15</td>
-                  <td>303 / 1070</td>
-                  <td>277</td>
-                  <td>527</td>
+            		<tr *ngFor="let trackRecord of performanceDetailedData; let even = even" [ngClass]="{even: even}">
+            			<td>{{trackRecord.date | date:'EEE, MMMM d, yyyy'}}</td>
+            			<td>{{trackRecord.nameOfRace}}</td>
+            			<td>{{trackRecord.distance}}</td>
+            			<td>{{trackRecord.status}}</td>
+            			<td>{{trackRecord.country}}</td>
+            			<td>{{trackRecord.time}}</td>
+            			<td>{{trackRecord.rank}}</td>
+            			<td>{{trackRecord.rankM}}</td>
             		</tr>
             	</tbody>
             </table>
@@ -169,200 +102,102 @@
             	<thead>
             		<tr>
             			<th>Date</th>
-            			<th>Name of the race</th>
+            			<th>Name of the Race</th>
             			<th>Distance / D+</th>
-                  <th>Status</th>
-                  <th>Qualifying race</th>
-                  <th>Route certified</th>
+                  <th>Qualifying Race</th>
+                  <th>Route Certified</th>
                   <th>Endurance</th>
                   <th>Mountain</th>
             		</tr>
             	</thead>
             	<tbody>
-            		<tr>
-            			<td>2018- 05-19</td>
-            			<td>Transylvania One Hundred 2018 - 80K</td>
-            			<td>85.9km / 4850m+</td>
-                  <td>Finisher</td>
-            			<td>Yes</td>
-            			<td>No</td>
-                  <td></td>
-                  <td></td>
-            		</tr>
-            		<tr class="even">
-                  <td>2017-	08-13</td>
-            			<td>Trail Des Fantomes 2017 - 48 Km</td>
-            			<td>49.5km / 1500m+</td>
-                  <td>Finisher</td>
-            			<td>Yes</td>
-            			<td>No</td>
-                  <td></td>
-                  <td></td>
-            		</tr>
-                <tr class="even">
-                  <td>07-15</td>
-            			<td>Trail Vielha-Molieres 3010 2017 - Maratón</td>
-            			<td>40.7km / 4000m+</td>
-                  <td>Finisher</td>
-            			<td>Yes</td>
-            			<td>No</td>
-                  <td></td>
-                  <td></td>
-            		</tr>
-                <tr class="even">
-                  <td>06-23</td>
-            			<td>The North Face Lavaredo Ultra Trail 2017 - Lavaredo Ultra Trail</td>
-            			<td>119.4km / 6450m+</td>
-                  <td>Finisher</td>
-            			<td>Yes</td>
-            			<td>No</td>
-                  <td></td>
-                  <td></td>
-            		</tr>
-            	</tbody>
-            </table>
-            <br/><br/><br/>
-            <h1>Detailed</h1>
-            <table cellspacing="0">
-            	<thead>
-            		<tr>
-            			<th>Trail Category</th>
-            			<th>Cotation (/ 1000)</th>
-            			<th>Men's best cotation</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-            		<tr>
-            			<td>General</td>
-            			<td>611</td>
-            			<td>951</td>
-            		</tr>
-            		<tr class="even">
-            			<td>XXL</td>
-            			<td>-</td>
-            			<td>918</td>
-            		</tr>
-                <tr>
-            			<td>XL</td>
-            			<td>508</td>
-            			<td>908</td>
-            		</tr>
-            		<tr class="even">
-            			<td>L</td>
-            			<td>577</td>
-            			<td>919</td>
-            		</tr>
-                <tr>
-            			<td>M</td>
-            			<td>591</td>
-            			<td>941</td>
-            		</tr>
-            		<tr class="even">
-            			<td>S</td>
-            			<td>609</td>
-            			<td>916</td>
-            		</tr>
-                <tr>
-            			<td>XS</td>
-            			<td>-</td>
-            			<td>909</td>
+                <tr *ngFor="let trackRecord of performanceDetailedData; let even = even" [ngClass]="{even: even}">
+            			<td>{{trackRecord.date | date:'EEE, MMMM d, yyyy'}}</td>
+            			<td>{{trackRecord.nameOfRace}}</td>
+            			<td>{{trackRecord.distance}}</td>
+            			<td>{{trackRecord.qualifyingRace}}</td>
+            			<td>{{trackRecord.routeCertified}}</td>
+            			<td>{{trackRecord.endurance}} points</td>
+            			<td>{{trackRecord.mountain}} points</td>
             		</tr>
             	</tbody>
             </table>
           </section>
           <section id="content4">
-            <h1>Overall</h1>
+            <h1>Men's ITRA World Ranking</h1>
             <table cellspacing="0">
             	<thead>
             		<tr>
             			<th>Trail Category</th>
-            			<th>Cotation (/ 1000)</th>
-            			<th>Men's best cotation</th>
+            			<th>ITRA's Performance Index</th>
+            			<th>World Ranking</th>
+            			<th>Ranking Europe</th>
+            			<th>Ranking Spain</th>
             		</tr>
             	</thead>
             	<tbody>
-            		<tr>
-            			<td>General</td>
-            			<td>611</td>
-            			<td>951</td>
-            		</tr>
-            		<tr class="even">
-            			<td>XXL</td>
-            			<td>-</td>
-            			<td>918</td>
-            		</tr>
-                <tr>
-            			<td>XL</td>
-            			<td>508</td>
-            			<td>908</td>
-            		</tr>
-            		<tr class="even">
-            			<td>L</td>
-            			<td>577</td>
-            			<td>919</td>
-            		</tr>
-                <tr>
-            			<td>M</td>
-            			<td>591</td>
-            			<td>941</td>
-            		</tr>
-            		<tr class="even">
-            			<td>S</td>
-            			<td>609</td>
-            			<td>916</td>
-            		</tr>
-                <tr>
-            			<td>XS</td>
-            			<td>-</td>
-            			<td>909</td>
+                <tr *ngFor="let statistics of worldRankData; let even = even" [ngClass]="{even: even}">
+            			<td>{{statistics.category}}</td>
+            			<td>{{statistics.performanceIndex}}</td>
+            			<td>{{statistics.worldRank}}</td>
+            			<td>{{statistics.europeRank}}</td>
+            			<td>{{statistics.spainRank}}</td>
             		</tr>
             	</tbody>
             </table>
-            <br/><br/><br/>
-            <h1>Detailed</h1>
+            <br/>
+            <h1>Best Performances</h1>
             <table cellspacing="0">
             	<thead>
             		<tr>
             			<th>Trail Category</th>
-            			<th>Cotation (/ 1000)</th>
-            			<th>Men's best cotation</th>
+            			<th>Date</th>
+            			<th>Name of the race</th>
+            			<th>Country</th>
+            			<th>Distance / D+</th>
+                  <th>Time</th>
+                  <th>Rank.</th>
+                  <th>Rank. M</th>
+                  <th>Score</th>
             		</tr>
             	</thead>
             	<tbody>
+                <tr *ngFor="let statistics of bestPerformancesData; let even = even" [ngClass]="{even: even}">
+            			<td>{{statistics.category}}</td>
+            			<td>{{statistics.date}}</td>
+            			<td>{{statistics.nameOfRace}}</td>
+            			<td>{{statistics.country}}</td>
+            			<td>{{statistics.distance}}</td>
+            			<td>{{statistics.time}}</td>
+            			<td>{{statistics.rank}}</td>
+            			<td>{{statistics.rankM}}</td>
+            			<td>{{statistics.score}}</td>
+            		</tr>
+            	</tbody>
+            </table>
+            <br/>
+            <h1>Other Statistical Data</h1>
+            <table cellspacing="0">
+            	<thead>
             		<tr>
-            			<td>General</td>
-            			<td>611</td>
-            			<td>951</td>
+            			<th>Number of Races</th>
+            			<th>Number of Races Finished</th>
+            			<th>Victories</th>
+            			<th>Top 3</th>
+            			<th>Top 10</th>
+            			<th>KM Covered</th>
+            			<th>D+ Covered</th>
             		</tr>
-            		<tr class="even">
-            			<td>XXL</td>
-            			<td>-</td>
-            			<td>918</td>
-            		</tr>
+            	</thead>
+            	<tbody>
                 <tr>
-            			<td>XL</td>
-            			<td>508</td>
-            			<td>908</td>
-            		</tr>
-            		<tr class="even">
-            			<td>L</td>
-            			<td>577</td>
-            			<td>919</td>
-            		</tr>
-                <tr>
-            			<td>M</td>
-            			<td>591</td>
-            			<td>941</td>
-            		</tr>
-            		<tr class="even">
-            			<td>S</td>
-            			<td>609</td>
-            			<td>916</td>
-            		</tr>
-                <tr>
-            			<td>XS</td>
-            			<td>-</td>
-            			<td>909</td>
+                	<td>{{otherData.numberOfRaces}}</td>
+            			<td>{{otherData.numberOfRacesFinished}}</td>
+            			<td>{{otherData.victories}}</td>
+            			<td>{{otherData.top3}}</td>
+            			<td>{{otherData.top10}}</td>
+            			<td>{{otherData.kmCovered}}</td>
+            			<td>{{otherData.eCovered}}</td>
             		</tr>
             	</tbody>
             </table>

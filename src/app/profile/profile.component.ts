@@ -1,7 +1,12 @@
+// Import modules
 import { Component, OnInit } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Profile } from './profile';
+
+// Import classes
+import { InfoData } from './profile';
+import { PerformanceData } from './profile';
+import { StatisticsData } from './profile';
 
 @Component({
   selector: 'app-profile',
@@ -10,17 +15,37 @@ import { Profile } from './profile';
 })
 export class ProfileComponent implements OnInit {
 
-  // performanceGeneral: string[];
-  performanceDetail: string[];
+  aboutMeData: object = {};
+  performanceGeneralData: string[] = [];
+  performanceDetailedData: string[] = [];
+  worldRankData:  string[] = [];
+  bestPerformancesData:  string[] = [];
+  otherData:  string[] = [];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get<Profile>("http://localhost:8000/api/profile")
+    this.http.get<InfoData>("http://localhost:8000/api/profile/info")
       .subscribe(data => {
-        this.performanceDetail = data.performanceDetail;
-        console.log(this.performanceDetail);
+        this.aboutMeData = data.aboutMeData;
+        this.performanceGeneralData = data.performanceData;
+        // console.log(data);
       });
+
+    this.http.get<PerformanceData>("http://localhost:8000/api/profile/performance")
+      .subscribe(data => {
+        this.performanceDetailedData = data.performanceData;
+        // console.log(data);
+      });
+
+    this.http.get<StatisticsData>("http://localhost:8000/api/profile/statistics")
+      .subscribe(data => {
+        this.worldRankData = data.worldRankData;
+        this.bestPerformancesData = data.bestPerformancesData;
+        this.otherData = data.otherData;
+        // console.log(data);
+      });
+
   }
 
 }
