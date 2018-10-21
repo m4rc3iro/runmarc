@@ -15,12 +15,11 @@ import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
     {   path: '', component: IntroductionComponent},
-    // enable for versions > 0.0.1
-    // {   path: 'home', component: HomeComponent},
-    // {   path: 'upcoming', component: UpcomingComponent},
-    // {   path: 'timeline', component: TimelineComponent},
-    // {   path: 'profile', component: ProfileComponent},
-    // {   path: 'comments', component: CommentsComponent},
+    {   path: 'home', component: HomeComponent},
+    {   path: 'upcoming', component: UpcomingComponent},
+    {   path: 'timeline', component: TimelineComponent},
+    {   path: 'profile', component: ProfileComponent},
+    {   path: 'comments', component: CommentsComponent},
     {   path: '', redirectTo: 'introduction', pathMatch: 'full' }
 ];
 
