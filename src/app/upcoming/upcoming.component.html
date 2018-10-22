@@ -1,62 +1,63 @@
 <div class="upcoming-container">
     <div class="upcoming-text">
-      <p>YAAAYYYYY, excited to be part of the following races for 2018:</p>
+      <h1>Upcoming Events</h1>
+      <p>Excited to be part of the following 2018 races:</p>
     </div>
 
     <div class="event">
       <div class="date">
         <div class="month">May</div>
         <div class="day">16</div>
-        <div class="year">2018</div>
+        <!-- <div class="year">2018</div> -->
       </div>
-      <div class="info">
+      <div class="info" (click)="expand0 = !expand0; expand1 = false; expand2 = false">
         <div class="race-name" [ngClass]="{'hidden' : expand0}">Transylvania 100<span class="country"> Romania</span></div>
         <div class="technical-details" [ngClass]="{'shown' : expand0}">
             <div class="details"><span class="label">Distance: </span>85.6 km</div>
             <div class="details"><span class="label">Elevation gain: </span>+ 4.979 meters</div>
             <div class="details">
-              <span class="label">Official website: </span><a href="http://www.transylvania100k.com/" target="_blank">http://www.transylvania100k.com/</a>
+              <span class="label">Website: </span><a href="http://www.transylvania100k.com/" target="_blank">http://www.transylvania100k.com/</a>
             </div>
         </div>
       </div>
-      <div class="more"><img class="arrow" src="/assets/arrow-circle.png" (click)="expand0 = !expand0; expand1 = false; expand2 = false"/></div>
+      <div class="more"><!--img class="arrow" src="/assets/arrow-circle.png" (click)="expand0 = !expand0; expand1 = false; expand2 = false"/--></div>
     </div>
 
     <div class="event">
       <div class="date">
         <div class="month">July</div>
         <div class="day">15</div>
-        <div class="year">2018</div>
+        <!-- <div class="year">2018</div> -->
       </div>
-      <div class="info">
+      <div class="info" (click)="expand1 = !expand1; expand0 = false; expand2 = false">
         <div class="race-name" [ngClass]="{'hidden' : expand1}">Eiger Ultra Trail<span class="country"> Switzerland</span></div>
         <div class="technical-details" [ngClass]="{'shown' : expand1}">
             <div class="details"><span class="label">Distance: </span>101 km</div>
             <div class="details"><span class="label">Elevation gain: </span>+ 6.700 meters</div>
             <div class="details">
-              <span class="label">Official website: </span><a href="https://www.eigerultratrail.ch/en/" target="_blank">https://www.eigerultratrail.ch/</a>
+              <span class="label">Website: </span><a href="https://www.eigerultratrail.ch/en/" target="_blank">https://www.eigerultratrail.ch/</a>
             </div>
         </div>
       </div>
-      <div class="more"><img class="arrow" src="/assets/arrow-circle.png" (click)="expand1 = !expand1; expand0 = false; expand2 = false"/></div>
+      <div class="more"><!-- img class="arrow" src="/assets/arrow-circle.png" (click)="expand1 = !expand1; expand0 = false; expand2 = false"/--></div>
     </div>
 
     <div class="event">
       <div class="date">
         <div class="month">August</div>
         <div class="day">31</div>
-        <div class="year">2018</div>
+        <!-- <div class="year">2018</div> -->
       </div>
-      <div class="info">
+      <div class="info" (click)="expand2 = !expand2; expand0 = false; expand1 = false">
         <div class="race-name" [ngClass]="{'hidden' : expand2}">UTMB - CCC<span class="country"> France</span></div>
         <div class="technical-details" [ngClass]="{'shown' : expand2}">
             <div class="details"><span class="label">Distance: </span>101 km</div>
             <div class="details"><span class="label">Elevation gain: </span>+ 6.100 meters</div>
             <div class="details">
-              <span class="label">Official website: </span><a href="http://utmbmontblanc.com/en/" target="_blank">http://utmbmontblanc.com/</a>
+              <span class="label">Website: </span><a href="http://utmbmontblanc.com/en/" target="_blank">http://utmbmontblanc.com/</a>
             </div>
         </div>
       </div>
-      <div class="more"><img class="arrow" src="/assets/arrow-circle.png" (click)="expand2 = !expand2; expand0 = false; expand1 = false"/></div>
+      <div class="more"><!-- img class="arrow" src="/assets/arrow-circle.png" (click)="expand2 = !expand2; expand0 = false; expand1 = false"/--></div>
     </div>
 </div>
