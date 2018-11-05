@@ -1,6 +1,6 @@
 export class InfoData {
   constructor(
-    public aboutMeData: object,
+    public aboutMeData: any,
     public performanceData: string[]) {}
 }
 

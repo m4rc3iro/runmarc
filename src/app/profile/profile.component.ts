@@ -15,7 +15,7 @@ import { StatisticsData } from './profile';
 })
 export class ProfileComponent implements OnInit {
 
-  aboutMeData: object = {};
+  aboutMeData: any;
   performanceGeneralData: string[] = [];
   performanceDetailedData: string[] = [];
   worldRankData:  string[] = [];

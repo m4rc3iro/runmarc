@@ -26,11 +26,10 @@
           <label for="tab4"><i class="fas fa-chart-bar"></i>&nbsp;&nbsp;&nbsp;Statistics</label>
 
           <section id="content1">
-            <div class="info-msg">
+            <ngb-alert type="success" [dismissible]="false">
               <i class="fa fa-info-circle"></i>
               Only the five best results of the last 36 months are taken into account in the calculation of the ITRA performance index.
-            </div>
-            <br/>
+            </ngb-alert>
             <h1>Overall</h1>
             <table cellspacing="0">
             	<thead>
@@ -117,8 +116,9 @@
             			<td>{{trackRecord.distance}}</td>
             			<td>{{trackRecord.qualifyingRace}}</td>
             			<td>{{trackRecord.routeCertified}}</td>
-            			<td>{{trackRecord.endurance}} points</td>
-            			<td>{{trackRecord.mountain}} points</td>
+            			<td *ngIf="trackRecord.endurance; else mDash">{{trackRecord.endurance}} points</td>
+            			<td *ngIf="trackRecord.mountain; else mDash">{{trackRecord.mountain}} points</td>
+                    <ng-template #mDash><td>-</td></ng-template>
             		</tr>
             	</tbody>
             </table>
@@ -190,7 +190,7 @@
             		</tr>
             	</thead>
             	<tbody>
-                <tr>
+                <tr *ngIf="otherData">
                 	<td>{{otherData.numberOfRaces}}</td>
             			<td>{{otherData.numberOfRacesFinished}}</td>
             			<td>{{otherData.victories}}</td>
