@@ -1,63 +1,616 @@
 <div class="upcoming-container">
-    <div class="upcoming-text">
-      <h1>Upcoming Events</h1>
-      <p>Excited to be part of the following 2018 races:</p>
-    </div>
 
-    <div class="event">
-      <div class="date">
-        <div class="month">May</div>
-        <div class="day">16</div>
-        <!-- <div class="year">2018</div> -->
-      </div>
-      <div class="info" (click)="expand0 = !expand0; expand1 = false; expand2 = false">
-        <div class="race-name" [ngClass]="{'hidden' : expand0}">Transylvania 100<span class="country"> Romania</span></div>
-        <div class="technical-details" [ngClass]="{'shown' : expand0}">
-            <div class="details"><span class="label">Distance: </span>85.6 km</div>
-            <div class="details"><span class="label">Elevation gain: </span>+ 4.979 meters</div>
-            <div class="details">
-              <span class="label">Website: </span><a href="http://www.transylvania100k.com/" target="_blank">http://www.transylvania100k.com/</a>
-            </div>
+    <!-- Tooltip template  -->
+    <ng-template #tipContent><b>{{event}}</b> {{country}}</ng-template>
+
+    <div class="calendar">
+      <div class="calendar-body">
+        <div class="calendar-month">
+          <div class="calendar-month-name">January</div>
+          <div class="calendar-month-header">
+            <div class="calendar-day">M</div>
+            <div class="calendar-day">Tu</div>
+            <div class="calendar-day">W</div>
+            <div class="calendar-day">Th</div>
+            <div class="calendar-day">F</div>
+            <div class="calendar-day">Sa</div>
+            <div class="calendar-day">Su</div>
+          </div>
+          <div class="calendar-month-body">
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day">31</div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+          </div>
+        </div>
+        <div class="calendar-month">
+          <div class="calendar-month-name">February</div>
+          <div class="calendar-month-header">
+            <div class="calendar-day">M</div>
+            <div class="calendar-day">Tu</div>
+            <div class="calendar-day">W</div>
+            <div class="calendar-day">Th</div>
+            <div class="calendar-day">F</div>
+            <div class="calendar-day">Sa</div>
+            <div class="calendar-day">Su</div>
+          </div>
+          <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+          </div>
+        </div>
+        <div class="calendar-month">
+          <div class="calendar-month-name">March</div>
+          <div class="calendar-month-header">
+            <div class="calendar-day">M</div>
+            <div class="calendar-day">Tu</div>
+            <div class="calendar-day">W</div>
+            <div class="calendar-day">Th</div>
+            <div class="calendar-day">F</div>
+            <div class="calendar-day">Sa</div>
+            <div class="calendar-day">Su</div>
+          </div>
+          <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day">31</div>
+            <div class="calendar-day Spacer"></div>
+          </div>
+        </div>
+        <div class="calendar-month">
+          <div class="calendar-month-name">April</div>
+          <div class="calendar-month-header">
+            <div class="calendar-day">M</div>
+            <div class="calendar-day">Tu</div>
+            <div class="calendar-day">W</div>
+            <div class="calendar-day">Th</div>
+            <div class="calendar-day">F</div>
+            <div class="calendar-day">Sa</div>
+            <div class="calendar-day">Su</div>
+          </div>
+          <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+          </div>
+        </div>
+        <div class="calendar-month">
+          <div class="calendar-month-name">May</div>
+          <div class="calendar-month-header">
+            <div class="calendar-day">M</div>
+            <div class="calendar-day">Tu</div>
+            <div class="calendar-day">W</div>
+            <div class="calendar-day">Th</div>
+            <div class="calendar-day">F</div>
+            <div class="calendar-day">Sa</div>
+            <div class="calendar-day">Su</div>
+          </div>
+          <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day event color1" [ngbTooltip]="tipContent" #t1="ngbTooltip" (mouseover)="toggleWithGreeting(t1, 'Transylvania100 80K', 'Romania')">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day">31</div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+          </div>
+        </div>
+        <div class="calendar-month">
+          <div class="calendar-month-name">June</div>
+          <div class="calendar-month-header">
+            <div class="calendar-day">M</div>
+            <div class="calendar-day">Tu</div>
+            <div class="calendar-day">W</div>
+            <div class="calendar-day">Th</div>
+            <div class="calendar-day">F</div>
+            <div class="calendar-day">Sa</div>
+            <div class="calendar-day">Su</div>
+          </div>
+          <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day Spacer"></div>
+          </div>
+        </div>
+        <div class="calendar-month">
+          <div class="calendar-month-name">July</div>
+          <div class="calendar-month-header">
+            <div class="calendar-day">M</div>
+            <div class="calendar-day">Tu</div>
+            <div class="calendar-day">W</div>
+            <div class="calendar-day">Th</div>
+            <div class="calendar-day">F</div>
+            <div class="calendar-day">Sa</div>
+            <div class="calendar-day">Su</div>
+          </div>
+          <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day event color2" [ngbTooltip]="tipContent" #t2="ngbTooltip" (mouseenter)="toggleWithGreeting(t2, 'Eiger Ultra Trail E101', 'Switzerland')">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day">31</div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+          </div>
+        </div>
+        <div class="calendar-month">
+          <div class="calendar-month-name">August</div>
+          <div class="calendar-month-header">
+            <div class="calendar-day">M</div>
+            <div class="calendar-day">Tu</div>
+            <div class="calendar-day">W</div>
+            <div class="calendar-day">Th</div>
+            <div class="calendar-day">F</div>
+            <div class="calendar-day">Sa</div>
+            <div class="calendar-day">Su</div>
+          </div>
+          <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day event color3" [ngbTooltip]="tipContent" #t3="ngbTooltip" (mouseenter)="toggleWithGreeting(t3, 'UTMB CCC', 'France')">31</div>
+            <div class="calendar-day Spacer"></div>
+          </div>
+        </div>
+        <div class="calendar-month">
+          <div class="calendar-month-name">September</div>
+          <div class="calendar-month-header">
+            <div class="calendar-day">M</div>
+            <div class="calendar-day">Tu</div>
+            <div class="calendar-day">W</div>
+            <div class="calendar-day">Th</div>
+            <div class="calendar-day">F</div>
+            <div class="calendar-day">Sa</div>
+            <div class="calendar-day">Su</div>
+          </div>
+          <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+          </div>
+        </div>
+        <div class="calendar-month">
+          <div class="calendar-month-name">October</div>
+          <div class="calendar-month-header">
+            <div class="calendar-day">M</div>
+            <div class="calendar-day">Tu</div>
+            <div class="calendar-day">W</div>
+            <div class="calendar-day">Th</div>
+            <div class="calendar-day">F</div>
+            <div class="calendar-day">Sa</div>
+            <div class="calendar-day">Su</div>
+          </div>
+          <div class="calendar-month-body">
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day">31</div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+          </div>
+        </div>
+        <div class="calendar-month">
+          <div class="calendar-month-name">November</div>
+          <div class="calendar-month-header">
+            <div class="calendar-day">M</div>
+            <div class="calendar-day">Tu</div>
+            <div class="calendar-day">W</div>
+            <div class="calendar-day">Th</div>
+            <div class="calendar-day">F</div>
+            <div class="calendar-day">Sa</div>
+            <div class="calendar-day">Su</div>
+          </div>
+          <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+          </div>
+        </div>
+        <div class="calendar-month">
+          <div class="calendar-month-name">December</div>
+          <div class="calendar-month-header">
+            <div class="calendar-day">M</div>
+            <div class="calendar-day">Tu</div>
+            <div class="calendar-day">W</div>
+            <div class="calendar-day">Th</div>
+            <div class="calendar-day">F</div>
+            <div class="calendar-day">Sa</div>
+            <div class="calendar-day">Su</div>
+          </div>
+          <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day">31</div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
+          </div>
         </div>
       </div>
-      <div class="more"><!--img class="arrow" src="/assets/arrow-circle.png" (click)="expand0 = !expand0; expand1 = false; expand2 = false"/--></div>
-    </div>
-
-    <div class="event">
-      <div class="date">
-        <div class="month">July</div>
-        <div class="day">15</div>
-        <!-- <div class="year">2018</div> -->
-      </div>
-      <div class="info" (click)="expand1 = !expand1; expand0 = false; expand2 = false">
-        <div class="race-name" [ngClass]="{'hidden' : expand1}">Eiger Ultra Trail<span class="country"> Switzerland</span></div>
-        <div class="technical-details" [ngClass]="{'shown' : expand1}">
-            <div class="details"><span class="label">Distance: </span>101 km</div>
-            <div class="details"><span class="label">Elevation gain: </span>+ 6.700 meters</div>
-            <div class="details">
-              <span class="label">Website: </span><a href="https://www.eigerultratrail.ch/en/" target="_blank">https://www.eigerultratrail.ch/</a>
-            </div>
-        </div>
-      </div>
-      <div class="more"><!-- img class="arrow" src="/assets/arrow-circle.png" (click)="expand1 = !expand1; expand0 = false; expand2 = false"/--></div>
-    </div>
-
-    <div class="event">
-      <div class="date">
-        <div class="month">August</div>
-        <div class="day">31</div>
-        <!-- <div class="year">2018</div> -->
-      </div>
-      <div class="info" (click)="expand2 = !expand2; expand0 = false; expand1 = false">
-        <div class="race-name" [ngClass]="{'hidden' : expand2}">UTMB - CCC<span class="country"> France</span></div>
-        <div class="technical-details" [ngClass]="{'shown' : expand2}">
-            <div class="details"><span class="label">Distance: </span>101 km</div>
-            <div class="details"><span class="label">Elevation gain: </span>+ 6.100 meters</div>
-            <div class="details">
-              <span class="label">Website: </span><a href="http://utmbmontblanc.com/en/" target="_blank">http://utmbmontblanc.com/</a>
-            </div>
-        </div>
-      </div>
-      <div class="more"><!-- img class="arrow" src="/assets/arrow-circle.png" (click)="expand2 = !expand2; expand0 = false; expand1 = false"/--></div>
     </div>
 </div>

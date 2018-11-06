@@ -12,6 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { CommentsComponent } from './comments/comments.component';
 import { FooterComponent } from './footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
     {   path: '', component: IntroductionComponent},
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
