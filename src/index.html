@@ -19,26 +19,6 @@
 
     gtag('config', 'UA-124406809-1');
   </script>
-
-  <!-- Google Captcha -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script type="text/javascript">
-      function recaptcha_callback() {
-          var submitCommentButton = document.getElementById('submit-comment');
-          submitCommentButton.removeAttribute('disabled');
-          submitCommentButton.classList.remove('disabled');
-      };
-
-      function recaptcha_expired_callback() {
-          var submitCommentButton = document.getElementById('submit-comment');
-          submitCommentButton.setAttribute('disabled', 'disabled');
-          submitCommentButton.classList.add('disabled');
-      };
-
-      function recaptcha_error_callback() {
-          recaptcha_expired_callback();
-      };
- </script>
 </head>
 <body>
     <app-root></app-root>
