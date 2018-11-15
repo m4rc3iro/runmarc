@@ -1,9 +1,9 @@
 export class Race {
 
   constructor(
-    public id: number,
     public name: string,
     public date: Date,
-    public description: string) {}
+    public description: string,
+    public images: string[]) {}
 
 }

@@ -1,7 +1,7 @@
 .timeline-container {
   height: 100%;
   width: 100%;
-  padding: 50px 0 50px 0px;
+  padding: 50px 0 0 0px;
   overflow: auto;
   font-family: "Effra", Helvetica, sans-serif;
   color: #768390;
@@ -14,9 +14,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
-a {
-  color: #FF6B6B;
-}
 a:hover {
   color: #ff9a9a;
   text-decoration: none;
@@ -29,11 +26,13 @@ a:hover {
   padding: 3em 1em;
   text-align: center;
 }
+
 .example-header h1 {
   color: #FFF;
   font-weight: 300;
   margin-bottom: 20px;
 }
+
 .example-header p {
   font-size: 12px;
   text-transform: uppercase;
@@ -42,8 +41,9 @@ a:hover {
 }
 
 .container-fluid .row {
-  padding: 0 0 4em 0;
+  padding: 0 0 0 0;
 }
+
 .container-fluid .row:nth-child(even) {
   background: #F1F4F5;
 }
@@ -54,10 +54,16 @@ a:hover {
   padding: 3em 0;
   border-bottom: 1px solid #E4EAEC;
 }
+
 .example-title p {
   margin: 0 auto;
   font-size: 16px;
   max-width: 400px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
 }
 
 /*==================================
@@ -72,6 +78,7 @@ a:hover {
   padding: 0;
   width: 100%;
 }
+
 .timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {
   line-height: inherit;
 }
@@ -81,6 +88,7 @@ a:hover {
   padding-left: 40px;
   position: relative;
 }
+
 .timeline-item:last-child {
   padding-bottom: 0;
 }
@@ -104,9 +112,10 @@ a:hover {
   left: 0;
   width: 15px;
 }
+
 .timeline-marker:before {
-  background: #FF6B6B;
-  border: 3px solid transparent;
+  background: #ffc202;
+  border: 8px solid transparent;
   border-radius: 100%;
   content: "";
   display: block;
@@ -117,6 +126,7 @@ a:hover {
   width: 10px;
   transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
 }
+
 .timeline-marker:after {
   content: "";
   width: 3px;
@@ -127,13 +137,14 @@ a:hover {
   bottom: 0;
   left: 6px;
 }
+
 .timeline-item:last-child .timeline-marker:after {
   content: none;
 }
 
 .timeline-item:not(.period):hover .timeline-marker:before {
   background: transparent;
-  border: 3px solid #FF6B6B;
+  border: 8px solid #10ac84;
 }
 
 /*----- TIMELINE CONTENT -----*/
@@ -141,10 +152,12 @@ a:hover {
   padding-bottom: 40px;
   padding-right: 25px;
 }
+
 .timeline-content p {
   font-family: "Comfortaa";
   font-size: 13px;
 }
+
 .timeline-content p:last-child {
   margin-bottom: 0;
 }
@@ -153,9 +166,11 @@ a:hover {
 .period {
   padding: 0;
 }
+
 .period .timeline-info {
   display: none;
 }
+
 .period .timeline-marker:before {
   background: transparent;
   content: "";
@@ -169,9 +184,11 @@ a:hover {
   border-top: 3px solid #CCD5DB;
   border-bottom: 3px solid #CCD5DB;
 }
+
 .period .timeline-marker-first:before {
   border-top: 0px;
 }
+
 .period .timeline-marker:after {
   content: "";
   height: 32px;
@@ -181,8 +198,13 @@ a:hover {
 .period .timeline-content {
   padding: 40px 0 70px;
 }
+
 .period .timeline-title {
   margin: 0;
+}
+
+.timeline-title:hover {
+  cursor: pointer;
 }
 
 /*----------------------------------------------
@@ -192,10 +214,12 @@ a:hover {
   .timeline-split .timeline, .timeline-centered .timeline {
     display: table;
   }
+
   .timeline-split .timeline-item, .timeline-centered .timeline-item {
     display: table-row;
     padding: 0;
   }
+
   .timeline-split .timeline-info, .timeline-centered .timeline-info,
   .timeline-split .timeline-marker,
   .timeline-centered .timeline-marker,
@@ -206,18 +230,183 @@ a:hover {
     display: table-cell;
     vertical-align: top;
   }
+
   .timeline-split .timeline-marker, .timeline-centered .timeline-marker {
     position: relative;
   }
-  .timeline-split .timeline-content, .timeline-centered .timeline-content {
-    padding-left: 30px;
-  }
-  .timeline-split .timeline-info, .timeline-centered .timeline-info {
-    padding-right: 30px;
 
+  .timeline-split .timeline-content, .timeline-centered .timeline-content {
+    padding-left: 25px;
   }
+
+  .timeline-split .timeline-info, .timeline-centered .timeline-info {
+    padding-right: 25px;
+  }
+
   .timeline-split .period .timeline-title, .timeline-centered .period .timeline-title {
     position: relative;
     left: -45px;
   }
+}
+
+/*----------------------------------------------
+    Gallery styles
+----------------------------------------------*/
+.show {
+  display: table-row;
+}
+
+/* Styles for image modal display dialog  */
+.popup {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.popup-image {
+  width: 100%;
+  -webkit-box-shadow: 0 0 1px 1px rgba(249, 65, 37, 1);
+  -moz-box-shadow: 0 0 1px 1px rgba(249, 65, 37, 1);
+  box-shadow: 0 0 1px 1px rgba(249, 65, 37, 1);
+}
+
+.show-popup {
+  display: flex;
+}
+
+.popup:before {
+  content: "";
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #3A3A3A;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  will-change: height, top;
+  animation: open-animation .4s cubic-bezier(0.83, 0.04, 0, 1.16) .55s both;
+}
+
+.popup:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #3A3A3A;
+  will-change: width, opacity;
+  animation: line-animation .4s cubic-bezier(0.83, 0.04, 0, 1.16) both;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+}
+
+.popup__block {
+  box-sizing: border-box;
+  position: relative;
+  padding: 5% 20%;
+  align-items: center;
+  margin: auto;
+  overflow: auto;
+  animation: fade .3s ease-out .8s both;
+}
+
+.popup__close {
+  margin-top: 50px;
+  width: 1.2rem;
+  height: 1.2rem;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+@keyframes line-animation {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+
+  99% {
+    width: 100%;
+    opacity: 1;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes open-animation {
+  0% {
+    height: 0;
+    top: 50%;
+  }
+
+  100% {
+    height: 100vh;
+    top: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.close {
+  margin: 50px 25px 0 0;
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  transition: 0.25s linear;
+  border-radius: 25px;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  content: '';
+  width: 1.75rem;
+  height: 0.225rem;
+  background-color: tomato;
+}
+
+.carousel-control-next-icon {
+  background-color: tomato;
+}
+
+.close:before {
+  transform: rotate(-45deg);
+}
+
+.close:after {
+  transform: rotate(45deg);
+}
+
+.close:hover {
+  transform: rotate(360deg);
+}
+
+.close:hover:before, .close:hover:after {
+  background-color: tomato;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  top: 50%;
+  align-items: baseline;
 }
