@@ -11,15 +11,17 @@ import { Race } from './race';
 })
 export class TimelineComponent implements OnInit {
 
+  BASE_URL: string = 'https://s3.eu-west-2.amazonaws.com/runmarc.io/timeline/';
+
   gallery: boolean;
   raceSelected: Race;
 
   races2018 = [
     new Race('Utmb® - Ccc®', new Date('08.31.2018'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",[
-      '/assets/lavaredo/north-face-lavaredo-ultra-trail-2017-1.jpg',
-      '/assets/lavaredo/north-face-lavaredo-ultra-trail-2017-2.jpg',
-      '/assets/lavaredo/north-face-lavaredo-ultra-trail-2017-3.jpg',
-      '/assets/lavaredo/north-face-lavaredo-ultra-trail-2017-4.jpg'
+      this.BASE_URL + 'lut2017/north-face-lavaredo-ultra-trail-2017-1.jpg',
+      this.BASE_URL + 'lut2017/north-face-lavaredo-ultra-trail-2017-2.jpg',
+      this.BASE_URL + 'lut2017/north-face-lavaredo-ultra-trail-2017-3.jpg',
+      this.BASE_URL + 'lut2017/north-face-lavaredo-ultra-trail-2017-4.jpg'
     ]),
     new Race('Eiger Ultra-Trail® - E101', new Date('07.14.2018'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",[]),
     new Race('Transylvania One Hundred - 80K', new Date('05.19.2018'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",[])
