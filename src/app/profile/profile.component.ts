@@ -1,12 +1,8 @@
-// Import modules
+// Import modules and services
 import { Component, OnInit } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-
-// Import classes
-import { InfoData } from './profile';
-import { PerformanceData } from './profile';
-import { StatisticsData } from './profile';
+import { ProfileService } from '../profile.service';
+// class imports
+import { Profile } from './profile';
 
 @Component({
   selector: 'app-profile',
@@ -15,37 +11,21 @@ import { StatisticsData } from './profile';
 })
 export class ProfileComponent implements OnInit {
 
-  aboutMeData: any;
-  performanceGeneralData: string[] = [];
-  performanceDetailedData: string[] = [];
-  worldRankData:  string[] = [];
-  bestPerformancesData:  string[] = [];
-  otherData:  string[] = [];
+  MY_BIRTH_DATE: string = '1984-06-21';
 
-  constructor(private http: HttpClient) { }
+  age: number;
+  profile: Profile;
+
+  constructor(private profileService: ProfileService) {}
 
   ngOnInit() {
-    this.http.get<InfoData>("http://localhost:8000/api/profile/info")
-      .subscribe(data => {
-        this.aboutMeData = data.aboutMeData;
-        this.performanceGeneralData = data.performanceData;
-        // console.log(data);
-      });
+    this.age = this.calculateAge();
+    this.profile = this.profileService.getProfile();
+  }
 
-    this.http.get<PerformanceData>("http://localhost:8000/api/profile/performance")
-      .subscribe(data => {
-        this.performanceDetailedData = data.performanceData;
-        // console.log(data);
-      });
-
-    this.http.get<StatisticsData>("http://localhost:8000/api/profile/statistics")
-      .subscribe(data => {
-        this.worldRankData = data.worldRankData;
-        this.bestPerformancesData = data.bestPerformancesData;
-        this.otherData = data.otherData;
-        // console.log(data);
-      });
-
+  calculateAge(): number {
+    var timeDiff = Math.abs(Date.now() - new Date(this.MY_BIRTH_DATE).getTime());
+    return Math.floor((timeDiff / (1000 * 3600 * 24))/365.25);
   }
 
 }

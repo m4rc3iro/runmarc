@@ -1,208 +1,210 @@
 <div class="profile-container">
-    <header class="header-container">
-      <div class="profile-photo-container">
-        <img class="profile-photo" src="/assets/itraProfile.png"/>
-      </div>
-      <div class="about-me-container">
-        <h1>Marc Eiro</h1>
-        <h2><span class="label">Sex: </span>{{aboutMeData.sex}}</h2>
-        <h2><span class="label">Age: </span>{{aboutMeData.age}} years old (1984)</h2>
-        <h2><span class="label">Nationality: </span>{{aboutMeData.nationality}}</h2>
-      </div>
-    </header>
-    <div class="results">
-      <div class="itra-performance-index">
-          <!-- tabbing start -->
-          <input id="tab1" type="radio" name="tabs" checked>
-          <label for="tab1"><i class="fas fa-bullseye"></i>&nbsp;&nbsp;&nbsp;Performance Index</label>
-
-          <input id="tab2" type="radio" name="tabs">
-          <label for="tab2"><i class="fas fa-medal"></i>&nbsp;&nbsp;&nbsp;Ranking</label>
-
-          <input id="tab3" type="radio" name="tabs">
-          <label for="tab3"><i class="fas fa-route"></i>&nbsp;&nbsp;&nbsp;Route's Characteristics</label>
-
-          <input id="tab4" type="radio" name="tabs">
-          <label for="tab4"><i class="fas fa-chart-bar"></i>&nbsp;&nbsp;&nbsp;Statistics</label>
-
-          <section id="content1">
-            <ngb-alert type="success" [dismissible]="false">
-              <i class="fa fa-info-circle"></i>
-              Only the five best results of the last 36 months are taken into account in the calculation of the ITRA performance index.
-            </ngb-alert>
-            <h1>Overall</h1>
-            <table cellspacing="0">
-            	<thead>
-            		<tr>
-            			<th>Trail Category</th>
-            			<th>Cotation (/ 1000)</th>
-            			<th>Men's Best Cotation</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-                <tr *ngFor="let performance of performanceGeneralData; let even = even" [ngClass]="{even: even}">
-                  <td>{{performance.type}}</td>
-            			<td>{{performance.cotation}}</td>
-            			<td>{{performance.menBestCotation}}</td>
-            		</tr>
-            	</tbody>
-            </table>
-            <br/>
-            <h1>Detailed</h1>
-            <table cellspacing="0">
-            	<thead>
-            		<tr>
-                  <th>Date</th>
-      						<th>Name of the Race</th>
-      						<th>Distance / D+</th>
-      						<th>Score</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-            		<tr *ngFor="let trackRecord of performanceDetailedData; let even = even" [ngClass]="{even: even}">
-                  <td>{{trackRecord.date | date:'EEE, MMMM d, yyyy'}}</td>
-            			<td>{{trackRecord.nameOfRace}}</td>
-            			<td>{{trackRecord.distance}}</td>
-            			<td>{{trackRecord.score}}</td>
-            		</tr>
-            	</tbody>
-            </table>
-          </section>
-          <section id="content2">
-            <table cellspacing="0">
-            	<thead>
-            		<tr>
-            			<th>Date</th>
-            			<th>Name of the Race</th>
-            			<th>Distance / D+</th>
-                  <th>Country</th>
-                  <th>Status</th>
-                  <th>Time</th>
-                  <th>Ranking</th>
-                  <th>Ranking Male</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-            		<tr *ngFor="let trackRecord of performanceDetailedData; let even = even" [ngClass]="{even: even}">
-            			<td>{{trackRecord.date | date:'EEE, MMMM d, yyyy'}}</td>
-            			<td>{{trackRecord.nameOfRace}}</td>
-            			<td>{{trackRecord.distance}}</td>
-            			<td>{{trackRecord.status}}</td>
-            			<td>{{trackRecord.country}}</td>
-            			<td>{{trackRecord.time}}</td>
-            			<td>{{trackRecord.rank}}</td>
-            			<td>{{trackRecord.rankM}}</td>
-            		</tr>
-            	</tbody>
-            </table>
-          </section>
-          <section id="content3">
-            <table cellspacing="0">
-            	<thead>
-            		<tr>
-            			<th>Date</th>
-            			<th>Name of the Race</th>
-            			<th>Distance / D+</th>
-                  <th>Qualifying Race</th>
-                  <th>Route Certified</th>
-                  <th>Endurance</th>
-                  <th>Mountain</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-                <tr *ngFor="let trackRecord of performanceDetailedData; let even = even" [ngClass]="{even: even}">
-            			<td>{{trackRecord.date | date:'EEE, MMMM d, yyyy'}}</td>
-            			<td>{{trackRecord.nameOfRace}}</td>
-            			<td>{{trackRecord.distance}}</td>
-            			<td>{{trackRecord.qualifyingRace}}</td>
-            			<td>{{trackRecord.routeCertified}}</td>
-            			<td *ngIf="trackRecord.endurance; else mDash">{{trackRecord.endurance}} points</td>
-            			<td *ngIf="trackRecord.mountain; else mDash">{{trackRecord.mountain}} points</td>
-                    <ng-template #mDash><td>-</td></ng-template>
-            		</tr>
-            	</tbody>
-            </table>
-          </section>
-          <section id="content4">
-            <h1>Men's ITRA World Ranking</h1>
-            <table cellspacing="0">
-            	<thead>
-            		<tr>
-            			<th>Trail Category</th>
-            			<th>ITRA's Performance Index</th>
-            			<th>World Ranking</th>
-            			<th>Ranking Europe</th>
-            			<th>Ranking Spain</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-                <tr *ngFor="let statistics of worldRankData; let even = even" [ngClass]="{even: even}">
-            			<td>{{statistics.category}}</td>
-            			<td>{{statistics.performanceIndex}}</td>
-            			<td>{{statistics.worldRank}}</td>
-            			<td>{{statistics.europeRank}}</td>
-            			<td>{{statistics.spainRank}}</td>
-            		</tr>
-            	</tbody>
-            </table>
-            <br/>
-            <h1>Best Performances</h1>
-            <table cellspacing="0">
-            	<thead>
-            		<tr>
-            			<th>Trail Category</th>
-            			<th>Date</th>
-            			<th>Name of the race</th>
-            			<th>Country</th>
-            			<th>Distance / D+</th>
-                  <th>Time</th>
-                  <th>Rank.</th>
-                  <th>Rank. M</th>
-                  <th>Score</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-                <tr *ngFor="let statistics of bestPerformancesData; let even = even" [ngClass]="{even: even}">
-            			<td>{{statistics.category}}</td>
-            			<td>{{statistics.date}}</td>
-            			<td>{{statistics.nameOfRace}}</td>
-            			<td>{{statistics.country}}</td>
-            			<td>{{statistics.distance}}</td>
-            			<td>{{statistics.time}}</td>
-            			<td>{{statistics.rank}}</td>
-            			<td>{{statistics.rankM}}</td>
-            			<td>{{statistics.score}}</td>
-            		</tr>
-            	</tbody>
-            </table>
-            <br/>
-            <h1>Other Statistical Data</h1>
-            <table cellspacing="0">
-            	<thead>
-            		<tr>
-            			<th>Number of Races</th>
-            			<th>Number of Races Finished</th>
-            			<th>Victories</th>
-            			<th>Top 3</th>
-            			<th>Top 10</th>
-            			<th>KM Covered</th>
-            			<th>D+ Covered</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-                <tr *ngIf="otherData">
-                	<td>{{otherData.numberOfRaces}}</td>
-            			<td>{{otherData.numberOfRacesFinished}}</td>
-            			<td>{{otherData.victories}}</td>
-            			<td>{{otherData.top3}}</td>
-            			<td>{{otherData.top10}}</td>
-            			<td>{{otherData.kmCovered}}</td>
-            			<td>{{otherData.eCovered}}</td>
-            		</tr>
-            	</tbody>
-            </table>
-          </section>
-        <!-- tabbing end -->
-      </div>
+  <header class="header-container">
+    <div class="profile-photo-container">
+      <img class="profile-photo" src="/assets/itraProfile.png" />
     </div>
+    <div class="about-me-container">
+      <h1>Marc Eiro</h1>
+      <h2><span class="label">Sex: </span>Male</h2>
+      <h2><span class="label">Age: </span>{{age}} years old (1984)</h2>
+      <h2><span class="label">Nationality: </span>Spain</h2>
+    </div>
+  </header>
+  <div class="results">
+    <div class="itra-performance-index">
+      <!-- tabbing start -->
+      <input id="tab1" type="radio" name="tabs" checked>
+      <label for="tab1"><i class="fas fa-bullseye"></i>&nbsp;&nbsp;&nbsp;Performance Index</label>
+
+      <input id="tab2" type="radio" name="tabs">
+      <label for="tab2"><i class="fas fa-medal"></i>&nbsp;&nbsp;&nbsp;Ranking</label>
+
+      <input id="tab3" type="radio" name="tabs">
+      <label for="tab3"><i class="fas fa-route"></i>&nbsp;&nbsp;&nbsp;Route's Characteristics</label>
+
+      <input id="tab4" type="radio" name="tabs">
+      <label for="tab4"><i class="fas fa-chart-bar"></i>&nbsp;&nbsp;&nbsp;Statistics</label>
+
+      <section id="content1">
+        <ngb-alert type="success" [dismissible]="false">
+          <i class="fa fa-info-circle"></i>
+          Only the five best results of the last 36 months are taken into account in the calculation of the ITRA performance index.
+        </ngb-alert>
+        <h1>Overall</h1>
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <th>Trail Category</th>
+              <th>Cotation (/ 1000)</th>
+              <th>Men's Best Cotation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let performance of profile.performance.overall; let even = even" [ngClass]="{even: even}">
+              <td>{{performance.type}}</td>
+              <td>{{performance.cotation}}</td>
+              <td>{{performance.menBestCotation}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <h1>Detailed</h1>
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Name of the Race</th>
+              <th>Distance / D+</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let trackRecord of profile.performance.detailed; let even = even" [ngClass]="{even: even}">
+              <td>{{trackRecord.date | date:'EEE, MMMM d, yyyy'}}</td>
+              <td>{{trackRecord.nameOfRace}}</td>
+              <td>{{trackRecord.distance}}</td>
+              <td>{{trackRecord.score}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="content2">
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Name of the Race</th>
+              <th>Distance / D+</th>
+              <th>Country</th>
+              <th>Status</th>
+              <th>Time</th>
+              <th>Ranking</th>
+              <th>Ranking Male</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let trackRecord of profile.performance.detailed; let even = even" [ngClass]="{even: even}">
+              <td>{{trackRecord.date | date:'EEE, MMMM d, yyyy'}}</td>
+              <td>{{trackRecord.nameOfRace}}</td>
+              <td>{{trackRecord.distance}}</td>
+              <td>{{trackRecord.status}}</td>
+              <td>{{trackRecord.country}}</td>
+              <td>{{trackRecord.time}}</td>
+              <td>{{trackRecord.rank}}</td>
+              <td>{{trackRecord.rankM}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="content3">
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Name of the Race</th>
+              <th>Distance / D+</th>
+              <th>Qualifying Race</th>
+              <th>Route Certified</th>
+              <th>Endurance</th>
+              <th>Mountain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let trackRecord of profile.performance.detailed; let even = even" [ngClass]="{even: even}">
+              <td>{{trackRecord.date | date:'EEE, MMMM d, yyyy'}}</td>
+              <td>{{trackRecord.nameOfRace}}</td>
+              <td>{{trackRecord.distance}}</td>
+              <td>{{trackRecord.qualifyingRace}}</td>
+              <td>{{trackRecord.routeCertified}}</td>
+              <td *ngIf="trackRecord.endurance; else mDash">{{trackRecord.endurance}} points</td>
+              <td *ngIf="trackRecord.mountain; else mDash">{{trackRecord.mountain}} points</td>
+              <ng-template #mDash>
+                <td>-</td>
+              </ng-template>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="content4">
+        <h1>Men's ITRA World Ranking</h1>
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <th>Trail Category</th>
+              <th>ITRA's Performance Index</th>
+              <th>World Ranking</th>
+              <th>Ranking Europe</th>
+              <th>Ranking Spain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let statistics of profile.statistics.worldRank; let even = even" [ngClass]="{even: even}">
+              <td>{{statistics.category}}</td>
+              <td>{{statistics.performanceIndex}}</td>
+              <td>{{statistics.worldRank}}</td>
+              <td>{{statistics.europeRank}}</td>
+              <td>{{statistics.spainRank}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <h1>Best Performances</h1>
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <th>Trail Category</th>
+              <th>Date</th>
+              <th>Name of the race</th>
+              <th>Distance / D+</th>
+              <th>Country</th>
+              <th>Time</th>
+              <th>Rank.</th>
+              <th>Rank. M</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let statistics of profile.performance.best; let even = even" [ngClass]="{even: even}">
+              <td>{{statistics.category}}</td>
+              <td>{{statistics.date}}</td>
+              <td>{{statistics.nameOfRace}}</td>
+              <td>{{statistics.distance}}</td>
+              <td>{{statistics.country}}</td>
+              <td>{{statistics.time}}</td>
+              <td>{{statistics.rank}}</td>
+              <td>{{statistics.rankM}}</td>
+              <td>{{statistics.score}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <h1>Other Statistical Data</h1>
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <th>Number of Races</th>
+              <th>Number of Races Finished</th>
+              <th>Victories</th>
+              <th>Top 3</th>
+              <th>Top 10</th>
+              <th>KM Covered</th>
+              <th>D+ Covered</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="profile.statistics.other">
+              <td>{{profile.statistics.other.numberOfRaces}}</td>
+              <td>{{profile.statistics.other.numberOfRacesFinished}}</td>
+              <td>{{profile.statistics.other.victories}}</td>
+              <td>{{profile.statistics.other.top3}}</td>
+              <td>{{profile.statistics.other.top10}}</td>
+              <td>{{profile.statistics.other.kmCovered}}</td>
+              <td>{{profile.statistics.other.eCovered}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- tabbing end -->
+    </div>
+  </div>
 </div>

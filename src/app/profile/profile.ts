@@ -1,17 +1,24 @@
-export class InfoData {
-  constructor(
-    public aboutMeData: any,
-    public performanceData: string[]) {}
+export class Profile {
+  public performance: Performance;
+  public statistics: Statistics;
+
+  constructor () {
+    this.performance = new Performance();
+    this.statistics = new Statistics();
+  }
 }
 
-export class PerformanceData {
-  constructor(
-    public performanceData: string[]) {}
+export class Performance {
+  public overall: string[];
+  public detailed: string[];
+  public best: string[];
+
+  constructor () {}
 }
 
-export class StatisticsData {
-  constructor(
-    public worldRankData: string[],
-    public bestPerformancesData: string[],
-    public otherData: string[]) {}
+export class Statistics {
+  public worldRank: string[];
+  public other: any;
+
+  constructor () {}
 }
