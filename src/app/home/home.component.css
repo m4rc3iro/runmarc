@@ -1,25 +1,80 @@
 .home-container {
   height: 100%;
   width: 100%;
-  padding: 50px 0 50px 0;
-  overflow: auto;
-
+  /* padding: 0px 0 50px 0; */
   -webkit-font-smoothing: antialiased;
-  color: rgb(50,50,50);
-  line-height: 1.6em;
+  /* color: rgb(50, 50, 50); */
+  /* line-height: 1.6em; */
+  /* margin: 0 auto; */
+  overflow: auto;
 }
 
 .news-container {
-  padding: 25px 0px 25px 0px;
-  /* border-top: .5px solid #CED3DC; */
+  padding: 0px 10% 5px 10%;
+  /* max-width: 90%; */
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 12px;
+  line-height: 1.65;
+  color: #666;
 }
 
 .welcome {
   position: relative;
+  background-image: url(/assets/eiger-welcome.png);
+  height: 500px;
+  width: 100%;
+}
+
+.welcome-text {
   color: black;
-  text-align: justify;
-  padding: 40px 75px 10px 75px;
-  /* z-index: 1; */
   font-family: 'Comfortaa';
   font-size: 13px;
+  text-align: justify;
+  background-color: white;
+  position: absolute;
+  margin: 200px 10% 0 10%;
+  padding: 50px;
+  width: 80%;
+  height: 330px;
+}
+
+.meta {
+  list-style: none;
+  margin: 0 0 50px -40px;
+  font-size: 0.923em;
+  color: #777;
+  border: none;
+}
+
+.meta li {
+  margin: 0;
+  float: left;
+  padding-right: 15px;
+}
+
+.meta li span {
+  padding-right: 5px;
+}
+
+.single-blog-content {
+  text-align: left;
+  font-size: 13px;
+  /* border-bottom: 0.5px solid #666; */
+}
+
+.welcome-text h1, .welcome-text p {
+  text-align: center;
+}
+
+.first {
+  margin-top: 100px;
+}
+
+.separator {
+  margin: 50px 25% 50px 25%;
+  border-bottom: 0.5px solid #666;
+}
+
+h1 {
+  font-size: 30px;
 }
