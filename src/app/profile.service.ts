@@ -16,17 +16,17 @@ export class ProfileService {
   getProfile (): Profile {
     let profile: Profile = new Profile ();
 
-    this.http.get<string[]>("http://localhost:8000/api/profile/info")
+    this.http.get<string[]>("http://localhost:3000/api/profile/info")
     .subscribe(data => {
       profile.performance.overall = data;
     });
 
-    this.http.get<string[]>("http://localhost:8000/api/profile/performance")
+    this.http.get<string[]>("http://localhost:3000/api/profile/performance")
     .subscribe(data => {
       profile.performance.detailed = data;
     });
 
-    this.http.get<any>("http://localhost:8000/api/profile/statistics")
+    this.http.get<any>("http://localhost:3000/api/profile/statistics")
     .subscribe(data => {
       profile.statistics.worldRank = data.worldRank;
       profile.performance.best = data.bestPerformances;

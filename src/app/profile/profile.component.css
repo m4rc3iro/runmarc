@@ -2,9 +2,11 @@
   font-family: "Open Sans", sans-serif;
   overflow: auto;
   width: 100%;
+  min-width: 420px;
   height: 100%;
   color: #555;
-  background: #fcfcfc;
+  background: #ffffff;
+  font-size: 14px;
 }
 
 .header-container {
@@ -14,18 +16,17 @@
 }
 
 .profile-photo-container {
-  width: 30%;
+  width: 325px;
+  padding: 20px 0 0 60px;
 }
 
 .about-me-container {
-  width: 70%;
-  padding: 5% 0 0;
+  width: 100%;
+  padding: 75px 0 0 75px;
 }
 
 .profile-photo {
   position: relative;
-  top: 20px;
-  left: 50px;
   width: 225px;
   padding: 3px;
   border: 5px solid #7b7771;
@@ -37,21 +38,18 @@
 }
 
 .itra-performance-index {
-  font-size: 14px/1;
   min-width: 320px;
   max-width: 100%;
   margin: 0 auto;
   color: #555;
-  /* padding: 30px; */
-  background: #fcfcfc;
+  background: #ffff;
 }
 
 .label {
   color: #d96459;
 }
 
-/* .info-msg { color: #059; background-color: #BEF; border-radius: 5px; padding: 10px 10px 10px 20px } */
-/* table styles */
+/****************** table styles *******************/
 table a:link {
   font-weight: bold;
   text-decoration: none;
@@ -73,7 +71,6 @@ table a:hover {
 table {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
-  /* margin:20px; */
   width: 100%;
   border-collapse: inherit;
   color: #666;
@@ -239,19 +236,42 @@ input:checked+label {
   display: block;
 }
 
-@media screen and (max-width: 650px) {
-  label {
-    font-size: 0;
+@media (max-width: 780px) {
+  .profile-photo {
+    /* width: 200px; */
   }
 
-  label:before {
-    font-size: 18px;
-    margin: 0;
+  .about-me-container {
+    padding: 75px 0 0 50px;
+  }
+
+  .profile-container {
+    font-size: 12px;
   }
 }
 
-@media screen and (max-width: 400px) {
-  label {
-    padding: 15px;
+@media (max-width: 570px) {
+  .header-container {
+    height: 290px;
+  }
+
+  .profile-photo-container {
+    padding: 35px 0 0 25px;
+  }
+
+  .profile-photo {
+    width: 170px;
+  }
+
+  .profile-container {
+    font-size: 10px;
+  }
+
+  .about-me-container {
+    padding: 75px 0 0 25px;
+  }
+
+  label[_ngcontent-c3] {
+    padding: 3px 6px;
   }
 }
