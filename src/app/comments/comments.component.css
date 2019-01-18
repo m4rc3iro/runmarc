@@ -8,7 +8,8 @@
 .right-container {
   width: 100%;
   height: 100%;
-  background: #ffef96;
+  /* background-color: #ffffff; */
+  /* #f1f4f5; */
   padding-top: 50px;
   overflow: auto;
 }
@@ -25,7 +26,8 @@
   width: 50vw;
   transform: translateX(0%);
   transition: .5s ease-out;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
+  z-index: 2;
 }
 
 .left-container-on {
@@ -49,7 +51,7 @@
   left: 50vw;
   background: #c94c4c;
   cursor: pointer;
-  box-shadow: 1px 1px 1px 0 rgba(0,0,0,.3);
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .3);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -70,8 +72,19 @@
   margin-top: 10%;
 }
 
-.feedback-text > p {
+.feedback-text>p {
   font-size: 13px;
+}
+
+.feedback-email {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
 .feedback-box {
@@ -106,16 +119,16 @@
 }
 
 .captcha_wrapper {
-    width: 302px;
-    max-height: 76px;
-    overflow: hidden;
-    margin-bottom: 10px;
+  width: 302px;
+  max-height: 76px;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 
 *, *:active, *:focus {
-    outline: 0;
-    outline-style: none;
-    outline-width: 0;
+  outline: 0;
+  outline-style: none;
+  outline-width: 0;
 }
 
 .footer {
@@ -194,14 +207,159 @@ ul {
   font-family: 'Comfortaa';
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
-  color: rgb(50,50,50);
+  color: rgb(50, 50, 50);
   line-height: 1.6em;
 }
 
-ul > li {
+ul>li {
   padding: 25px 15% 25px 15%;
 }
 
-h1, h2, h3 {
-  font-family: 'Comfortaa';
+p {
+  font-family: 'Comfortaa', "Calibri", "Roboto", sans-serif;
+  font-size: 13px;
+}
+
+.far, .fas {
+  /* color: gray; */
+  transform: scaleX(-1);
+}
+
+/* ---------------------- */
+.comments {
+  /* max-width: 450px; */
+  padding: 0 20%;
+  margin: 50px auto;
+}
+
+.comments article {
+  position: relative;
+  border-bottom: solid 1px rgba(178, 179, 153, 0.125);
+  margin: 0 auto 50px auto;
+  padding: 0px 15%;
+}
+
+.comments article:last-child {
+  border: none;
+}
+
+.comments article:hover time {
+  opacity: 1;
+}
+
+.comments article img, .avatar {
+  position: absolute;
+  top: -20px;
+  left: 50px;
+  width: 40px;
+  height: 40px;
+  border-width: 0;
+  border-radius: 100%;
+  font-size: 40px;
+}
+
+.comments article h4 {
+  display: inline-block;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.comments article h4 a {
+  color: #404040;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+.comments article h4 a:hover {
+  color: #BFBFA8;
+}
+
+.comments article time {
+  color: #545454;
+  margin-left: 1rem;
+  text-transform: uppercase;
+}
+
+.comments article .icon-rocknroll {
+  color: #545454;
+  font-size: .85rem;
+}
+
+.comments article .icon-rocknroll:hover {
+  opacity: .5;
+}
+
+.comments article time,
+.comments article .like-count,
+.comments article .like-data,
+.comments article .icon-rocknroll {
+  font-size: .75rem;
+  opacity: 0;
+}
+
+.comments article time, .comments article .like-count, .comments article .like-data {
+  font-weight: 300;
+}
+
+.comments article p {
+  margin-bottom: 50px;
+  font-style: italic;
+  text-align: left;
+}
+
+.comments article p .reply {
+  color: #BFBFA8;
+  cursor: pointer;
+}
+
+.comments article .active {
+  opacity: 1;
+}
+
+.like-data {
+  float: right;
+}
+
+.icon-rocknroll {
+  background: none;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin: 0 .125rem 0 0;
+  padding: 0;
+}
+
+.comments article:hover .icon-rocknroll,
+.comments article:hover .like-count,
+.comments article:hover .like-data {
+  opacity: 1;
+}
+
+@media (max-width: 650px) {
+  .comments {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .comments article {
+    width: 90%;
+  }
+
+  .comments article .avatar, #profile-photo {
+    position: relative;
+    left: -1rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .comments article h4 {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .comments article h4 time {
+    display: block;
+    margin-left: 0 !important;
+    opacity: .5 !important;
+  }
 }

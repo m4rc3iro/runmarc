@@ -13,7 +13,6 @@
 }
 
 .navigation-links {
-  /* margin-top: -50px; */
   float: right;
 }
 
@@ -60,8 +59,6 @@ li a:hover {
   }
 
   .logo-container {
-    /* height: 100%; */
-    /* width: 31%; */
     float: left;
   }
 
@@ -71,16 +68,10 @@ li a:hover {
 
   ul li {
     white-space: nowrap;
-    float: right;
+    float: left;
   }
 
   li a {
     padding: 10px 10px;
   }
 }
-
-/* @media (max-width: 340px) {
-  .navigation-links {
-    font-size: 5px;
-  }
-} */
