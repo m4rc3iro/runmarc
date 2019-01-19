@@ -11,7 +11,7 @@
           </div>
         </li>
         <li *ngFor="let race of races2018" class="timeline-item">
-          <div class="timeline-info"><span>{{race.date | date:'MMMM d, yyyy'}}</span></div>
+          <div class="timeline-info"><span>{{race.date | date:'d MMMM yyyy'}}</span></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <h3 class="timeline-title" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h3>
@@ -26,7 +26,7 @@
           </div>
         </li>
         <li *ngFor="let race of races2017" class="timeline-item">
-          <div class="timeline-info"><span>{{race.date | date:'MMMM d, yyyy'}}</span></div>
+          <div class="timeline-info"><span>{{race.date | date:'d MMMM yyyy' }}</span></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <h3 class="timeline-title" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h3>
@@ -41,7 +41,7 @@
           </div>
         </li>
         <li *ngFor="let race of races2016" class="timeline-item">
-          <div class="timeline-info"><span>{{race.date | date:'MMMM d, yyyy'}}</span></div>
+          <div class="timeline-info"><span>{{race.date | date:'d MMMM yyyy' }}</span></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <h3 class="timeline-title" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h3>
@@ -56,7 +56,7 @@
           </div>
         </li>
         <li *ngFor="let race of races2015" class="timeline-item">
-          <div class="timeline-info"><span>{{race.date | date:'MMMM d, yyyy'}}</span></div>
+          <div class="timeline-info"><span>{{race.date | date:'d MMMM yyyy' }}</span></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <h3 class="timeline-title" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h3>

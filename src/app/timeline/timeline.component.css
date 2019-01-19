@@ -1,7 +1,7 @@
 .timeline-container {
   height: 100%;
   width: 100%;
-  padding: 50px 0 0 0px;
+  padding: 50px 30px 0 40px;
   overflow: auto;
   font-family: "Effra", Helvetica, sans-serif;
   color: #768390;
@@ -61,11 +61,6 @@ a:hover {
   max-width: 400px;
 }
 
-.carousel-image {
-  width: 100%;
-  max-width: 1024px;
-}
-
 /*==================================
     TIMELINE
 ==================================*/
@@ -101,7 +96,7 @@ a:hover {
   margin: 0 0 .5em 0;
   text-transform: uppercase;
   white-space: nowrap;
-  padding-left: 25px;
+  padding-left: 15px;
 }
 
 /*----- TIMELINE MARKER -----*/
@@ -208,48 +203,6 @@ a:hover {
 }
 
 /*----------------------------------------------
-    MOD: TIMELINE SPLIT
-----------------------------------------------*/
-@media (min-width: 768px) {
-  .timeline-split .timeline, .timeline-centered .timeline {
-    display: table;
-  }
-
-  .timeline-split .timeline-item, .timeline-centered .timeline-item {
-    display: table-row;
-    padding: 0;
-  }
-
-  .timeline-split .timeline-info, .timeline-centered .timeline-info,
-  .timeline-split .timeline-marker,
-  .timeline-centered .timeline-marker,
-  .timeline-split .timeline-content,
-  .timeline-centered .timeline-content,
-  .timeline-split .period .timeline-info,
-  .timeline-centered .period .timeline-info {
-    display: table-cell;
-    vertical-align: top;
-  }
-
-  .timeline-split .timeline-marker, .timeline-centered .timeline-marker {
-    position: relative;
-  }
-
-  .timeline-split .timeline-content, .timeline-centered .timeline-content {
-    padding-left: 25px;
-  }
-
-  .timeline-split .timeline-info, .timeline-centered .timeline-info {
-    padding-right: 25px;
-  }
-
-  .timeline-split .period .timeline-title, .timeline-centered .period .timeline-title {
-    position: relative;
-    left: -45px;
-  }
-}
-
-/*----------------------------------------------
     Gallery styles
 ----------------------------------------------*/
 .show {
@@ -322,49 +275,15 @@ a:hover {
   right: 20px;
 }
 
-@keyframes line-animation {
-  0% {
-    width: 0;
-    opacity: 1;
-  }
-
-  99% {
-    width: 100%;
-    opacity: 1;
-  }
-
-  100% {
-    width: 100%;
-    opacity: 0;
-  }
-}
-
-@keyframes open-animation {
-  0% {
-    height: 0;
-    top: 50%;
-  }
-
-  100% {
-    height: 100vh;
-    top: 0;
-  }
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+.carousel-image {
+  width: 100%;
+  max-width: 1024px;
 }
 
 .close {
   margin: 50px 25px 0 0;
   position: fixed;
-  top: 0.5rem;
+  top: 3.5rem;
   right: 0.5rem;
   display: flex;
   align-items: center;
@@ -409,4 +328,102 @@ a:hover {
 .carousel-control-prev, .carousel-control-next {
   top: 50%;
   align-items: baseline;
+}
+
+@media (min-width: 540px) {
+  .close {
+    top: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .timeline-split .timeline, .timeline-centered .timeline {
+    display: table;
+  }
+
+  .timeline-split .timeline-item, .timeline-centered .timeline-item {
+    display: table-row;
+    padding: 0;
+  }
+
+  .timeline-split .timeline-info, .timeline-centered .timeline-info,
+  .timeline-split .timeline-marker,
+  .timeline-centered .timeline-marker,
+  .timeline-split .timeline-content,
+  .timeline-centered .timeline-content,
+  .timeline-split .period .timeline-info,
+  .timeline-centered .period .timeline-info {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .timeline-split .timeline-marker, .timeline-centered .timeline-marker {
+    position: relative;
+  }
+
+  .timeline-split .timeline-content, .timeline-centered .timeline-content {
+    padding-left: 15px;
+  }
+
+  .timeline-split .timeline-info, .timeline-centered .timeline-info {
+    padding-right: 15px;
+  }
+
+  .timeline-split .period .timeline-title, .timeline-centered .period .timeline-title {
+    position: relative;
+    left: -45px;
+  }
+
+  .close {
+    top: 0.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .carousel-image {
+    max-width: 1280px;
+  }
+
+  .close {
+    top: 0.5rem;
+  }
+}
+
+@keyframes line-animation {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+
+  99% {
+    width: 100%;
+    opacity: 1;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes open-animation {
+  0% {
+    height: 0;
+    top: 50%;
+  }
+
+  100% {
+    height: 100vh;
+    top: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
