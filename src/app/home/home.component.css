@@ -1,6 +1,4 @@
 .home-container {
-  height: 100%;
-  width: 100%;
   -webkit-font-smoothing: antialiased;
   overflow: auto;
   background: #ffffff;
@@ -8,7 +6,6 @@
 
 .news-container {
   padding: 0px 10% 0 10%;
-  /* max-width: 90%; */
   font-family: Montserrat, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 12px;
   line-height: 1.65;

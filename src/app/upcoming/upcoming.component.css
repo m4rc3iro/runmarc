@@ -1,22 +1,19 @@
 .upcoming-container {
-  height: 100%;
   width: 100%;
   overflow: auto;
-  background: whitesmoke
+  background: whitesmoke;
 }
 
 .upcoming-text {
   position: relative;
   padding: 75px 0 0 25px;
   font-family: "Comfortaa", "Effra", Helvetica, sans-serif;
-  font-size: 13px
+  font-size: 13px;
 }
 
-/* .event {height: 60px; width: 60%; border: 1px solid #939393; border-radius: 5px; margin: 1% 20% 1% 20%; display: flex} */
 .date {
   width: 10%;
   min-width: 50px;
-  height: 100%;
   border-right: 1px solid #939393;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -24,34 +21,32 @@
   font-size: 12px;
   font-weight: bold;
   text-align: center;
-  background: #EAF2EF
+  background: #EAF2EF;
 }
 
 .info {
   width: 85%;
-  height: 100%;
   text-align: center;
   background: white;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .more {
   width: 5%;
   min-width: 50px;
-  height: 100%;
   border-left: 1px solid #939393;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  background: white
+  background: white;
 }
 
 .month {
-  padding-top: 5px
+  padding-top: 5px;
 }
 
 .day {
   font-family: "Comfortaa";
-  font-size: 30px
+  font-size: 30px;
 }
 
 .year {}
@@ -60,7 +55,7 @@
   font-family: 'Faster One', 'Monoton';
   font-size: 3vw;
   padding: 10px 10px 0px 10px;
-  transition: opacity 1s ease-out
+  transition: opacity 1s ease-out;
 }
 
 .country {
@@ -68,23 +63,23 @@
   font-family: "Comfortaa";
   font-size: 10px;
   top: 25px;
-  left: 50px
+  left: 50px;
 }
 
 .technical-details {
   font-family: "Comfortaa";
   font-size: 12px;
   opacity: 0;
-  transition: opacity 0s ease-out
+  transition: opacity 0s ease-out;
 }
 
 .details {
-  padding: 2px
+  padding: 2px;
 }
 
 .label {
   color: #ea574d;
-  font-weight: bold
+  font-weight: bold;
 }
 
 .hidden {
@@ -92,23 +87,23 @@
   height: 0;
   transition: opacity 1s ease-out;
   overflow: hidden;
-  margin-top: -6px
+  margin-top: -6px;
 }
 
 .shown {
   opacity: 1;
-  transition: opacity 1s ease-out
+  transition: opacity 1s ease-out;
 }
 
 /* .arrow {width: 50%; padding: 15%; transform: rotate(90deg)} */
 .arrow:hover {
   cursor: pointer;
   transform: rotate(450deg);
-  transition: all 0.3s ease-in-out 0s
+  transition: all 0.3s ease-in-out 0s;
 }
 
 a:visited {
-  color: black
+  color: black;
 }
 
 /*******************************************************************************/
@@ -125,24 +120,24 @@ a:visited {
   align-items: center;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around
+  justify-content: space-around;
 }
 
 .calendar-month {
   display: flex;
-  flex-flow: column nowrap
+  flex-flow: column nowrap;
 }
 
 .calendar-month-name {
   font-size: 12pt;
   font-weight: 400;
   line-height: 0.375in;
-  margin-left: 10px
+  margin-left: 10px;
 }
 
 .calendar-month {
   height: 2.1in;
-  width: 2.3333333333in
+  width: 2.3333333333in;
 }
 
 .calendar-month-header {
@@ -152,21 +147,21 @@ a:visited {
   font-size: 10pt;
   font-weight: 500;
   margin-left: 10px;
-  justify-content: space-around
+  justify-content: space-around;
 }
 
 .calendar-month-body {
   display: flex;
   flex-flow: row wrap;
   font-weight: 300;
-  margin-left: 10px
+  margin-left: 10px;
 }
 
 .calendar-day {
   box-sizing: border-box;
   height: 0.25in;
   line-height: 0.25in;
-  width: 14.2857142857%
+  width: 14.2857142857%;
 }
 
 .event {
@@ -174,41 +169,41 @@ a:visited {
   color: white;
   height: 24px;
   width: 24px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .color1 {
-  background-color: #1976d2
+  background-color: #1976d2;
 }
 
 .color2 {
-  background-color: #00b894
+  background-color: #00b894;
 }
 
 .color3 {
-  background-color: #fdcb6e
+  background-color: #fdcb6e;
 }
 
 .color4 {
-  background-color: #e17055
+  background-color: #e17055;
 }
 
 .color5 {
-  background-color: #81ecec
+  background-color: #81ecec;
 }
 
 .color6 {
-  background-color: #a29bfe
+  background-color: #a29bfe;
 }
 
 .color7 {
-  background-color: #fd79a8
+  background-color: #fd79a8;
 }
 
-.color8 {
+/* .color8 {
   background-color:
 }
 
 .color9 {
   background-color:
-}
+} */

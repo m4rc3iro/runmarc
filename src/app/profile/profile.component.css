@@ -1,9 +1,7 @@
 .profile-container {
   font-family: "Open Sans", sans-serif;
   overflow: auto;
-  width: 100%;
   min-width: 420px;
-  height: 100%;
   color: #555;
   background: #ffffff;
   font-size: 14px;
