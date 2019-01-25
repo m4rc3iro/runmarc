@@ -2,6 +2,7 @@
   width: 100%;
   overflow: auto;
   background: whitesmoke;
+  padding: 100px 0 50px 0;
 }
 
 .upcoming-text {
@@ -49,8 +50,6 @@
   font-size: 30px;
 }
 
-.year {}
-
 .race-name {
   font-family: 'Faster One', 'Monoton';
   font-size: 3vw;
@@ -95,32 +94,22 @@
   transition: opacity 1s ease-out;
 }
 
-/* .arrow {width: 50%; padding: 15%; transform: rotate(90deg)} */
 .arrow:hover {
   cursor: pointer;
   transform: rotate(450deg);
   transition: all 0.3s ease-in-out 0s;
 }
 
-a:visited {
-  color: black;
+.row {
+  justify-content: space-around;
 }
 
-/*******************************************************************************/
 .calendar {
-  padding: 75px 5% 0 5%;
+  padding: 0 5% 0 4%;
   font-size: 11px;
   font-weight: 300;
   text-align: center;
   font-family: 'Roboto', sans-serif;
-}
-
-.calendar-body {
-  align-content: center;
-  align-items: center;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
 }
 
 .calendar-month {
@@ -133,11 +122,6 @@ a:visited {
   font-weight: 400;
   line-height: 0.375in;
   margin-left: 10px;
-}
-
-.calendar-month {
-  height: 2.1in;
-  width: 2.3333333333in;
 }
 
 .calendar-month-header {
@@ -167,8 +151,8 @@ a:visited {
 .event {
   border-radius: 13px;
   color: white;
-  height: 24px;
-  width: 24px;
+  height: 23px;
+  width: 23px;
   cursor: pointer;
 }
 
@@ -199,11 +183,3 @@ a:visited {
 .color7 {
   background-color: #fd79a8;
 }
-
-/* .color8 {
-  background-color:
-}
-
-.color9 {
-  background-color:
-} */
