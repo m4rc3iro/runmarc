@@ -2,6 +2,7 @@
   -webkit-font-smoothing: antialiased;
   overflow: auto;
   background: #ffffff;
+  height: 100%;
 }
 
 .news-container {
