@@ -40,30 +40,139 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let performance of profile.performance.overall; let even = even" [ngClass]="{even: even}">
-              <td>{{performance.type}}</td>
-              <td>{{performance.cotation}}</td>
-              <td>{{performance.menBestCotation}}</td>
+            <tr class="even">
+              <td>GENERAL</td>
+              <td>616</td>
+              <td>951</td>
+            </tr>
+            <tr>
+              <td>XXL</td>
+              <td>-</td>
+              <td>918</td>
+            </tr>
+            <tr class="even">
+              <td>XL</td>
+              <td>601</td>
+              <td>911</td>
+            </tr>
+            <tr>
+              <td>L</td>
+              <td>597</td>
+              <td>919</td>
+            </tr>
+            <tr class="even">
+              <td>M</td>
+              <td>591</td>
+              <td>943</td>
+            </tr>
+            <tr>
+              <td>S</td>
+              <td>609</td>
+              <td>926</td>
+            </tr>
+            <tr class="even">
+              <td>XS</td>
+              <td>-</td>
+              <td>911</td>
             </tr>
           </tbody>
         </table>
-        <br />
+        <br>
         <h1>Detailed</h1>
         <table cellspacing="0">
           <thead>
             <tr>
               <th>Date</th>
               <th>Name of the Race</th>
+              <th>Country</th>
               <th>Distance / D+</th>
               <th>Score</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let trackRecord of profile.performance.detailed; let even = even" [ngClass]="{even: even}">
-              <td>{{trackRecord.date | date:'EEE, MMMM d, yyyy'}}</td>
-              <td>{{trackRecord.nameOfRace}}</td>
-              <td>{{trackRecord.distance}}</td>
-              <td>{{trackRecord.score}}</td>
+            <tr class="even">
+              <td>Fri, August 31, 2018</td>
+              <td>Utmb® 2018 - Ccc®</td>
+              <td>France</td>
+              <td>100.1km / 6075m+</td>
+              <td>622</td>
+            </tr>
+            <tr>
+              <td>Sat, July 14, 2018</td>
+              <td>Eiger Ultra-Trail® 2018 - E101 Stop Km85</td>
+              <td>Switzerland</td>
+              <td>85.1km / 5175m+</td>
+              <td>618</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, May 19, 2018</td>
+              <td>Transylvania One Hundred 2018 - 80K</td>
+              <td>Romania</td>
+              <td>85.9km / 4850m+</td>
+              <td>595</td>
+            </tr>
+            <tr>
+              <td>Sun, August 13, 2017</td>
+              <td>Trail Des Fantomes 2017 - 48 Km</td>
+              <td>Belgium</td>
+              <td>49.5km / 1500m+</td>
+              <td>632</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, July 15, 2017</td>
+              <td>Trail Vielha-Molieres 3010 2017 - Maratón</td>
+              <td>Spain</td>
+              <td>40.7km / 4000m+</td>
+              <td>571</td>
+            </tr>
+            <tr>
+              <td>Fri, June 23, 2017</td>
+              <td>The North Face Lavaredo Ultra Trail 2017 - Lavaredo Ultra Trail</td>
+              <td>Italy</td>
+              <td>119.4km / 6450m+</td>
+              <td>527</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, February 25, 2017</td>
+              <td>Transgrancanaria Hg 2017 - Advanced</td>
+              <td>Spain</td>
+              <td>81.2km / 3575m+</td>
+              <td>595</td>
+            </tr>
+            <tr>
+              <td>Sat, August 20, 2016</td>
+              <td>Matterhorn Ultraks 2016 - Matterhorn Ultraks 45K</td>
+              <td>Switzerland</td>
+              <td>46.6km / 3525m+</td>
+              <td>612</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, July 16, 2016</td>
+              <td>Eiger Ultra Trail 2016 - E51</td>
+              <td>Switzerland</td>
+              <td>52.4km / 3025m+</td>
+              <td>548</td>
+            </tr>
+            <tr>
+              <td>Sat, June 4, 2016</td>
+              <td>Ultra Skymarathon® Madeira 2016 - Usm</td>
+              <td>Portugal</td>
+              <td>54.8km / 4575m+</td>
+              <td>491</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, March 14, 2015</td>
+              <td>The Hillary 2015 - 34 Km</td>
+              <td>New Zealand</td>
+              <td>32.5km / 1325m+</td>
+              <td>606</td>
+            </tr>
+            <tr>
+              <td>Sat, February 7, 2015</td>
+              <td>Tarawera Ultramarathon 2015 - 100 Km</td>
+              <td>New Zealand</td>
+              <td>102.9km / 2625m+</td>
+              <td>499</td>
             </tr>
           </tbody>
         </table>
@@ -75,7 +184,6 @@
               <th>Date</th>
               <th>Name of the Race</th>
               <th>Distance / D+</th>
-              <th>Country</th>
               <th>Status</th>
               <th>Time</th>
               <th>Ranking</th>
@@ -83,15 +191,113 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let trackRecord of profile.performance.detailed; let even = even" [ngClass]="{even: even}">
-              <td>{{trackRecord.date | date:'EEE, MMMM d, yyyy'}}</td>
-              <td>{{trackRecord.nameOfRace}}</td>
-              <td>{{trackRecord.distance}}</td>
-              <td>{{trackRecord.status}}</td>
-              <td>{{trackRecord.country}}</td>
-              <td>{{trackRecord.time}}</td>
-              <td>{{trackRecord.rank}}</td>
-              <td>{{trackRecord.rankM}}</td>
+            <tr class="even">
+              <td>Fri, August 31, 2018</td>
+              <td>Utmb® 2018 - Ccc®</td>
+              <td>100.1km / 6075m+</td>
+              <td>Finisher</td>
+              <td>15:45:57</td>
+              <td>150 / 1622</td>
+              <td>136</td>
+            </tr>
+            <tr>
+              <td>Sat, July 14, 2018</td>
+              <td>Eiger Ultra-Trail® 2018 - E101 Stop Km85</td>
+              <td>85.1km / 5175m+</td>
+              <td>Finisher</td>
+              <td>11:48:29</td>
+              <td>14 / 470</td>
+              <td>14</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, May 19, 2018</td>
+              <td>Transylvania One Hundred 2018 - 80K</td>
+              <td>85.9km / 4850m+</td>
+              <td>Finisher</td>
+              <td>15:06:06</td>
+              <td>8 / 53</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>Sun, August 13, 2017</td>
+              <td>Trail Des Fantomes 2017 - 48 Km</td>
+              <td>49.5km / 1500m+</td>
+              <td>Finisher</td>
+              <td>05:38:21</td>
+              <td>17 / 210</td>
+              <td>17</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, July 15, 2017</td>
+              <td>Trail Vielha-Molieres 3010 2017 - Maratón</td>
+              <td>40.7km / 4000m+</td>
+              <td>Finisher</td>
+              <td>09:02:23</td>
+              <td>79 / 308</td>
+              <td>76</td>
+            </tr>
+            <tr>
+              <td>Fri, June 23, 2017</td>
+              <td>The North Face Lavaredo Ultra Trail 2017 - Lavaredo Ultra Trail</td>
+              <td>119.4km / 6450m+</td>
+              <td>Finisher</td>
+              <td>21:16:15</td>
+              <td>303 / 1070</td>
+              <td>277</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, February 25, 2017</td>
+              <td>Transgrancanaria Hg 2017 - Advanced</td>
+              <td>81.2km / 3575m+</td>
+              <td>Finisher</td>
+              <td>11:19:20</td>
+              <td>78 / 440</td>
+              <td>69</td>
+            </tr>
+            <tr>
+              <td>Sat, August 20, 2016</td>
+              <td>Matterhorn Ultraks 2016 - Matterhorn Ultraks 45K</td>
+              <td>46.6km / 3525m+</td>
+              <td>Finisher</td>
+              <td>07:01:51</td>
+              <td>93 / 452</td>
+              <td>80</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, July 16, 2016</td>
+              <td>Eiger Ultra Trail 2016 - E51</td>
+              <td>52.4km / 3025m+</td>
+              <td>Finisher</td>
+              <td>08:01:10</td>
+              <td>106 / 638</td>
+              <td>91</td>
+            </tr>
+            <tr>
+              <td>Sat, June 4, 2016</td>
+              <td>Ultra Skymarathon® Madeira 2016 - Usm</td>
+              <td>54.8km / 4575m+</td>
+              <td>Finisher</td>
+              <td>10:40:51</td>
+              <td>111 / 165</td>
+              <td>94</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, March 14, 2015</td>
+              <td>The Hillary 2015 - 34 Km</td>
+              <td>32.5km / 1325m+</td>
+              <td>Finisher</td>
+              <td>03:53:39</td>
+              <td>13 / 110</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>Sat, February 7, 2015</td>
+              <td>Tarawera Ultramarathon 2015 - 100 Km</td>
+              <td>102.9km / 2625m+</td>
+              <td>Finisher</td>
+              <td>14:08:48</td>
+              <td>247 / 431</td>
+              <td>187</td>
             </tr>
           </tbody>
         </table>
@@ -110,17 +316,113 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let trackRecord of profile.performance.detailed; let even = even" [ngClass]="{even: even}">
-              <td>{{trackRecord.date | date:'EEE, MMMM d, yyyy'}}</td>
-              <td>{{trackRecord.nameOfRace}}</td>
-              <td>{{trackRecord.distance}}</td>
-              <td>{{trackRecord.qualifyingRace}}</td>
-              <td>{{trackRecord.routeCertified}}</td>
-              <td *ngIf="trackRecord.endurance; else mDash">{{trackRecord.endurance}} points</td>
-              <td *ngIf="trackRecord.mountain; else mDash">{{trackRecord.mountain}} points</td>
-              <ng-template #mDash>
-                <td>-</td>
-              </ng-template>
+            <tr class="even">
+              <td>Fri, August 31, 2018</td>
+              <td>Utmb® 2018 - Ccc®</td>
+              <td>100.1km / 6075m+</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>5 points</td>
+              <td>8 points</td>
+            </tr>
+            <tr>
+              <td>Sat, July 14, 2018</td>
+              <td>Eiger Ultra-Trail® 2018 - E101 Stop Km85</td>
+              <td>85.1km / 5175m+</td>
+              <td>Yes</td>
+              <td>No</td>
+              <td>4 points</td>
+              <td>8 points</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, May 19, 2018</td>
+              <td>Transylvania One Hundred 2018 - 80K</td>
+              <td>85.9km / 4850m+</td>
+              <td>Yes</td>
+              <td>No</td>
+              <td>4 points</td>
+              <td>8 points</td>
+            </tr>
+            <tr>
+              <td>Sun, August 13, 2017</td>
+              <td>Trail Des Fantomes 2017 - 48 Km</td>
+              <td>49.5km / 1500m+</td>
+              <td>Yes</td>
+              <td>No</td>
+              <td>3 points</td>
+              <td>3 points</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, July 15, 2017</td>
+              <td>Trail Vielha-Molieres 3010 2017 - Maratón</td>
+              <td>40.7km / 4000m+</td>
+              <td>Yes</td>
+              <td>No</td>
+              <td>3 points</td>
+              <td>14 points</td>
+            </tr>
+            <tr>
+              <td>Fri, June 23, 2017</td>
+              <td>The North Face Lavaredo Ultra Trail 2017 - Lavaredo Ultra Trail</td>
+              <td>119.4km / 6450m+</td>
+              <td>Yes</td>
+              <td>No</td>
+              <td>5 points</td>
+              <td>7 points</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, February 25, 2017</td>
+              <td>Transgrancanaria Hg 2017 - Advanced</td>
+              <td>81.2km / 3575m+</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>4 points</td>
+              <td>5 points</td>
+            </tr>
+            <tr>
+              <td>Sat, August 20, 2016</td>
+              <td>Matterhorn Ultraks 2016 - Matterhorn Ultraks 45K</td>
+              <td>46.6km / 3525m+</td>
+              <td>-</td>
+              <td>No</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, July 16, 2016</td>
+              <td>Eiger Ultra Trail 2016 - E51</td>
+              <td>52.4km / 3025m+</td>
+              <td>Yes</td>
+              <td>No</td>
+              <td>3 points</td>
+              <td>7 points</td>
+            </tr>
+            <tr>
+              <td>Sat, June 4, 2016</td>
+              <td>Ultra Skymarathon® Madeira 2016 - Usm</td>
+              <td>54.8km / 4575m+</td>
+              <td>-</td>
+              <td>No</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr class="even">
+              <td>Sat, March 14, 2015</td>
+              <td>The Hillary 2015 - 34 Km</td>
+              <td>32.5km / 1325m+</td>
+              <td>-</td>
+              <td>No</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>Sat, February 7, 2015</td>
+              <td>Tarawera Ultramarathon 2015 - 100 Km</td>
+              <td>102.9km / 2625m+</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>4 points</td>
+              <td>-</td>
             </tr>
           </tbody>
         </table>
@@ -138,16 +440,58 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let statistics of profile.statistics.worldRank; let even = even" [ngClass]="{even: even}">
-              <td>{{statistics.category}}</td>
-              <td>{{statistics.performanceIndex}}</td>
-              <td>{{statistics.worldRank}}</td>
-              <td>{{statistics.europeRank}}</td>
-              <td>{{statistics.spainRank}}</td>
+            <tr class="even">
+              <td>GENERAL</td>
+              <td>616</td>
+              <td>39178</td>
+              <td>27572</td>
+              <td>6606</td>
+            </tr>
+            <tr>
+              <td>XXL</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr class="even">
+              <td>XL</td>
+              <td>601</td>
+              <td>4507</td>
+              <td>3368</td>
+              <td>909</td>
+            </tr>
+            <tr>
+              <td>L</td>
+              <td>597</td>
+              <td>8381</td>
+              <td>5761</td>
+              <td>1411</td>
+            </tr>
+            <tr class="even">
+              <td>M</td>
+              <td>591</td>
+              <td>18171</td>
+              <td>12538</td>
+              <td>2838</td>
+            </tr>
+            <tr>
+              <td>S</td>
+              <td>609</td>
+              <td>20141</td>
+              <td>14349</td>
+              <td>3584</td>
+            </tr>
+            <tr class="even">
+              <td>XS</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
             </tr>
           </tbody>
         </table>
-        <br />
+        <br>
         <h1>Best Performances</h1>
         <table cellspacing="0">
           <thead>
@@ -156,7 +500,6 @@
               <th>Date</th>
               <th>Name of the race</th>
               <th>Distance / D+</th>
-              <th>Country</th>
               <th>Time</th>
               <th>Rank.</th>
               <th>Rank. M</th>
@@ -164,20 +507,59 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let statistics of profile.performance.best; let even = even" [ngClass]="{even: even}">
-              <td>{{statistics.category}}</td>
-              <td>{{statistics.date}}</td>
-              <td>{{statistics.nameOfRace}}</td>
-              <td>{{statistics.distance}}</td>
-              <td>{{statistics.country}}</td>
-              <td>{{statistics.time}}</td>
-              <td>{{statistics.rank}}</td>
-              <td>{{statistics.rankM}}</td>
-              <td>{{statistics.score}}</td>
+            <tr class="even">
+              <td>GENERAL</td>
+              <td>2017-08-13</td>
+              <td>Trail Des Fantomes 2017 - 48 Km</td>
+              <td>49.5km / 1500m+</td>
+              <td>05:38:21</td>
+              <td>17 / 210</td>
+              <td>17</td>
+              <td>632</td>
+            </tr>
+            <tr>
+              <td>XL</td>
+              <td>2018-08-31</td>
+              <td>Utmb® 2018 - Ccc®</td>
+              <td>100.1km / 6075m+</td>
+              <td>15:45:57</td>
+              <td>150 / 1622</td>
+              <td>136</td>
+              <td>622</td>
+            </tr>
+            <tr class="even">
+              <td>L</td>
+              <td>2018-07-14</td>
+              <td>Eiger Ultra-Trail® 2018 - E101 Stop Km85</td>
+              <td>85.1km / 5175m+</td>
+              <td>11:48:29</td>
+              <td>14 / 470</td>
+              <td>14</td>
+              <td>618</td>
+            </tr>
+            <tr>
+              <td>M</td>
+              <td>2016-08-20</td>
+              <td>Matterhorn Ultraks 2016 - Matterhorn Ultraks 45K</td>
+              <td>46.6km / 3525m+</td>
+              <td>07:01:51</td>
+              <td>93 / 452</td>
+              <td>80</td>
+              <td>612</td>
+            </tr>
+            <tr class="even">
+              <td>S</td>
+              <td>2017-08-13</td>
+              <td>Trail Des Fantomes 2017 - 48 Km</td>
+              <td>49.5km / 1500m+</td>
+              <td>05:38:21</td>
+              <td>17 / 210</td>
+              <td>17</td>
+              <td>632</td>
             </tr>
           </tbody>
         </table>
-        <br />
+        <br>
         <h1>Other Statistical Data</h1>
         <table cellspacing="0">
           <thead>
@@ -192,19 +574,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngIf="profile.statistics.other">
-              <td>{{profile.statistics.other.numberOfRaces}}</td>
-              <td>{{profile.statistics.other.numberOfRacesFinished}}</td>
-              <td>{{profile.statistics.other.victories}}</td>
-              <td>{{profile.statistics.other.top3}}</td>
-              <td>{{profile.statistics.other.top10}}</td>
-              <td>{{profile.statistics.other.kmCovered}}</td>
-              <td>{{profile.statistics.other.eCovered}}</td>
+            <tr>
+              <td>12</td>
+              <td>12</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>851 km</td>
+              <td>46735 m</td>
             </tr>
           </tbody>
         </table>
       </section>
-      <!-- tabbing end -->
     </div>
   </div>
 </div>

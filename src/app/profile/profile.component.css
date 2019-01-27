@@ -110,12 +110,10 @@ table tr:first-child th:last-child {
 }
 
 table tr {
-  padding-left: 20px;
   text-align: center;
 }
 
 table td:first-child {
-  padding-left: 20px;
   text-align: center;
   border-left: 0;
 }
@@ -190,7 +188,7 @@ p {
 
 section {
   display: none;
-  padding: 20px 30px;
+  padding: 30px;
   border-top: 1px solid #ddd;
 }
 
@@ -235,16 +233,24 @@ input:checked+label {
 }
 
 @media (max-width: 780px) {
-  .profile-photo {
-    /* width: 200px; */
-  }
-
   .about-me-container {
     padding: 75px 0 0 50px;
   }
 
   .profile-container {
     font-size: 12px;
+  }
+
+  table {
+    font-size: 10px;
+  }
+
+  table thead th, table th {
+    padding: 10px 20px;
+  }
+
+  h1 {
+    font-size: 15px;
   }
 }
 
@@ -271,5 +277,21 @@ input:checked+label {
 
   label[_ngcontent-c3] {
     padding: 3px 6px;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 12px;
+  }
+
+  table {
+    font-size: 8px;
+  }
+
+  table thead th, table th {
+    padding: 5px 5px;
   }
 }

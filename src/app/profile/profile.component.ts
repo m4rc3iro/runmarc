@@ -20,7 +20,8 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.age = this.calculateAge();
-    this.profile = this.profileService.getProfile();
+    // Disabling AJAX call to retrieve data from ITRA dinamically
+    // this.profile = this.profileService.getProfile();
   }
 
   calculateAge(): number {
