@@ -230,7 +230,7 @@ a:hover {
 }
 
 .popup:before {
-  content: "";
+  content: '';
   box-sizing: border-box;
   width: 100%;
   background-color: #3A3A3A;
@@ -242,7 +242,7 @@ a:hover {
 }
 
 .popup:after {
-  content: "";
+  content: '';
   width: 0;
   height: 2px;
   background-color: #3A3A3A;
@@ -252,6 +252,7 @@ a:hover {
   top: 50%;
   left: 0;
   margin-top: -1px;
+  text-rendering: optimizeLegibility;
 }
 
 .popup__block {
@@ -260,7 +261,6 @@ a:hover {
   top: 22px;
   align-items: center;
   margin: auto;
-  overflow: auto;
   animation: fade .3s ease-out .8s both;
 }
 
@@ -273,68 +273,73 @@ a:hover {
   right: 20px;
 }
 
-.carousel-image {
+.carousel-image-landscape {
+  /* for optimal rendering of images in screen, do not make them bigger than 2200x1600 pixels */
   width: 100%;
   max-width: 1024px;
 }
 
+.carousel-image-portrait {
+  width: 100%;
+  max-width: 500px;
+}
+
 .close {
   margin: 50px 25px 0 0;
+  text-shadow: none;
   position: fixed;
   top: 3.5rem;
   right: 0.5rem;
-  display: flex;
   align-items: center;
   justify-content: center;
   width: 1.5rem;
   height: 1.5rem;
   border: none;
-  background-color: transparent;
   font-size: 1.5rem;
   transition: 0.25s linear;
   border-radius: 25px;
-}
-
-.close:before, .close:after {
-  position: absolute;
-  content: '';
-  width: 1.75rem;
-  height: 0.225rem;
-  background-color: tomato;
-}
-
-.carousel-control-next-icon {
-  background-color: tomato;
-}
-
-.close:before {
-  transform: rotate(-45deg);
-}
-
-.close:after {
-  transform: rotate(45deg);
+  color: tomato;
 }
 
 .close:hover {
   transform: rotate(360deg);
 }
 
-.close:hover:before, .close:hover:after {
-  background-color: tomato;
+.fa-times-circle {
+  color: tomato;
+  text-rendering: optimizeLegibility;
 }
 
-.carousel-control-prev, .carousel-control-next {
-  top: 50%;
-  align-items: baseline;
+video {
+  width: 99%;
+  padding: 5% 15%;
+}
+
+@media (max-width: 540px) {
+  .carousel-image-portrait {
+    max-width: 300px;
+  }
 }
 
 @media (min-width: 540px) {
+  .carousel-image-portrait {
+    max-width: 425px;
+  }
+
   .close {
     top: 0.5rem;
   }
 }
 
 @media (min-width: 768px) {
+  .carousel-image-portrait {
+    max-width: 500px;
+  }
+
+  .close {
+    top: 0.5rem;
+  }
+
   .timeline-split .timeline, .timeline-centered .timeline {
     display: table;
   }
@@ -371,15 +376,15 @@ a:hover {
     position: relative;
     left: -45px;
   }
-
-  .close {
-    top: 0.5rem;
-  }
 }
 
 @media (min-width: 1400px) {
-  .carousel-image {
+  .carousel-image-landscape {
     max-width: 1280px;
+  }
+
+  .carousel-image-portrait {
+    max-width: 600px;
   }
 
   .close {
@@ -424,4 +429,10 @@ a:hover {
   100% {
     opacity: 1;
   }
+}
+
+/* trick to remove the blue outline border selector from focused items in Chrome: */
+/* https://stackoverflow.com/questions/20340138/remove-blue-border-from-css-custom-styled-button-in-chrome */
+*:focus {
+  outline: none
 }
