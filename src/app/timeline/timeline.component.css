@@ -7,16 +7,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #3D4351;
-  margin-top: 0;
-}
-
-a:hover {
-  color: #ff9a9a;
-  text-decoration: none;
-}
-
 .example-header {
   background: #3D4351;
   color: #FFF;
@@ -275,13 +265,14 @@ a:hover {
 
 .carousel-image-landscape {
   /* for optimal rendering of images in screen, do not make them bigger than 2200x1600 pixels */
-  width: 100%;
+  width: 80%;
   max-width: 1024px;
 }
 
 .carousel-image-portrait {
-  width: 100%;
-  max-width: 500px;
+  width: 76%;
+  max-width: 600px;
+  margin-left: 12%;
 }
 
 .close {
@@ -310,20 +301,15 @@ a:hover {
   text-rendering: optimizeLegibility;
 }
 
-video {
-  width: 99%;
-  padding: 5% 15%;
-}
-
 @media (max-width: 540px) {
   .carousel-image-portrait {
-    max-width: 300px;
+    max-width: 350px;
   }
 }
 
 @media (min-width: 540px) {
   .carousel-image-portrait {
-    max-width: 425px;
+    max-width: 525px;
   }
 
   .close {
@@ -333,7 +319,7 @@ video {
 
 @media (min-width: 768px) {
   .carousel-image-portrait {
-    max-width: 500px;
+    max-width: 600px;
   }
 
   .close {
@@ -384,7 +370,7 @@ video {
   }
 
   .carousel-image-portrait {
-    max-width: 600px;
+    max-width: 700px;
   }
 
   .close {
@@ -429,6 +415,26 @@ video {
   100% {
     opacity: 1;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #3D4351;
+  margin-top: 0;
+}
+
+img, video {
+  border: 1px solid #84817a;
+  border-radius: 10px;
+}
+
+img {
+  margin: 0 0 0 10%;
+}
+
+video {
+  width: 70%;
+  padding: 0;
+  margin: 0 0 5% 15%;
 }
 
 /* trick to remove the blue outline border selector from focused items in Chrome: */

@@ -32,6 +32,7 @@ export class TimelineComponent implements OnInit {
     ]),
     new Race('Eiger Ultra-Trail® - E101', new Date('2018-07-14'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",[
       this.BASE_URL + 'eiger2018/eiger2018-5-p.jpg',
+      this.BASE_URL + 'eiger2018/eiger2018-6.jpg',
       this.BASE_URL + 'eiger2018/eiger2018-10.jpg',
       this.BASE_URL + 'eiger2018/eiger2018-14-p.jpg',
       this.BASE_URL + 'eiger2018/eiger2018-15.jpg',
@@ -91,7 +92,6 @@ export class TimelineComponent implements OnInit {
       this.BASE_URL + 'transgrancanaria2017/Screenshot 2019-02-11-23.jpg',
       this.BASE_URL + 'transgrancanaria2017/Screenshot 2019-02-11-24.jpg',
       this.BASE_URL + 'transgrancanaria2017/Screenshot 2019-02-11-28.jpg',
-      this.BASE_URL + 'transgrancanaria2017/Screenshot 2019-02-11-29.jpg',
       this.BASE_URL + 'transgrancanaria2017/Screenshot 2019-02-11-30.jpg',
       this.BASE_URL + 'transgrancanaria2017/Screenshot 2019-02-11-39.jpg',
       this.BASE_URL + 'transgrancanaria2017/Screenshot 2019-02-11-47.jpg',
