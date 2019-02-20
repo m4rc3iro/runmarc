@@ -10,7 +10,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { ProfileComponent } from './profile/profile.component';
 import { IntroductionComponent } from './introduction/introduction.component';
-import { CommentsComponent } from './comments/comments.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -20,7 +20,7 @@ const appRoutes: Routes = [
     {   path: 'upcoming', component: UpcomingComponent},
     {   path: 'timeline', component: TimelineComponent},
     {   path: 'profile', component: ProfileComponent},
-    {   path: 'comments', component: CommentsComponent},
+    {   path: 'feedback', component: FeedbackComponent},
     {   path: '', redirectTo: 'introduction', pathMatch: 'full' }
 ];
 
@@ -33,7 +33,7 @@ const appRoutes: Routes = [
     TimelineComponent,
     ProfileComponent,
     IntroductionComponent,
-    CommentsComponent,
+    FeedbackComponent,
     FooterComponent
   ],
   imports: [
