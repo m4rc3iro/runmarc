@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
+  commentsColors: string[] = ['#a8e6cf','#dcedc1', '#ffd3b6', '#ffaaa5', '#ff8b94'];
   showCommentBox: boolean;
   newComment: string = '';
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

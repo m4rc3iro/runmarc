@@ -1,11 +1,12 @@
 <div class="comments-container">
   <div class="left-container" [ngClass]="{'left-container-on' : showCommentBox}">
     <section class="feedback-text">
-      <h3>Leave your comment!</h3>
+      <h3>Leave your comment</h3>
       <p>Feel free to drop a comment below if you liked this website and I will add it on the wall.</p>
     </section>
-    <div class="feedback-box">
-      <form action="?" method="POST">
+    <form action="?" method="POST">
+      <input class="feedback-email" name="hello" type="text" />
+      <div class="feedback-box">
         <div class="comment-wrapper">
           <textarea #comment class="comment" maxlength="500" (keyup)="onKeyPress(comment.value)"></textarea>
           <div class="captcha_wrapper">
@@ -20,55 +21,70 @@
             <button id="submit-comment" type="submit" class="button disabled" disabled>Send</button>
           </div>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
     <section class="feedback-text">
       <p>For any questions or enquires, feel free to drop an email to <span style="color:#f94125">runmarc@gmail.com</span> and I will answer you as soon as possible.</p>
     </section>
     <div class="pull" (click)="showCommentBox = !showCommentBox;" [ngClass]="{'push' : showCommentBox}">
-      <span class="vertical-text">Leave a comment!</span>
+      <span class="vertical-text">Post a comment</span>
     </div>
   </div>
   <div class="right-container">
-    <ul>
-      <li>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis fermentum ipsum, eget convallis leo elementum sed. Suspendisse quis quam quam. Phasellus eleifend tristique tellus ac posuere. Aliquam velit magna, consequat vel elit non, tincidunt varius nibh. Nullam semper ut urna a hendrerit. Duis vitae nisi in massa laoreet scelerisque in non enim. Sed tempus augue nec dolor imperdiet rutrum. Curabitur enim velit, feugiat quis libero sit amet, finibus accumsan ligula. Ut venenatis sapien ut tortor rhoncus, sollicitudin consequat sapien dapibus.
-      </li>
-      <li>
-        Pellentesque et ultrices turpis. Curabitur a diam et urna egestas rhoncus non id tellus. Aliquam at mi interdum, ornare nibh varius, pharetra tellus. Sed eget risus a magna consectetur tempor. Vestibulum auctor in magna sed interdum. Integer nisl ante, tristique et nunc in, venenatis fermentum dolor. Ut ultricies tincidunt justo, non ultrices lacus tempor eu. Ut quis auctor arcu. Quisque non molestie sem. Donec convallis ipsum sit amet lorem efficitur, sit amet iaculis lacus euismod. Phasellus varius, urna sit amet condimentum malesuada, dolor urna ullamcorper tortor, et placerat ex ante a felis. Donec tempus pulvinar elit, semper tempus dui accumsan sed. Morbi id semper sapien.
-      </li>
-      <li>
-        Sed et elit pellentesque, accumsan sem vel, lobortis erat. Nunc aliquet mi eros, ac facilisis lectus mollis sit amet. Nam ornare convallis laoreet. Aliquam ut tellus magna. In sagittis ipsum in magna commodo hendrerit. Cras volutpat sit amet libero vel iaculis. Donec at arcu et tellus rhoncus semper quis sed libero. Nullam commodo odio nec nulla maximus porttitor. Vestibulum a ante sit amet urna congue gravida ut ut dolor. Etiam interdum ac augue eu tincidunt. Vestibulum eleifend lectus nec ex consequat porttitor. Nulla facilisi. Nam sit amet congue nisl. Donec vitae sem odio.
-      </li>
-      <li>
-        Sed et elit pellentesque, accumsan sem vel, lobortis erat. Nunc aliquet mi eros, ac facilisis lectus mollis sit amet. Nam ornare convallis laoreet. Aliquam ut tellus magna. In sagittis ipsum in magna commodo hendrerit. Cras volutpat sit amet libero vel iaculis. Donec at arcu et tellus rhoncus semper quis sed libero. Nullam commodo odio nec nulla maximus porttitor. Vestibulum a ante sit amet urna congue gravida ut ut dolor. Etiam interdum ac augue eu tincidunt. Vestibulum eleifend lectus nec ex consequat porttitor. Nulla facilisi. Nam sit amet congue nisl. Donec vitae sem odio.
-      </li>
-      <li>
-        Sed et elit pellentesque, accumsan sem vel, lobortis erat. Nunc aliquet mi eros, ac facilisis lectus mollis sit amet. Nam ornare convallis laoreet. Aliquam ut tellus magna. In sagittis ipsum in magna commodo hendrerit. Cras volutpat sit amet libero vel iaculis. Donec at arcu et tellus rhoncus semper quis sed libero. Nullam commodo odio nec nulla maximus porttitor. Vestibulum a ante sit amet urna congue gravida ut ut dolor. Etiam interdum ac augue eu tincidunt. Vestibulum eleifend lectus nec ex consequat porttitor. Nulla facilisi. Nam sit amet congue nisl. Donec vitae sem odio.
-      </li>
-      <li>
-        Sed et elit pellentesque, accumsan sem vel, lobortis erat. Nunc aliquet mi eros, ac facilisis lectus mollis sit amet. Nam ornare convallis laoreet. Aliquam ut tellus magna. In sagittis ipsum in magna commodo hendrerit. Cras volutpat sit amet libero vel iaculis. Donec at arcu et tellus rhoncus semper quis sed libero. Nullam commodo odio nec nulla maximus porttitor. Vestibulum a ante sit amet urna congue gravida ut ut dolor. Etiam interdum ac augue eu tincidunt. Vestibulum eleifend lectus nec ex consequat porttitor. Nulla facilisi. Nam sit amet congue nisl. Donec vitae sem odio.
-      </li>
-    </ul>
+    <section id="app" class="comments">
+      <blockquote class="grass">
+        <h1>
+          <span class="grass">Superman666</span>
+        </h1>
+        <time>1 month ago</time>
+        <div class="like-data">
+          <button class="icon-rocknroll active">♥</button><span class="like-count active">69</span>
+        </div>
+        <p>Thank you for visiting all the way from NYC. This is just a test to determine if the Twitter API is working as it should. You should see your profile image and your username at the very top that links to your account. You should also see
+          that I wrote in a thank you introduction with your location.</p>
+      </blockquote>
+      <blockquote class="bittersweet">
+        <h1>
+          <span class="bittersweet">randomuser3</span>
+        </h1>
+        <time>1 week ago</time>
+        <div class="like-data">
+          <button class="icon-rocknroll active">♥</button><span class="like-count active">1</span>
+        </div>
+        <p>Thank you for visiting all the way from NYC. This is just a test to determine if the Twitter API is working as it should. You should see your profile image and your username at the very top that links to your account. You should also see
+          that I wrote in a thank you introduction with your location.</p>
+      </blockquote>
+      <blockquote class="bluejeans">
+        <h1>
+          <span class="bluejeans">paquitoChocolatero</span>
+        </h1>
+        <time>4 days ago</time>
+        <div class="like-data">
+          <button class="icon-rocknroll active">♥</button><span class="like-count active">2</span>
+        </div>
+        <p>Thank you for visiting all the way from NYC. This is just a test to determine if the Twitter API is working as it should. You should see your profile image and your username at the very top that links to your account. You should also see
+          that I wrote in a thank you introduction with your location.</p>
+      </blockquote>
+    </section>
   </div>
 </div>
 
 <!-- Google Captcha -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script type="text/javascript">
-    function recaptcha_callback() {
-        var submitCommentButton = document.getElementById('submit-comment');
-        submitCommentButton.removeAttribute('disabled');
-        submitCommentButton.classList.remove('disabled');
-    };
+  function recaptcha_callback() {
+    var submitCommentButton = document.getElementById('submit-comment');
+    submitCommentButton.removeAttribute('disabled');
+    submitCommentButton.classList.remove('disabled');
+  };
 
-    function recaptcha_expired_callback() {
-        var submitCommentButton = document.getElementById('submit-comment');
-        submitCommentButton.setAttribute('disabled', 'disabled');
-        submitCommentButton.classList.add('disabled');
-    };
+  function recaptcha_expired_callback() {
+    var submitCommentButton = document.getElementById('submit-comment');
+    submitCommentButton.setAttribute('disabled', 'disabled');
+    submitCommentButton.classList.add('disabled');
+  };
 
-    function recaptcha_error_callback() {
-        recaptcha_expired_callback();
-    };
+  function recaptcha_error_callback() {
+    recaptcha_expired_callback();
+  };
 </script>

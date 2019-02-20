@@ -170,11 +170,11 @@
   text-align: right;
 }
 
-.button {
+button {
   border-color: #1976d2;
   background: #1976d2;
   cursor: pointer;
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  /* font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; */
   color: #fff;
   font-size: 14px;
   line-height: 14px;
@@ -219,100 +219,10 @@ p {
   font-size: 13px;
 }
 
-.far, .fas {
-  /* color: gray; */
-  transform: scaleX(-1);
-}
-
 /* ---------------------- */
 .comments {
-  /* max-width: 450px; */
   padding: 0 20%;
   margin: 50px auto;
-}
-
-.comments article {
-  position: relative;
-  border-bottom: solid 1px rgba(178, 179, 153, 0.125);
-  margin: 0 auto 50px auto;
-  padding: 0px 15%;
-}
-
-.comments article:last-child {
-  border: none;
-}
-
-.comments article:hover time {
-  opacity: 1;
-}
-
-.comments article img, .avatar {
-  position: absolute;
-  top: -20px;
-  left: 50px;
-  width: 40px;
-  height: 40px;
-  border-width: 0;
-  border-radius: 100%;
-  font-size: 40px;
-}
-
-.comments article h4 {
-  display: inline-block;
-  font-weight: 400;
-  margin-bottom: 15px;
-}
-
-.comments article h4 a {
-  color: #404040;
-  text-transform: lowercase;
-  text-decoration: none;
-}
-
-.comments article h4 a:hover {
-  color: #BFBFA8;
-}
-
-.comments article time {
-  color: #545454;
-  margin-left: 1rem;
-  text-transform: uppercase;
-}
-
-.comments article .icon-rocknroll {
-  color: #545454;
-  font-size: .85rem;
-}
-
-.comments article .icon-rocknroll:hover {
-  opacity: .5;
-}
-
-.comments article time,
-.comments article .like-count,
-.comments article .like-data,
-.comments article .icon-rocknroll {
-  font-size: .75rem;
-  opacity: 0;
-}
-
-.comments article time, .comments article .like-count, .comments article .like-data {
-  font-weight: 300;
-}
-
-.comments article p {
-  margin-bottom: 50px;
-  font-style: italic;
-  text-align: left;
-}
-
-.comments article p .reply {
-  color: #BFBFA8;
-  cursor: pointer;
-}
-
-.comments article .active {
-  opacity: 1;
 }
 
 .like-data {
@@ -328,37 +238,264 @@ p {
   padding: 0;
 }
 
-.comments article:hover .icon-rocknroll,
-.comments article:hover .like-count,
-.comments article:hover .like-data {
-  opacity: 1;
-}
-
 @media (max-width: 650px) {
   .comments {
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
 
-  .comments article {
-    width: 90%;
+  .comments blockquote {
+    width: 95%;
   }
 
-  .comments article .avatar, #profile-photo {
-    position: relative;
-    left: -1rem;
-    display: inline-block;
-    vertical-align: middle;
+  .comments blockquote h1,
+    {
+    font-size: 12px;
   }
 
-  .comments article h4 {
-    display: inline-block;
-    vertical-align: middle;
+  .comments blockquote time, .comments blockquote .icon-rocknroll {
+    font-size: 10px;
   }
 
-  .comments article h4 time {
-    display: block;
-    margin-left: 0 !important;
-    opacity: .5 !important;
+  .comments blockquote::before {
+    left: 15px;
+    top: 10px;
+    font-size: 40px;
   }
+
+  p {
+    font-size: 10px;
+  }
+}
+
+/* blockquote styles  */
+blockquote {
+  display: block;
+  background: #fff;
+  padding: 15px 20px 5px 45px;
+  margin: 0 0 20px;
+  position: relative;
+  /*Font*/
+  font-size: 14px;
+  line-height: 1.2;
+  color: #666;
+  /*Box Shadow - (Optional)*/
+  -moz-box-shadow: 2px 2px 15px #ccc;
+  -webkit-box-shadow: 2px 2px 15px #ccc;
+  box-shadow: 2px 2px 15px #ccc;
+  /*Borders - (Optional)*/
+  border-left-style: solid;
+  border-left-width: 15px;
+  border-right-style: solid;
+  border-right-width: 2px;
+}
+
+blockquote::before {
+  content: "\201C";
+  /*Unicode for Left Double Quote*/
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #999;
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+
+blockquote::after {
+  /*Reset to make sure*/
+  content: "";
+}
+
+blockquote a {
+  text-decoration: none;
+  background: #eee;
+  cursor: pointer;
+  padding: 0 3px;
+  color: #c76c0c;
+}
+
+blockquote a:hover {
+  color: #666;
+}
+
+blockquote em {
+  font-style: italic;
+}
+
+blockquote time {
+  color: #545454;
+  margin-left: 1rem;
+  text-transform: uppercase;
+}
+
+blockquote .icon-rocknroll {
+  color: #545454;
+  font-size: .85rem;
+}
+
+blockquote .icon-rocknroll:hover {
+  opacity: .5;
+}
+
+blockquote time,
+blockquote .like-count,
+blockquote .like-data,
+blockquote .icon-rocknroll {
+  font-size: .75rem;
+  margin-top: -5px;
+  opacity: 0;
+}
+
+blockquote:hover time {
+  opacity: 1;
+}
+
+blockquote .active {
+  opacity: 1;
+}
+
+blockquote:hover .icon-rocknroll,
+blockquote:hover .like-count,
+blockquote:hover .like-data {
+  opacity: 1;
+}
+
+blockquote p {
+  font-style: italic;
+  text-align: left;
+}
+
+/*Default Color Palette*/
+blockquote.default {
+  border-left-color: #656d77;
+  border-right-color: #434a53;
+}
+
+/*Grapefruit Color Palette*/
+blockquote.grapefruit {
+  border-left-color: #ed5565;
+  border-right-color: #da4453;
+}
+
+/*Bittersweet Color Palette*/
+blockquote.bittersweet {
+  border-left-color: #fc6d58;
+  border-right-color: #e95546;
+}
+
+/*Sunflower Color Palette*/
+blockquote.sunflower {
+  border-left-color: #ffcd69;
+  border-right-color: #f6ba59;
+}
+
+/*Grass Color Palette*/
+blockquote.grass {
+  border-left-color: #9fd477;
+  border-right-color: #8bc163;
+}
+
+/*Mint Color Palette*/
+blockquote.mint {
+  border-left-color: #46cfb0;
+  border-right-color: #34bc9d;
+}
+
+/*Aqua Color Palette*/
+blockquote.aqua {
+  border-left-color: #4fc2e5;
+  border-right-color: #3bb0d6;
+}
+
+/*Blue Jeans Color Palette*/
+blockquote.bluejeans {
+  border-left-color: #5e9de6;
+  border-right-color: #4b8ad6;
+}
+
+/*Lavander Color Palette*/
+blockquote.lavander {
+  border-left-color: #ad93e6;
+  border-right-color: #977bd5;
+}
+
+/*Pinkrose Color Palette*/
+blockquote.pinkrose {
+  border-left-color: #ed87bd;
+  border-right-color: #d870a9;
+}
+
+/*Light Color Palette*/
+blockquote.light {
+  border-left-color: #f5f7fa;
+  border-right-color: #e6e9ed;
+}
+
+/*Gray Color Palette*/
+blockquote.gray {
+  border-left-color: #ccd1d8;
+  border-right-color: #aab2bc;
+}
+
+span {
+  font-weight: bolder;
+}
+
+h1 {
+  display: inline-block;
+  text-align: left;
+  font-size: 16px;
+  font-family: 'Comfortaa', sans-serif;
+  /* "Helvetica Neue", Arial, Helvetica, sans-serif; */
+}
+
+span.Cdefault {
+  color: #434a53;
+}
+
+span.Cgrapefruit {
+  color: #da4453;
+}
+
+span.Cbittersweet {
+  color: #e95546;
+}
+
+span.Csunflower {
+  color: #f6ba59;
+}
+
+span.Cgrass {
+  color: #8bc163;
+}
+
+span.Cmint {
+  color: #34bc9d;
+}
+
+span.Caqua {
+  color: #3bb0d6;
+}
+
+span.Cbluejeans {
+  color: #4b8ad6;
+}
+
+span.Clavander {
+  color: #977bd5;
+}
+
+span.Cpinkrose {
+  color: #d870a9;
+}
+
+span.Clight {
+  color: #e6e9ed;
+}
+
+span.Cgray {
+  color: #aab2bc;
 }
