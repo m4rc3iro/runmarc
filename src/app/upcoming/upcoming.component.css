@@ -111,6 +111,7 @@
   font-weight: 300;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  color: #666;
 }
 
 .calendar-month {
@@ -123,6 +124,7 @@
   font-weight: 400;
   line-height: 0.375in;
   margin-left: 10px;
+  color: #555;
 }
 
 .calendar-month-header {
@@ -183,4 +185,8 @@
 
 .color7 {
   background-color: #fd79a8;
+}
+
+.color8 {
+  background-color: #3d3d3d;
 }
