@@ -31,4 +31,5 @@ export class CommentService {
   getComments(): Comment[] {
     return this.comments;
   }
+  
 }

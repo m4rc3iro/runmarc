@@ -1,6 +1,7 @@
 // Import modules and services
 import { Component, OnInit } from '@angular/core';
 import { CommentService } from '../comment.service';
+import { HttpClient } from '@angular/common/http';
 // Class imports
 import { Comment } from '../comment';
 
@@ -11,27 +12,28 @@ import { Comment } from '../comment';
 })
 export class FeedbackComponent implements OnInit {
 
-  colors: string[] = [
-    'default','grapefruit', 'bittersweet', 'sunflower', 'grass', 'mint',
-    'aqua', 'bluejeans', 'lavander', 'pinkrose', 'light', 'gray'
-  ];
-
   commentService: CommentService;
+  httpClient: HttpClient;
 
   showCommentBox: boolean;
   comments: Comment[];
-
   author: string = '';
   email: string = '';
   text: string = '';
 
   // TODO: show feedback thanks message.
   submitted = false;
+  iAmNotARobot = false;
 
+  colors = [
+    'default','grapefruit', 'bittersweet', 'sunflower', 'grass', 'mint',
+    'aqua', 'bluejeans', 'lavander', 'pinkrose', 'light', 'gray'
+  ];
 
-  constructor (commentService: CommentService) {
+  constructor (httpClient: HttpClient, commentService: CommentService) {
+    this.httpClient = httpClient;
     this.commentService = commentService;
-    this.comments = commentService.getComments();
+    this.comments = this.commentService.getComments();
   }
 
   ngOnInit() {
@@ -43,14 +45,21 @@ export class FeedbackComponent implements OnInit {
     this.commentService.addComment(new Comment(new Date, this.author, this.email, this.text, 0));
   }
 
-  // onKeyPress (value: string) { this.comment = value; }
+  resolved(captchaResponse: string) {
+    let payload = `{"captchaResponse": "${captchaResponse}"}`;
+    // verification routed through backend to prevent browser CORS issues
+    this.httpClient.post<any>('http://localhost:3000/api/captcha/verify', payload)
+              .subscribe(data => {
+                // console.log('Google captcha verification response: ' + JSON.stringify(data));
+                this.iAmNotARobot = data.success;
+              });
+  }
 
-  getRandomColor (cColor: boolean) {
+  getRandomColor () {
     let min = 0,
         max = this.colors.length - 1;
-    let color = this.colors[Math.floor(Math.random() * (max - min + 1)) + min];
-    return cColor ? 'Cbittersweet' : 'bittersweet';
-    // return cColor ? 'C' + color : color;
+    // return this.colors[Math.floor(Math.random() * (max - min + 1)) + min];
+    return 'bittersweet';
   }
 
 }

@@ -27,7 +27,8 @@
         Don't forget to add your comment!
       </div>
 
-      <button type="submit" class="btn btn-success" [disabled]="!feedbackForm.form.valid" (click)="newFeedback(); feedbackForm.reset()">Submit</button>
+      <re-captcha (resolved)="resolved($event)" siteKey="6LfoY2UUAAAAAArZE2IikiGXVrKz4InovhPpPalk" required></re-captcha>
+      <button type="submit" class="btn btn-success" [disabled]="!feedbackForm.form.valid || !iAmNotARobot" (click)="newFeedback(); feedbackForm.reset()">Submit</button>
     </form>
 
     <div class="pull" (click)="showCommentBox = !showCommentBox;" [ngClass]="{'push' : showCommentBox}">
@@ -36,36 +37,16 @@
   </div>
   <div class="right-container">
     <section id="app" class="comments">
-      <blockquote [ngClass]="getRandomColor()" *ngFor="let comment of comments">
-        <h1>
-          <span>{{comment.author}}</span>
-        </h1>
-        <time>{{comment.date | date:'EEE, MMMM d, yyyy'}}</time>
-        <div class="like-data">
-          <button class="icon-rocknroll active">♥<span class="like-count active">{{comment.likes}}</span></button>
-        </div>
-        <p>{{comment.text}}</p>
-      </blockquote>
+      <ng-template ngFor let-comment [ngForOf]="comments" let-i="index">
+        <blockquote [ngClass]="colors[i % comments.length]">
+          <h1><span>{{comment.author}}</span></h1>
+          <time>{{comment.date | date:'EEE, MMMM d, yyyy'}}</time>
+          <div class="like-data">
+            <button class="icon-rocknroll active">♥<span class="like-count active">{{comment.likes}}</span></button>
+          </div>
+          <p>{{comment.text}}</p>
+        </blockquote>
+      </ng-template>
     </section>
   </div>
 </div>
-
-<!-- Google Captcha -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script type="text/javascript">
-  function recaptcha_callback() {
-    var submitCommentButton = document.getElementById('submit-comment');
-    submitCommentButton.removeAttribute('disabled');
-    submitCommentButton.classList.remove('disabled');
-  };
-
-  function recaptcha_expired_callback() {
-    var submitCommentButton = document.getElementById('submit-comment');
-    submitCommentButton.setAttribute('disabled', 'disabled');
-    submitCommentButton.classList.add('disabled');
-  };
-
-  function recaptcha_error_callback() {
-    recaptcha_expired_callback();
-  };
-</script>
