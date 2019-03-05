@@ -45,11 +45,9 @@
 
 .pull {
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 50vw;
-  /* background: #1976d2; */
-  /*background: #c94c4c;*/
-  background: #42A948;
+  background: #d96459;
   cursor: pointer;
   box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .3);
   border-top-right-radius: 10px;
@@ -110,13 +108,6 @@
   resize: none;
   width: 100%;
   box-sizing: border-box;
-}
-
-.captcha_wrapper {
-  width: 302px;
-  max-height: 76px;
-  overflow: hidden;
-  margin-bottom: 10px;
 }
 
 *, *:active, *:focus {
@@ -194,40 +185,22 @@ button {
   background: #529ecc;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0px;
-  text-align: center;
-  font-family: 'Comfortaa';
-  font-size: 13px;
-  -webkit-font-smoothing: antialiased;
-  color: rgb(50, 50, 50);
-  line-height: 1.6em;
+.submit-button {
+  float: right;
 }
 
-ul>li {
-  padding: 25px 15% 25px 15%;
+.g-recaptcha {
+  float: left;
+  z-index: 1;
 }
 
-p {
-  font-family: 'Comfortaa', "Calibri", "Roboto", sans-serif;
-  font-size: 13px;
+.alert-danger {
+  height: 30px;
+  padding: 5px 15px;
 }
 
-form {
-  padding: 30px;
-}
-
-label {
-  font-size: 15px;
-}
-
-/* h1 {
-
-} */
-/* ---------------------- */
 .comments {
-  padding: 0 20%;
+  padding: 0 15%;
   margin: 50px auto;
 }
 
@@ -244,52 +217,18 @@ label {
   padding: 0;
 }
 
-@media (max-width: 650px) {
-  .comments {
-    width: 100%;
-    padding: 0 2rem;
-  }
-
-  .comments blockquote {
-    width: 95%;
-  }
-
-  .comments blockquote h1,
-    {
-    font-size: 12px;
-  }
-
-  .comments blockquote time, .comments blockquote .icon-rocknroll {
-    font-size: 10px;
-  }
-
-  .comments blockquote::before {
-    left: 15px;
-    top: 10px;
-    font-size: 40px;
-  }
-
-  p {
-    font-size: 10px;
-  }
-}
-
-/* blockquote styles  */
 blockquote {
   display: block;
   background: #fff;
   padding: 15px 20px 5px 45px;
   margin: 0 0 20px;
   position: relative;
-  /*Font*/
   font-size: 14px;
   line-height: 1.2;
   color: #666;
-  /*Box Shadow - (Optional)*/
   -moz-box-shadow: 2px 2px 15px #ccc;
   -webkit-box-shadow: 2px 2px 15px #ccc;
   box-shadow: 2px 2px 15px #ccc;
-  /*Borders - (Optional)*/
   border-left-style: solid;
   border-left-width: 15px;
   border-right-style: solid;
@@ -298,20 +237,16 @@ blockquote {
 
 blockquote::before {
   content: "\201C";
-  /*Unicode for Left Double Quote*/
-  /*Font*/
   font-family: Georgia, serif;
   font-size: 60px;
   font-weight: bold;
   color: #999;
-  /*Positioning*/
   position: absolute;
   left: 10px;
-  top: 5px;
+  top: 0;
 }
 
 blockquote::after {
-  /*Reset to make sure*/
   content: "";
 }
 
@@ -331,10 +266,15 @@ blockquote em {
   font-style: italic;
 }
 
+blockquote h1 {
+  color: #E74C3C;
+}
+
 blockquote time {
   color: #545454;
-  margin-left: 1rem;
   text-transform: uppercase;
+  float: right;
+  padding-top: 5px;
 }
 
 blockquote .icon-rocknroll {
@@ -374,73 +314,61 @@ blockquote p {
   text-align: left;
 }
 
-/*Default Color Palette*/
 blockquote.default {
   border-left-color: #656d77;
   border-right-color: #434a53;
 }
 
-/*Grapefruit Color Palette*/
 blockquote.grapefruit {
   border-left-color: #ed5565;
   border-right-color: #da4453;
 }
 
-/*Bittersweet Color Palette*/
 blockquote.bittersweet {
   border-left-color: #fc6d58;
   border-right-color: #e95546;
 }
 
-/*Sunflower Color Palette*/
 blockquote.sunflower {
   border-left-color: #ffcd69;
   border-right-color: #f6ba59;
 }
 
-/*Grass Color Palette*/
 blockquote.grass {
   border-left-color: #9fd477;
   border-right-color: #8bc163;
 }
 
-/*Mint Color Palette*/
 blockquote.mint {
   border-left-color: #46cfb0;
   border-right-color: #34bc9d;
 }
 
-/*Aqua Color Palette*/
 blockquote.aqua {
   border-left-color: #4fc2e5;
   border-right-color: #3bb0d6;
 }
 
-/*Blue Jeans Color Palette*/
 blockquote.bluejeans {
   border-left-color: #5e9de6;
   border-right-color: #4b8ad6;
 }
 
-/*Lavander Color Palette*/
 blockquote.lavander {
   border-left-color: #ad93e6;
   border-right-color: #977bd5;
 }
 
-/*Pinkrose Color Palette*/
 blockquote.pinkrose {
   border-left-color: #ed87bd;
   border-right-color: #d870a9;
 }
 
-/*Light Color Palette*/
 blockquote.light {
   border-left-color: #f5f7fa;
   border-right-color: #e6e9ed;
 }
 
-/*Gray Color Palette*/
 blockquote.gray {
   border-left-color: #ccd1d8;
   border-right-color: #aab2bc;
@@ -456,6 +384,41 @@ h1 {
   font-size: 16px;
   font-family: 'Comfortaa', sans-serif;
   /* "Helvetica Neue", Arial, Helvetica, sans-serif; */
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+  text-align: center;
+  font-family: 'Comfortaa';
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  color: rgb(50, 50, 50);
+  line-height: 1.6em;
+}
+
+ul>li {
+  padding: 25px 15% 25px 15%;
+}
+
+p {
+  font-family: 'Comfortaa', "Calibri", "Roboto", sans-serif;
+  font-size: 13px;
+}
+
+form {
+  margin-top: 5%;
+  padding: 30px;
+  font-size: 13px;
+}
+
+label {
+  font-size: 14px;
+  color: #666;
+}
+
+input {
+  height: 30px;
 }
 
 span.Cdefault {
@@ -504,4 +467,71 @@ span.Clight {
 
 span.Cgray {
   color: #aab2bc;
+}
+
+@media (max-width: 1024px) {
+  #rc-imageselect, .g-recaptcha {
+    transform: scale(0.87);
+    -webkit-transform: scale(0.87);
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+  }
+}
+
+@media (max-width: 915px) {
+  .submit-button {
+    float: left;
+  }
+}
+
+@media (max-width: 650px) {
+  .comments {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .comments blockquote {
+    width: 95%;
+  }
+
+  .comments blockquote h1,
+    {
+    font-size: 12px;
+  }
+
+  .comments blockquote time, .comments blockquote .icon-rocknroll {
+    font-size: 10px;
+  }
+
+  .comments blockquote::before {
+    left: 15px;
+    top: 10px;
+    font-size: 40px;
+  }
+
+  .left-container {
+    width: 75vw;
+    left: calc(-75vw - 1px);
+  }
+
+  .pull {
+    left: 75vw;
+  }
+
+  p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 433px) {
+  #rc-imageselect, .g-recaptcha {
+    transform: scale(0.67);
+    -webkit-transform: scale(0.67);
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+  }
+
+  .submit-button {
+    margin-top: -13px;
+  }
 }

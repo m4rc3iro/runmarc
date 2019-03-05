@@ -1,35 +1,42 @@
 <div class="comments-container">
   <div class="left-container" [ngClass]="{'left-container-on' : showCommentBox}">
+    <div [hidden]="submitted">
+      <form #feedbackForm="ngForm">
+        {{diagnostic}}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="author" #name="ngModel" required>
+        </div>
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          Name is required
+        </div>
 
-    <form #feedbackForm="ngForm">
-      {{diagnostic}}
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="author" #name="ngModel" required>
-      </div>
-      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-        Name is required
-      </div>
+        <div class="form-group">
+          <label for="name">Email</label>
+          <input type="text" class="form-control" id="mail" name="mail" [(ngModel)]="comment.email" #mail="ngModel" required>
+        </div>
+        <div [hidden]="mail.valid || mail.pristine" class="alert alert-danger">
+          Email address is required
+        </div>
 
-      <div class="form-group">
-        <label for="name">Email</label>
-        <input type="text" class="form-control" id="mail" name="mail" [(ngModel)]="comment.email" #mail="ngModel" required>
-      </div>
-      <div [hidden]="mail.valid || mail.pristine" class="alert alert-danger">
-        Email address is required
-      </div>
+        <div class="form-group">
+          <label for="comment">Comment</label>
+          <textarea type="text" class="form-control" id="comment" name="comment" [(ngModel)]="text" #comment="ngModel" required rows="8" cols="80" maxlength="500"></textarea>
+        </div>
+        <div [hidden]="comment.valid || comment.pristine" class="alert alert-danger">
+          Don't forget to add your comment!
+        </div>
 
-      <div class="form-group">
-        <label for="comment">Comment</label>
-        <textarea type="text" class="form-control" id="comment" name="comment" [(ngModel)]="text" #comment="ngModel" required rows="8" cols="80"></textarea>
-      </div>
-      <div [hidden]="comment.valid || comment.pristine" class="alert alert-danger">
-        Don't forget to add your comment!
-      </div>
+        <div class="buttons">
+          <re-captcha class="g-recaptcha" data-theme="light" (resolved)="resolved($event)" siteKey="6LfoY2UUAAAAAArZE2IikiGXVrKz4InovhPpPalk" required></re-captcha>
+          <button type="submit" class="btn btn-success submit-button" [disabled]="!feedbackForm.form.valid || !iAmNotARobot" (click)="newFeedback(); feedbackForm.reset()">Submit</button>
+        </div>
+      </form>
+    </div>
 
-      <re-captcha (resolved)="resolved($event)" siteKey="6LfoY2UUAAAAAArZE2IikiGXVrKz4InovhPpPalk" required></re-captcha>
-      <button type="submit" class="btn btn-success" [disabled]="!feedbackForm.form.valid || !iAmNotARobot" (click)="newFeedback(); feedbackForm.reset()">Submit</button>
-    </form>
+    <div [hidden]="!submitted">
+      <h2>Thanks for submitting your feedback! Come back soon to check it out!</h2>
+    </div>
 
     <div class="pull" (click)="showCommentBox = !showCommentBox;" [ngClass]="{'push' : showCommentBox}">
       <span class="vertical-text">Leave your feedback</span>
@@ -41,9 +48,9 @@
         <blockquote [ngClass]="colors[i % comments.length]">
           <h1><span>{{comment.author}}</span></h1>
           <time>{{comment.date | date:'EEE, MMMM d, yyyy'}}</time>
-          <div class="like-data">
+          <!-- <div class="like-data">
             <button class="icon-rocknroll active">♥<span class="like-count active">{{comment.likes}}</span></button>
-          </div>
+          </div> -->
           <p>{{comment.text}}</p>
         </blockquote>
       </ng-template>

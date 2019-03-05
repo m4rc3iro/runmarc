@@ -37,6 +37,7 @@ export class FeedbackComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.shuffleComments();
   }
 
   onSubmit() { this.submitted = true; }
@@ -47,15 +48,31 @@ export class FeedbackComponent implements OnInit {
 
   resolved(captchaResponse: string) {
     let payload = `{"captchaResponse": "${captchaResponse}"}`;
-    // verification routed through backend to prevent browser CORS issues
-    this.httpClient.post<any>('http://localhost:3000/api/captcha/verify', payload)
-              .subscribe(data => {
-                // console.log('Google captcha verification response: ' + JSON.stringify(data));
-                this.iAmNotARobot = data.success;
-              });
+
+    // If the captcha has expired prior to submitting its value to the server,
+    // the component will reset the captcha, and trigger the resolved event with response === null
+    if (captchaResponse != null) {
+      // verification routed through backend to prevent browser CORS issues
+      this.httpClient.post<any>('http://localhost:3000/api/captcha/verify', payload)
+      .subscribe(data => {
+        // console.log('Google captcha verification response: ' + JSON.stringify(data));
+        this.iAmNotARobot = false; //data.success;
+      });
+    }
   }
 
-  getRandomColor () {
+  shuffleComments(){
+    let input = this.comments;
+    for (let i = input.length - 1; i >= 0; i--) {
+        let randomIndex = Math.floor(Math.random()*(i+1));
+        let itemAtIndex = input[randomIndex];
+        input[randomIndex] = input[i];
+        input[i] = itemAtIndex;
+    }
+    this.comments = input;
+  }
+
+  getRandomColor() {
     let min = 0,
         max = this.colors.length - 1;
     // return this.colors[Math.floor(Math.random() * (max - min + 1)) + min];
