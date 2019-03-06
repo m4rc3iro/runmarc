@@ -13,19 +13,7 @@ export class UpcomingComponent implements OnInit {
 
   event: string;
   country: string;
-  website: string;
   popoverTitle: string = 'Event Details';
-
-  events = [{
-            event: 'Transylvania100 80K',
-            country: 'Romania'
-          }, {
-            event: 'Eiger Ultra Trail E101',
-            country: 'Switzerland'
-          }, {
-            event: 'UTMB CCC',
-            country: 'France'
-          }];
 
   constructor() {
   }
@@ -34,7 +22,7 @@ export class UpcomingComponent implements OnInit {
 
   }
 
-  toggleWithGreeting(tooltip, event: string, country: string, website: string) {
+  toggleWithGreeting(tooltip, event: string, country: string) {
     this.event = event;
     this.country = country;
 
