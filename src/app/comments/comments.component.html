@@ -2,10 +2,11 @@
   <div class="left-container" [ngClass]="{'left-container-on' : showCommentBox}">
     <div [hidden]="submitted">
       <form #feedbackForm="ngForm">
-        {{diagnostic}}
+        <h1>Leave your comment</h1>
+        <p>Any feedback, comment or suggestion is welcome. Express yourself!</p>
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="author" #name="ngModel" required>
+          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="author" #name="ngModel" maxlength="50" required>
         </div>
         <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
           Name is required
@@ -13,10 +14,11 @@
 
         <div class="form-group">
           <label for="name">Email</label>
-          <input type="text" class="form-control" id="mail" name="mail" [(ngModel)]="comment.email" #mail="ngModel" required>
+          <input type="text" class="form-control" id="mail" name="mail" [(ngModel)]="comment.email" #email="ngModel" maxlength="50" required email>
         </div>
-        <div [hidden]="mail.valid || mail.pristine" class="alert alert-danger">
-          Email address is required
+        <div *ngIf="!email.pristine && email.invalid" class="alert alert-danger">
+          <div *ngIf="email.errors.required">Email is required</div>
+          <div *ngIf="email.errors.email">Email must be a valid email address</div>
         </div>
 
         <div class="form-group">
@@ -28,18 +30,20 @@
         </div>
 
         <div class="buttons">
-          <re-captcha class="g-recaptcha" data-theme="light" (resolved)="resolved($event)" siteKey="6LfoY2UUAAAAAArZE2IikiGXVrKz4InovhPpPalk" required></re-captcha>
-          <button type="submit" class="btn btn-success submit-button" [disabled]="!feedbackForm.form.valid || !iAmNotARobot" (click)="newFeedback(); feedbackForm.reset()">Submit</button>
+          <re-captcha class="g-recaptcha" [(ngModel)]="formModel.captcha" name="captcha" #captchaControl="ngModel" data-theme="light" (resolved)="resolved($event)" siteKey="6LfoY2UUAAAAAArZE2IikiGXVrKz4InovhPpPalk" required></re-captcha>
+          <button type="submit" class="btn btn-success submit-button" [disabled]="!feedbackForm.form.valid || !iAmNotARobot" (click)="newFeedback(); feedbackForm.reset(); onSubmit();">Submit</button>
         </div>
       </form>
     </div>
 
-    <div [hidden]="!submitted">
-      <h2>Thanks for submitting your feedback! Come back soon to check it out!</h2>
+    <div [hidden]="!submitted" class="thankyou">
+      <div class="thanks-container">
+        <p class="thanks-container-text">Thanks for your feedback! <br> Come back soon to check it out :)</p>
+      </div>
     </div>
 
     <div class="pull" (click)="showCommentBox = !showCommentBox;" [ngClass]="{'push' : showCommentBox}">
-      <span class="vertical-text">Leave your feedback</span>
+      <span class="vertical-text">Leave a comment</span>
     </div>
   </div>
   <div class="right-container">

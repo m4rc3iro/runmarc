@@ -1,49 +1,50 @@
 .home-container {
   -webkit-font-smoothing: antialiased;
-  overflow: auto;
-  background: #ffffff;
-  height: 100%;
+  overflow              : auto;
+  background            : white;
+  height                : 100%;
+  display               : table;
 }
 
 .news-container {
-  padding: 0px 10% 0 10%;
+  padding    : 0 10%;
   font-family: Montserrat, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 12px;
+  font-size  : 12px;
   line-height: 1.65;
-  color: #666;
+  color      : #666;
 }
 
 .welcome {
-  position: relative;
-  background-image: url(/assets/eiger-welcome.png);
-  height: 500px;
-  width: 100%;
+  position        : relative;
+  background-image: url("/assets/eiger-welcome.png");
+  height          : 500px;
+  width           : 100%;
 }
 
 .welcome-text {
-  color: black;
-  font-family: 'Comfortaa';
-  font-size: 13px;
-  text-align: justify;
+  color           : black;
+  font-family     : 'Comfortaa';
+  font-size       : 13px;
+  text-align      : justify;
   background-color: white;
-  position: absolute;
-  margin: 200px 10% 0 10%;
-  padding: 50px;
-  width: 80%;
-  height: 330px;
+  position        : absolute;
+  margin          : 200px 10% 0;
+  padding         : 50px;
+  width           : 80%;
+  height          : 330px;
 }
 
 .meta {
   list-style: none;
-  margin: 0 0 50px -40px;
-  font-size: 0.923em;
-  color: #777;
-  border: none;
+  margin    : 0 0 50px -40px;
+  font-size : 0.923em;
+  color     : #777;
+  border    : none;
 }
 
 .meta li {
-  margin: 0;
-  float: left;
+  margin       : 0;
+  float        : left;
   padding-right: 15px;
 }
 
@@ -53,11 +54,12 @@
 
 .single-blog-content {
   text-align: left;
-  font-size: 13px;
+  font-size : 13px;
   /* border-bottom: 0.5px solid #666; */
 }
 
-.welcome-text h1, .welcome-text p {
+.welcome-text h1,
+.welcome-text p {
   text-align: center;
 }
 
@@ -66,7 +68,7 @@
 }
 
 .separator {
-  margin: 50px 25% 50px 25%;
+  margin       : 50px 25%;
   border-bottom: 1px solid #ced6e0;
 }
 

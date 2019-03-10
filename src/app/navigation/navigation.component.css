@@ -1,15 +1,15 @@
 .navigation-bar {
-  position: fixed;
+  position        : fixed;
   /* color blue: #1976d2; */
   /*  color red: #d96459 */
   background-color: #d96459;
-  font-family: "maven Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica;
-  font-size: 14px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
-  width: 100%;
-  min-width: 340px;
-  height: 40px;
-  z-index: 4;
+  font-family     : "maven Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica;
+  font-size       : 14px;
+  box-shadow      : 0 2px 5px 0 rgba(0, 0, 0, .3);
+  width           : 100%;
+  min-width       : 340px;
+  height          : 40px;
+  z-index         : 4;
 }
 
 .navigation-links {
@@ -18,7 +18,7 @@
 
 .logo-container {
   margin: -7px 0 0 10px;
-  float: left;
+  float : left;
 }
 
 .logo {
@@ -27,8 +27,8 @@
 
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin         : 0;
+  padding        : 0;
 }
 
 ul li {
@@ -36,25 +36,24 @@ ul li {
 }
 
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 8px 12px;
+  display        : block;
+  color          : white;
+  text-align     : center;
+  padding        : 8px 12px;
   text-decoration: none;
 }
 
 li a:hover {
   color: #fff200;
 }
-
 @media (max-width: 740px) {
   .navigation-bar {
     min-height: 37px;
-    height: auto;
+    height    : auto;
   }
 
   .navigation-links {
-    margin: 0;
+    margin   : 0;
     font-size: 12px;
   }
 
@@ -68,10 +67,15 @@ li a:hover {
 
   ul li {
     white-space: nowrap;
-    float: left;
+    float      : left;
   }
 
   li a {
-    padding: 10px 10px;
+    padding: 10px;
+  }
+}
+@media (max-width: 400px) {
+  .navigation-links {
+    font-size: 10px;
   }
 }

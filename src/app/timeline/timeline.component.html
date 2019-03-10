@@ -67,7 +67,7 @@
 
       <!--  gallery  -->
       <div class="popup" [ngClass]="{'show-popup' : gallery}">
-        <div class="popup__block">
+        <div class="popup-block">
           <ngb-carousel *ngIf="raceSelected">
             <ng-template ngbSlide *ngFor="let image of raceSelected.images">
 
@@ -84,7 +84,7 @@
             </ng-template>
           </ngb-carousel>
 
-          <button class="close" (click)="gallery = !gallery;" [ngClass]="{'popup__close' : gallery}"><i class="far fa-times-circle"></i></button>
+          <button class="close" (click)="gallery = !gallery;" [ngClass]="{'popup-close' : gallery}"><i class="far fa-times-circle"></i></button>
         </div>
       </div>
 

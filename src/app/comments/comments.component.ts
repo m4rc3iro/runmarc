@@ -5,12 +5,16 @@ import { HttpClient } from '@angular/common/http';
 // Class imports
 import { Comment } from '../comment';
 
+export interface FormModel {
+  captcha?: string;
+}
+
 @Component({
-  selector: 'app-feedback',
-  templateUrl: './feedback.component.html',
-  styleUrls: ['./feedback.component.css']
+  selector: 'app-comments',
+  templateUrl: './comments.component.html',
+  styleUrls: ['./comments.component.css']
 })
-export class FeedbackComponent implements OnInit {
+export class CommentsComponent implements OnInit {
 
   commentService: CommentService;
   httpClient: HttpClient;
@@ -21,7 +25,8 @@ export class FeedbackComponent implements OnInit {
   email: string = '';
   text: string = '';
 
-  // TODO: show feedback thanks message.
+  // TODO: show comments thanks message.
+  public formModel: FormModel = {};
   submitted = false;
   iAmNotARobot = false;
 
@@ -40,24 +45,29 @@ export class FeedbackComponent implements OnInit {
     this.shuffleComments();
   }
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() {
+    this.submitted = true;
+  }
 
   newFeedback () {
     this.commentService.addComment(new Comment(new Date, this.author, this.email, this.text, 0));
   }
 
   resolved(captchaResponse: string) {
-    let payload = `{"captchaResponse": "${captchaResponse}"}`;
-
-    // If the captcha has expired prior to submitting its value to the server,
-    // the component will reset the captcha, and trigger the resolved event with response === null
+    // If the captcha has expired prior to submitting its value to the server, the component
+    // will reset the captcha, and trigger the resolved event with response === null
     if (captchaResponse != null) {
       // verification routed through backend to prevent browser CORS issues
+      let payload = `{"captchaResponse": "${captchaResponse}"}`;
       this.httpClient.post<any>('http://localhost:3000/api/captcha/verify', payload)
-      .subscribe(data => {
-        // console.log('Google captcha verification response: ' + JSON.stringify(data));
-        this.iAmNotARobot = false; //data.success;
-      });
+          .subscribe(data => {
+            // console.log('Google captcha verification response: ' + JSON.stringify(data));
+            if (data.success) {
+              this.iAmNotARobot = true;
+            } else {
+              this.formModel.captcha = ''; // reset captcha, you are a robot
+            }
+          });
     }
   }
 
