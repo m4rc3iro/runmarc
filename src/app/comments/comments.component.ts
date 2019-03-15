@@ -19,14 +19,12 @@ export class CommentsComponent implements OnInit {
   commentService: CommentService;
   httpClient: HttpClient;
 
-  showCommentBox: boolean;
   comments: Comment[];
-  author: string = '';
-  email: string = '';
-  text: string = '';
 
-  // TODO: show comments thanks message.
-  public formModel: FormModel = {};
+  formModel: FormModel = {};
+  author: string = '';
+  emailAddress: string = '';
+  text: string = '';
   submitted = false;
   iAmNotARobot = false;
 
@@ -38,19 +36,26 @@ export class CommentsComponent implements OnInit {
   constructor (httpClient: HttpClient, commentService: CommentService) {
     this.httpClient = httpClient;
     this.commentService = commentService;
-    this.comments = this.commentService.getComments();
   }
 
   ngOnInit() {
-    this.shuffleComments();
+    this.commentService.getComments().subscribe((data: Comment[]) =>
+      this.comments = this.shuffleComments(data)
+    );
   }
 
   onSubmit() {
     this.submitted = true;
   }
 
-  newFeedback () {
-    this.commentService.addComment(new Comment(new Date, this.author, this.email, this.text, 0));
+  addComment() {
+    let comment = new Comment();
+    comment.date = new Date();
+    comment.author = this.author;
+    comment.email = this.emailAddress;
+    comment.text = this.text;
+    
+    this.commentService.addComment(comment);
   }
 
   resolved(captchaResponse: string) {
@@ -71,22 +76,17 @@ export class CommentsComponent implements OnInit {
     }
   }
 
-  shuffleComments(){
-    let input = this.comments;
-    for (let i = input.length - 1; i >= 0; i--) {
+  shuffleComments(comments: Comment[]): Comment[] {
+    let input = comments;
+    if (comments && comments.length > 0) {
+      for (let i = input.length - 1; i >= 0; i--) {
         let randomIndex = Math.floor(Math.random()*(i+1));
         let itemAtIndex = input[randomIndex];
         input[randomIndex] = input[i];
         input[i] = itemAtIndex;
+      }
     }
-    this.comments = input;
-  }
-
-  getRandomColor() {
-    let min = 0,
-        max = this.colors.length - 1;
-    // return this.colors[Math.floor(Math.random() * (max - min + 1)) + min];
-    return 'bittersweet';
+    return input;
   }
 
 }
