@@ -1,60 +1,54 @@
 <div class="comments-container">
-  <div class="left-container" [ngClass]="{'left-container-on' : showCommentBox}">
-    <div [hidden]="submitted">
-      <form #commentForm="ngForm">
-        <h1>Leave your comment</h1>
-        <p>Any feedback, comment or suggestion is welcome. Express yourself!</p>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="author" #name="ngModel" maxlength="50" required>
-        </div>
-        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-          Name is required
-        </div>
 
-        <div class="form-group">
-          <label for="name">Email</label>
-          <input type="text" class="form-control" id="email" name="email" [(ngModel)]="emailAddress" #email="ngModel" maxlength="50" required email>
+  <div class="slideout">
+    <img src="../assets/feedback.png" alt="Feedback">
+    <div class="slideout_inner">
+      <div [hidden]="submitted">
+        <form #commentForm="ngForm">
+          <!-- <h1>Leave your comment</h1>
+        <p>Any feedback, comment or suggestion is welcome. Express yourself!</p> -->
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="author" #name="ngModel" maxlength="50" required>
+          </div>
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            Name is required
+          </div>
+          <div class="form-group">
+            <label for="name">Email</label>
+            <input type="text" class="form-control" id="email" name="email" [(ngModel)]="emailAddress" #email="ngModel" maxlength="50" required email>
+          </div>
+          <div *ngIf="!email.pristine && email.invalid" class="alert alert-danger">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+          </div>
+          <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea type="text" class="form-control" id="comment" name="comment" [(ngModel)]="text" #comment="ngModel" required rows="8" cols="80" maxlength="500"></textarea>
+          </div>
+          <div [hidden]="comment.valid || comment.pristine" class="alert alert-danger">
+            Comment is required
+          </div>
+          <div class="buttons">
+            <re-captcha class="g-recaptcha" [(ngModel)]="formModel.captcha" name="captcha" #captchaControl="ngModel" data-theme="light" (resolved)="resolved($event)" siteKey="6LfoY2UUAAAAAArZE2IikiGXVrKz4InovhPpPalk" required></re-captcha>
+            <button type="submit" class="btn btn-success submit-button" [disabled]="!commentForm.form.valid || !iAmNotARobot" (click)="addComment(); commentForm.reset(); onSubmit();">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div [hidden]="!submitted" class="thankyou">
+        <div class="thanks-container">
+          <p class="thanks-container-text">Thanks for your feedback!</p>
         </div>
-        <div *ngIf="!email.pristine && email.invalid" class="alert alert-danger">
-          <div *ngIf="email.errors.required">Email is required</div>
-          <div *ngIf="email.errors.email">Email must be a valid email address</div>
-        </div>
-
-        <div class="form-group">
-          <label for="comment">Comment</label>
-          <textarea type="text" class="form-control" id="comment" name="comment" [(ngModel)]="text" #comment="ngModel" required rows="8" cols="80" maxlength="500"></textarea>
-        </div>
-        <div [hidden]="comment.valid || comment.pristine" class="alert alert-danger">
-          Comment is required
-        </div>
-
-        <div class="buttons">
-          <re-captcha class="g-recaptcha" [(ngModel)]="formModel.captcha" name="captcha" #captchaControl="ngModel" data-theme="light" (resolved)="resolved($event)" siteKey="6LfoY2UUAAAAAArZE2IikiGXVrKz4InovhPpPalk" required></re-captcha>
-          <button type="submit" class="btn btn-success submit-button" [disabled]="!commentForm.form.valid || !iAmNotARobot" (click)="addComment(); commentForm.reset(); onSubmit();">Submit</button>
-        </div>
-      </form>
-    </div>
-
-    <div [hidden]="!submitted" class="thankyou">
-      <div class="thanks-container">
-        <p class="thanks-container-text">Thanks for your feedback! <br> Come back soon to check it out :)</p>
       </div>
     </div>
-
-    <div class="pull" (click)="showCommentBox = !showCommentBox;" [ngClass]="{'push' : showCommentBox}">
-      <span class="vertical-text">Leave a comment</span>
-    </div>
   </div>
+
   <div class="right-container">
     <section id="app" class="comments">
       <ng-template ngFor let-comment [ngForOf]="comments" let-i="index">
         <blockquote [ngClass]="colors[i % colors.length]">
           <h1><span>{{comment.author}}</span></h1>
           <time>{{comment.date | date:'EEE, MMMM d, yyyy'}}</time>
-          <!-- <div class="like-data">
-            <button class="icon-rocknroll active">♥<span class="like-count active">{{comment.likes}}</span></button>
-          </div> -->
           <p>{{comment.text}}</p>
         </blockquote>
       </ng-template>
