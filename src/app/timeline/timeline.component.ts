@@ -17,7 +17,7 @@ export class TimelineComponent implements OnInit {
   raceSelected: Race;
 
   races2018 = [
-    new Race('Utmb® - Ccc®', new Date('2018-08-31'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",[
+    new Race('Utmb® - Ccc®', new Date('2018-08-31'), "A race deep into wilderness using for the most the international path 'Grande Randonnée du Tour du Mont-Blanc (GR TMB)'. Mountain race, with numerous passages in high altitude (>2500m), in difficult weather conditions (night, wind, cold, rain or snow), that needs a very good training, adapted equipment and a real capacity of personal autonomy.",[
       // 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4',
       this.BASE_URL + 'ccc2018/IMG_3957.jpg',
       this.BASE_URL + 'ccc2018/IMG_3960.jpg',
@@ -30,7 +30,7 @@ export class TimelineComponent implements OnInit {
       this.BASE_URL + 'ccc2018/IMG_3978.jpg',
       this.BASE_URL + 'ccc2018/IMG_3980.jpg'
     ]),
-    new Race('Eiger Ultra-Trail® - E101', new Date('2018-07-14'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",[
+    new Race('Eiger Ultra-Trail® - E101', new Date('2018-07-14'), "Grindelwald holds the honour of hosting the first Ultra Trail race inspired by the myth of the Eiger. The race route passes through the most breath-taking viewpoints in the area; Grosse Scheidegg, First, Bachalpsee, Berghotel Faulhorn, Schynige Platte, Wengen, Männlichen, before traversing the base of the Eiger North Face itself. This Ultra Trail delivers a truly spectacular alpine experience. With a distance of 101km and 6700m height difference, the E101 is a mighty challenge to even the most seasoned of trail runners and the chance of winning the Mountain Prize at the Grosse Scheidegg should help provide a little extra motivation.",[
       this.BASE_URL + 'eiger2018/eiger2018-5-p.jpg',
       this.BASE_URL + 'eiger2018/eiger2018-6.jpg',
       this.BASE_URL + 'eiger2018/eiger2018-10.jpg',
@@ -39,7 +39,7 @@ export class TimelineComponent implements OnInit {
       this.BASE_URL + 'eiger2018/eiger2018-20.jpg',
       this.BASE_URL + 'eiger2018/eiger2018-25.jpg',
     ]),
-    new Race('Transylvania One Hundred - 80K', new Date('2018-05-19'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",[
+    new Race('Transylvania One Hundred - 80K', new Date('2018-05-19'), "Mountain ultra-trail through the wilds of Transylvania, starting and finishing at Dracula's Castle.",[
       this.BASE_URL + 'transylvania2018/transylvania-499.jpg',
       this.BASE_URL + 'transylvania2018/transylvania-500.jpg',
       this.BASE_URL + 'transylvania2018/transylvania-501.jpg',
@@ -52,7 +52,7 @@ export class TimelineComponent implements OnInit {
   ];
 
   races2017 = [
-    new Race('Trail Des Fantomes - 48 Km', new Date('2017-08-13'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",[
+    new Race('Trail Des Fantomes - 48 Km', new Date('2017-08-13'), "",[
       this.BASE_URL + 'phantomes2017/sportograf-105992029.jpg',
       this.BASE_URL + 'phantomes2017/sportograf-106001146.jpg',
       this.BASE_URL + 'phantomes2017/sportograf-105971969-p.jpg',
@@ -60,7 +60,7 @@ export class TimelineComponent implements OnInit {
       this.BASE_URL + 'phantomes2017/sportograf-105984387-p.jpg',
       this.BASE_URL + 'phantomes2017/sportograf-105973836.jpg',
     ]),
-    new Race('Trail Vielha-Molieres 3010 - Maratón', new Date('2017-07-15'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",[
+    new Race('Trail Vielha-Molieres 3010 - Maratón', new Date('2017-07-15'), "The Vielha-Molières 3010 Marathon is a high mountain race where 5 peaks of more than 2,000 meters are crowned; among them the Molieres of 3010 of height, ceiling of the Valley of Aran and of the race. Two sections of more than 2,400 meters are passed. It has a vertical kilometer hidden in the first 6 kilometers. Much of the race takes place over 2,000 meters, and the start and finish is in Vielha, at 974 meters. Crestas like those of Letassi, alpine meadows in Aubas, magnificent forests like the Baricauba, lakes like the Estanh des Pois, natural spaces like the Artiga de Lin, views of the Aneto from the Tuc de Molières, waterfalls like those of Conangles, rivers, tarteras , ... all that awaits you in this race of pure sky run. There are mountain races, this is a race through the mountains, in the middle of the axial pyrenees. You will feel like a deer or a bear in its habitat. More than 95% of the race are paths and paths. A circular route of the knife style.",[
       this.BASE_URL + 'vielhamolieres2017/IMG_1402.JPG',
       this.BASE_URL + 'vielhamolieres2017/IMG_1409.JPG',
       this.BASE_URL + 'vielhamolieres2017/IMG_1410-p.JPG',
@@ -69,7 +69,7 @@ export class TimelineComponent implements OnInit {
       this.BASE_URL + 'vielhamolieres2017/video-finish.mp4',
       this.BASE_URL + 'vielhamolieres2017/IMG_1438-p.JPG',
     ]),
-    new Race('The North Face Lavaredo Ultra Trail - 120K', new Date('2017-06-23'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the sheets.",[
+    new Race('The North Face Lavaredo Ultra Trail - 120K', new Date('2017-06-23'), "Live the Dolomites experience!",[
       this.BASE_URL + 'lut2017/IMG_1057.JPG',
       this.BASE_URL + 'lut2017/north-face-lavaredo-ultra-trail-2017-3948.jpg',
       this.BASE_URL + 'lut2017/IMG_1115.JPG',
@@ -86,7 +86,7 @@ export class TimelineComponent implements OnInit {
       this.BASE_URL + 'lut2017/north-face-lavaredo-ultra-trail-2017-4770-p.jpg',
       this.BASE_URL + 'lut2017/video-finish.mp4',
     ]),
-    new Race('Transgrancanaria Hg - Advanced 82K', new Date('2017-02-25'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",[
+    new Race('Transgrancanaria Hg - Advanced 82K', new Date('2017-02-25'), "A course designed only for the brave. To complete this type of Transgrancanaria need to be physically fit and experienced mountain racing over long distances. If you have successfully participated in the Transgrancanaria Marathon in the past, this may be for you the next year. The route crosses some of the most outstanding natural scenery of Gran Canaria and it begins at 06:00 in the morning. Several aid stations will welcome the runners, who will enjoy the encouragement of the thousands of people along the course that will come to marvel at your bravery.",[
       this.BASE_URL + 'transgrancanaria2017/Screenshot 2019-02-11-01.jpg',
       this.BASE_URL + 'transgrancanaria2017/Photo 25.02.17-59-p.jpg',
       this.BASE_URL + 'transgrancanaria2017/Screenshot 2019-02-11-23.jpg',
@@ -100,7 +100,7 @@ export class TimelineComponent implements OnInit {
   ];
 
   races2016 = [
-    new Race('Matterhorn Ultraks - 45K', new Date('2016-08-20'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining e 1960s with the release of Letraset sheets.",[
+    new Race('Matterhorn Ultraks - 45K', new Date('2016-08-20'), "A magical track! With a concentration of wild space and high mountains, an ideal course requiring one to combine speed and technique, whithout fearing the climb to 3'100m to Gornergrat, offering a panoramic view of the ever present Matterhorn.",[
       this.BASE_URL + 'ultraks2016/ultraks-0610.jpg',
       this.BASE_URL + 'ultraks2016/ultraks-0611.jpg',
       this.BASE_URL + 'ultraks2016/ultraks-0614.jpg',
@@ -113,7 +113,7 @@ export class TimelineComponent implements OnInit {
       this.BASE_URL + 'ultraks2016/ultraks-3323.jpg',
       this.BASE_URL + 'ultraks2016/ultraks-3325.jpg',
     ]),
-    new Race('Eiger Ultra Trail - E51', new Date('2016-07-16'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",[
+    new Race('Eiger Ultra Trail - E51', new Date('2016-07-16'), "Although aptly named the Panorama Trail, the first ascent towards Grosse Scheidegg should not be underestimated. Once reached, the spectacular scenery along the route to Oberläger via First and Bachalpsee, the 360° panorama atop the Faulhorn summit at 2680m, and the views to the horizon on route to Schynige Platte, definitely compensate for all the effort and remain long in the memory.",[
       this.BASE_URL + 'eiger2016/eigerUltraTrail2016_11.jpg',
       this.BASE_URL + 'eiger2016/eigerUltraTrail2016_12.jpg',
       this.BASE_URL + 'eiger2016/eigerUltraTrail2016_15-p.jpg',
@@ -122,7 +122,7 @@ export class TimelineComponent implements OnInit {
       this.BASE_URL + 'eiger2016/eigerUltraTrail2016_25-p.jpg',
       this.BASE_URL + 'eiger2016/eigerUltraTrail2016_26.jpg',
     ]),
-    new Race('Ultra Skymarathon® Madeira - Usm', new Date('2016-06-04'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. also the leap into electronic typesetting, It was popularised in the 1960s with the release of Letraset sheets.",[
+    new Race('Ultra Skymarathon® Madeira - Usm', new Date('2016-06-04'), "The Madeira Sky Race is a mountain technical race with marked gradients 4121 D + and a high technical degree in the slope of Skyrunning.",[
       this.BASE_URL + 'usm2016/Screenshot 2019-02-11-59.jpg',
       this.BASE_URL + 'usm2016/Screenshot 2019-02-11-58.jpg',
       this.BASE_URL + 'usm2016/Screenshot 2019-02-11-29.jpg',
@@ -135,12 +135,12 @@ export class TimelineComponent implements OnInit {
   ];
 
   races2015 = [
-    new Race('The Hillary - 34K', new Date('2015-03-14'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",[
+    new Race('The Hillary - 34K', new Date('2015-03-14'), "The Trail follows a variety of terrain and scenery – many claim a magical pull of the trail and keep coming back for more. Stunning views throughout the trail, rugged West coast beaches, magnificent native bush including the hundreds of year old native Kauri trees. Past large waterfalls and sand dunes, along cliff tops or through marshlands – there is something for everyone.",[
       // this.BASE_URL + 'hillary2015/',
       // this.BASE_URL + 'hillary2015/',
       // this.BASE_URL + 'hillary2015/',
     ]),
-    new Race('Tarawera Ultramarathon - 100K', new Date('2015-02-07'), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and sc",[
+    new Race('Tarawera Ultramarathon - 100K', new Date('2015-02-07'), "The Tarawera 102k is one of the largest, most competitive and international trail running ultra races in the world. Part of the Ultra-Trail World Tour. It is the most international running race in New Zealand with more than 40 countries represented in this race alone and more than half of the field from outside of New Zealand. The 102k is everything that trail ultra running should be – fun, competitive, challenging, scenic, friendly and inspiring.",[
       this.BASE_URL + 'tarawera2015/tarawera-19.jpg',
       this.BASE_URL + 'tarawera2015/tarawera-20-p.jpg',
       this.BASE_URL + 'tarawera2015/tarawera-24.jpg',
