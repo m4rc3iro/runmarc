@@ -8,7 +8,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --aot --prod",
+    "build:server:prod": "ng run runmarc:server && webpack --config webpack.server.config.js --progress --colors",
+    "build:browser:prod": "ng build --prod",
+    "build:prod": "npm run build:server:prod && npm run build:browser:prod",
+    "server": "node local.js"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +29,7 @@
     "@angular/router": "^6.0.3",
     "@ng-bootstrap/ng-bootstrap": "^2.0.0-alpha.0",
     "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
+    "@ng-toolkit/universal": "^1.1.51",
     "bootstrap": "^4.0.0",
     "core-js": "^2.5.4",
     "express": "^4.16.3",
@@ -32,7 +37,14 @@
     "path": "^0.12.7",
     "rxjs": "^6.0.0",
     "typescript": "~2.7.2",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "@angular/platform-server": "^6.0.3",
+    "@nguniversal/module-map-ngfactory-loader": "~6.0.0",
+    "webpack-cli": "^3.1.2",
+    "ts-loader": "4.2.0",
+    "@nguniversal/express-engine": "~6.0.0",
+    "@nguniversal/common": "~6.0.0",
+    "cors": "~2.8.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.3",

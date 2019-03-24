@@ -1,3 +1,6 @@
+import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { CommonModule } from '@angular/common';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -28,8 +31,14 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    BrowserModule,
+  imports:[
+ CommonModule,
+NgtUniversalModule,
+ 
+ TransferHttpCacheModule,
+HttpClientModule,
+ 
+    
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot(),
@@ -49,6 +58,5 @@ const appRoutes: Routes = [
     FooterComponent
   ],
   providers: [],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }
