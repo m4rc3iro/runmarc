@@ -25,6 +25,7 @@ export class CommentsComponent implements OnInit {
   author: string = '';
   emailAddress: string = '';
   text: string = '';
+
   submitted = false;
   iAmNotARobot = false;
 
@@ -39,10 +40,16 @@ export class CommentsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.commentService.getComments().subscribe((data: Comment[]) =>
-      this.comments = this.shuffleComments(data)
-    );
+    let localComments = localStorage.getItem('comments');
+    if(localComments && localComments.indexOf('Error') == -1){
+      this.comments = this.parseComments(localComments);
+      this.comments = this.shuffleComments(this.comments);
+    } else {
+      this.commentService.getComments().subscribe((data: Comment[]) => this.processData(data) );
+    }
   }
+
+  ngOnDestroy() { localStorage.removeItem('comments'); }
 
   onSubmit() {
     this.submitted = true;
@@ -54,7 +61,7 @@ export class CommentsComponent implements OnInit {
     comment.author = this.author;
     comment.email = this.emailAddress;
     comment.text = this.text;
-    
+
     this.commentService.addComment(comment);
   }
 
@@ -74,6 +81,17 @@ export class CommentsComponent implements OnInit {
             }
           });
     }
+  }
+
+  processData(data: Comment[]) {
+    this.comments = this.shuffleComments(data);
+    localStorage.setItem('comments', JSON.stringify(data));
+  }
+
+  parseComments(comments: string) {
+    // type assertion to convert data types
+    let commentsObject: Array<Comment> = JSON.parse(comments);
+    return commentsObject;
   }
 
   shuffleComments(comments: Comment[]): Comment[] {
