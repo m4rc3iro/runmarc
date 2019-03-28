@@ -8,18 +8,19 @@ import { Comment } from './comment';
   providedIn: 'root'
 })
 export class CommentService {
-  
+
+  comments_api_path = '/api/comments';
   env = environment;
 
   public constructor(private httpClient: HttpClient) { }
 
   public addComment(comment: Comment) {
-    this.httpClient.post<any>(`${this.env.runmarc_api_base_url}/api/comments`, comment)
+    this.httpClient.post<any>(`${this.env.runmarc_api_base_url}${this.comments_api_path}`, comment)
       .subscribe(data => { /* console.log(JSON.stringify(data)); */ });
   }
 
   public getComments(): Observable<Comment[]> {
-    return this.httpClient.get<Comment[]>(`${this.env.runmarc_api_base_url}/api/comments`);
+    return this.httpClient.get<Comment[]>(`${this.env.runmarc_api_base_url}${this.comments_api_path}`);
   }
 
 }
