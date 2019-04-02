@@ -31,6 +31,9 @@
           </div>
           <div class="buttons">
             <re-captcha class="g-recaptcha" [(ngModel)]="formModel.captcha" name="captcha" #captchaControl="ngModel" data-theme="light" (resolved)="resolved($event)" siteKey="6LfoY2UUAAAAAArZE2IikiGXVrKz4InovhPpPalk" required></re-captcha>
+            <div [hidden]="captchaControl.valid || captchaControl.pristine" class="alert alert-danger" style="float: left">
+              Captcha verification failed
+            </div>
             <button type="submit" class="btn btn-success submit-button" [disabled]="!commentForm.form.valid || !iAmNotARobot" (click)="addComment(); commentForm.reset(); onSubmit();">Submit</button>
           </div>
         </form>

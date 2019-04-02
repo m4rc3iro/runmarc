@@ -1,8 +1,7 @@
-// Import modules and services
+import { environment } from '../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { CommentService } from '../comment.service';
 import { HttpClient } from '@angular/common/http';
-// Class imports
 import { Comment } from '../comment';
 
 export interface FormModel {
@@ -16,11 +15,14 @@ export interface FormModel {
 })
 export class CommentsComponent implements OnInit {
 
+  env = environment;
+
   commentService: CommentService;
   httpClient: HttpClient;
 
   comments: Comment[];
 
+  // new comment form stuff
   formModel: FormModel = {};
   author: string = '';
   emailAddress: string = '';
@@ -47,12 +49,14 @@ export class CommentsComponent implements OnInit {
     } else {
       this.commentService.getComments().subscribe((data: Comment[]) => this.processData(data) );
     }
-  }
 
-  ngOnDestroy() { localStorage.removeItem('comments'); }
+    // make sure only one comment can be sent per user session
+    this.submitted = JSON.parse(localStorage.getItem('commentSubmitted'));
+  }
 
   onSubmit() {
     this.submitted = true;
+    localStorage.setItem('commentSubmitted', 'true');
   }
 
   addComment() {
@@ -70,14 +74,13 @@ export class CommentsComponent implements OnInit {
     // will reset the captcha, and trigger the resolved event with response === null
     if (captchaResponse != null) {
       // verification routed through backend to prevent browser CORS issues
-      let payload = `{"captchaResponse": "${captchaResponse}"}`;
-      this.httpClient.post<any>('http://localhost:3000/api/captcha/verify', payload)
-          .subscribe(data => {
-            // console.log('Google captcha verification response: ' + JSON.stringify(data));
+      let payload = JSON.parse(`{"captchaResponse": "${captchaResponse}"}`);
+      this.httpClient.post<any>(`${this.env.runmarc_api_base_url}/api/captcha/verify`, payload)
+          .subscribe(data => { // console.log('Google captcha verification response: ' + JSON.stringify(data));
             if (data.success) {
               this.iAmNotARobot = true;
             } else {
-              this.formModel.captcha = ''; // reset captcha, you are a robot
+              this.formModel.captcha = ''; // verification failed, reset captcha (you are a robot)
             }
           });
     }
@@ -106,5 +109,4 @@ export class CommentsComponent implements OnInit {
     }
     return input;
   }
-
 }

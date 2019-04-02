@@ -5,5 +5,5 @@
 export const environment = {
   production: false,
 	baseHref: '/',
-  runmarc_api_base_url: 'https://0gkrlwepl9.execute-api.eu-west-2.amazonaws.com/dev'
+  runmarc_api_base_url: 'http://localhost:3000'
 };

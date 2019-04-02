@@ -32,13 +32,10 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:[
- CommonModule,
-NgtUniversalModule,
- 
- TransferHttpCacheModule,
-HttpClientModule,
- 
-    
+    CommonModule,
+    NgtUniversalModule,
+    TransferHttpCacheModule,
+    HttpClientModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot(),
