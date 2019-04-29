@@ -1,6 +1,7 @@
 import { environment } from '../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Comment } from './comment';
 
@@ -14,9 +15,9 @@ export class CommentService {
 
   public constructor(private httpClient: HttpClient) { }
 
-  public addComment(comment: Comment) {
-    this.httpClient.post<any>(`${this.env.runmarc_api_base_url}${this.comments_api_path}`, comment)
-      .subscribe(data => { /* console.log(JSON.stringify(data)); */ });
+  public addComment(comment: Comment, authenticationToken: string): Observable<Comment> {
+    let httpOptions = { headers: new HttpHeaders({ 'access-token': authenticationToken })};
+    return this.httpClient.post<any>(`${this.env.runmarc_api_base_url}${this.comments_api_path}`, comment, httpOptions);
   }
 
   public getComments(): Observable<Comment[]> {

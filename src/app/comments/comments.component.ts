@@ -28,8 +28,9 @@ export class CommentsComponent implements OnInit {
   emailAddress: string = '';
   text: string = '';
 
-  submitted = false;
+  submitted = false; // to show and hide the thanks for your comment message
   iAmNotARobot = false;
+  authenticationToken: string;
 
   colors = [
     'default','grapefruit', 'bittersweet', 'sunflower', 'grass', 'mint',
@@ -42,31 +43,34 @@ export class CommentsComponent implements OnInit {
   }
 
   ngOnInit() {
-    let localComments = localStorage.getItem('comments');
-    if(localComments && localComments.indexOf('Error') == -1){
-      this.comments = this.parseComments(localComments);
+    let localComments = JSON.parse(localStorage.getItem('comments'));
+
+    if(localComments && !this.expiredComments(localComments.timestamp)){
+      this.comments = <Comment[]>localComments.value;
       this.comments = this.shuffleComments(this.comments);
     } else {
-      this.commentService.getComments().subscribe((data: Comment[]) => this.processData(data) );
+        this.commentService.getComments().subscribe((data: Comment[]) => {
+        this.comments = this.shuffleComments(data);
+        var object = { value: data,
+                       timestamp: new Date().getTime() };
+        localStorage.setItem('comments', JSON.stringify(object));
+      });
     }
-
     // make sure only one comment can be sent per user session
     this.submitted = JSON.parse(localStorage.getItem('commentSubmitted'));
   }
 
-  onSubmit() {
-    this.submitted = true;
-    localStorage.setItem('commentSubmitted', 'true');
+  expiredComments(commentsTimestamp: string) {
+    let timeDiff = new Date().getTime() - +commentsTimestamp;
+    return timeDiff > 3600000 ? true : false; // comments expire after an hour
   }
 
   addComment() {
-    let comment = new Comment();
-    comment.date = new Date();
-    comment.author = this.author;
-    comment.email = this.emailAddress;
-    comment.text = this.text;
-
-    this.commentService.addComment(comment);
+    let comment = new Comment(null, new Date(), this.author, this.emailAddress, this.text, null);
+    this.commentService.addComment(comment, this.authenticationToken).subscribe(data => {
+      this.submitted = true;
+      localStorage.setItem('commentSubmitted', 'true');
+    });
   }
 
   resolved(captchaResponse: string) {
@@ -76,31 +80,21 @@ export class CommentsComponent implements OnInit {
       // verification routed through backend to prevent browser CORS issues
       let payload = JSON.parse(`{"captchaResponse": "${captchaResponse}"}`);
       this.httpClient.post<any>(`${this.env.runmarc_api_base_url}/api/captcha/verify`, payload)
-          .subscribe(data => { // console.log('Google captcha verification response: ' + JSON.stringify(data));
-            if (data.success) {
-              this.iAmNotARobot = true;
-            } else {
-              this.formModel.captcha = ''; // verification failed, reset captcha (you are a robot)
-            }
-          });
+        .subscribe(data => { // console.log('Google captcha verification response: ' + JSON.stringify(data));
+          if (data.success) {
+            this.iAmNotARobot = true;
+            this.authenticationToken = captchaResponse;
+          } else {
+            this.formModel.captcha = ''; // verification failed, reset captcha (you are a robot)
+          }
+      });
     }
   }
 
-  processData(data: Comment[]) {
-    this.comments = this.shuffleComments(data);
-    localStorage.setItem('comments', JSON.stringify(data));
-  }
-
-  parseComments(comments: string) {
-    // type assertion to convert data types
-    let commentsObject: Array<Comment> = JSON.parse(comments);
-    return commentsObject;
-  }
-
   shuffleComments(comments: Comment[]): Comment[] {
-    let input = comments;
+    let input = comments
     if (comments && comments.length > 0) {
-      for (let i = input.length - 1; i >= 0; i--) {
+      for (let i = comments.length - 1; i >= 0; i--) {
         let randomIndex = Math.floor(Math.random()*(i+1));
         let itemAtIndex = input[randomIndex];
         input[randomIndex] = input[i];
