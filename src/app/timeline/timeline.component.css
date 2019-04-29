@@ -297,11 +297,6 @@
   color         : tomato;
   text-rendering: optimizeLegibility;
 }
-@media (max-width: 540px) {
-  .carousel-image-portrait {
-    max-width: 350px;
-  }
-}
 @media (min-width: 540px) {
   .carousel-image-portrait {
     max-width: 525px;
@@ -312,10 +307,6 @@
   }
 }
 @media (min-width: 768px) {
-  .carousel-image-portrait {
-    max-width: 600px;
-  }
-
   .close {
     top: 0.5rem;
   }
