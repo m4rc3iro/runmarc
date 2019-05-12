@@ -1,20 +1,18 @@
-# Runmarc
+# Runmarc Frontend
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Build
+## Production Build and Deployment
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Docker configuration available to build and run the application into a Docker container:
 
-### Production Build and Deployment
+- `docker build --rm -t frontend .`
+- `docker run -d --name frontend -p 80:80 frontend`
 
-Run `npm run build:serverless:deploy` to build and deploy the project on AWS Lambda.
+To access Docker container run the following command: `docker exec -it frontend /bin/sh`
 
-## Change Logs
+# Environmental Variables
 
-### 0.0.1
-
-- Initial version of the website, which basically offers support for running on a production environment.
-- Only Introduction functionality available.
+Located under `src/environments`. Development and Production ready configuration.
