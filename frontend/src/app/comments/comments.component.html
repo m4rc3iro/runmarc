@@ -34,7 +34,7 @@
             <div [hidden]="captchaControl.valid || captchaControl.pristine" class="alert alert-danger" style="float: left">
               Captcha verification failed
             </div>
-            <button type="submit" class="btn btn-success submit-button" [disabled]="!commentForm.form.valid || !iAmNotARobot" (click)="addComment(); commentForm.reset(); onSubmit();">Submit</button>
+            <button type="submit" class="btn btn-success submit-button" [disabled]="!commentForm.form.valid || !iAmNotARobot" (click)="addComment(); commentForm.reset();">Submit</button>
           </div>
         </form>
       </div>
