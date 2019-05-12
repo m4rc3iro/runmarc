@@ -25,7 +25,6 @@
     "@angular/router": "^6.0.3",
     "@ng-bootstrap/ng-bootstrap": "^2.0.0-alpha.0",
     "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
-    "@ng-toolkit/serverless": "^7.1.0",
     "@ng-toolkit/universal": "^1.1.51",
     "@nguniversal/common": "~6.0.0",
     "@nguniversal/express-engine": "~6.0.0",
@@ -43,7 +42,7 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.13.3",
+    "@angular-devkit/build-angular": "^0.13.9",
     "@angular/language-service": "^6.0.3",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
