@@ -10,7 +10,7 @@ services:
   express: #name of the second service
     build: backend # specify the directory of the Dockerfile
     env_file:
-     - ../.env-prod
+     - backend/.env-prod
     ports:
       - "3000:3000" #specify ports forewarding
     links:

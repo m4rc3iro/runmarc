@@ -17,7 +17,9 @@ The application
 In order to build and deploy the application into DigitalOcean:
 
 1. SSH into Digital Ocean's server: `ssh root@134.209.239.31` (pass in 1Password)
-1. Navigate to application's folder and run `git pull`
+1. [Optional] Clone repository -`git clone https://m4rc3iro@bitbucket.org/m4rc3iro/runmarc.git`
+1. [Optional] Navigate to application's folder and run `git pull`
+1. [Optional] Create an `runmarc/backend/.env-prod` environmental properties file with all the required secrets (see 1Password)
 1. Build and spin up the environment by running `docker-compose up`
 1. Navigate to `http://134.209.239.31/`
 
