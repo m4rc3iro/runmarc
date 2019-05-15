@@ -185,8 +185,9 @@
   margin: 0;
 }
 
-.timeline-title:hover {
+.race-name:hover {
   cursor: pointer;
+  color : #d96459;
 }
 /*----------------------------------------------
     Gallery styles
