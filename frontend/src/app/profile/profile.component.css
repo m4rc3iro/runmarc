@@ -1,33 +1,33 @@
 .profile-container {
   font-family: "Open Sans", sans-serif;
-  overflow: auto;
-  min-width: 420px;
-  color: #555;
-  background: #ffffff;
-  font-size: 14px;
+  overflow   : auto;
+  min-width  : 420px;
+  color      : #555;
+  background : #ffffff;
+  font-size  : 14px;
 }
 
 .header-container {
-  display: flex;
-  height: 350px;
+  display    : flex;
+  height     : 350px;
   padding-top: 60px;
 }
 
 .profile-photo-container {
-  width: 325px;
+  width  : 325px;
   padding: 20px 0 0 60px;
 }
 
 .about-me-container {
-  width: 100%;
+  width  : 100%;
   padding: 75px 0 0 75px;
 }
 
 .profile-photo {
-  position: relative;
-  width: 225px;
-  padding: 3px;
-  border: 5px solid #7b7771;
+  position     : relative;
+  width        : 225px;
+  padding      : 3px;
+  border       : 5px solid #7b7771;
   border-radius: 150px;
 }
 
@@ -36,77 +36,76 @@
 }
 
 .itra-performance-index {
-  min-width: 320px;
-  max-width: 100%;
-  margin: 0 auto;
-  color: #555;
+  min-width : 320px;
+  max-width : 100%;
+  margin    : 0 auto;
+  color     : #555;
   background: #ffff;
 }
 
 .label {
   color: #d96459;
 }
-
 /****************** table styles *******************/
 table a:link {
-  font-weight: bold;
+  font-weight    : bold;
   text-decoration: none;
-  color: #666;
+  color          : #666;
 }
 
 table a:visited {
-  font-weight: bold;
+  font-weight    : bold;
   text-decoration: none;
-  color: #999;
+  color          : #999;
 }
 
 table a:active,
 table a:hover {
   text-decoration: underline;
-  color: #bd5a35;
+  color          : #bd5a35;
 }
 
 table {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  width: 100%;
-  border-collapse: inherit;
-  color: #666;
-  border: #ccc 1px solid;
+  font-family          : Arial, Helvetica, sans-serif;
+  font-size            : 12px;
+  width                : 100%;
+  border-collapse      : inherit;
+  color                : #666;
+  border               : #ccc 1px solid;
   -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  background: #eaebec;
-  -webkit-box-shadow: 0 1px 2px #d1d1d1;
-  -moz-box-shadow: 0 1px 2px #d1d1d1;
-  box-shadow: 0 1px 2px #d1d1d1;
-  text-shadow: 1px 1px 0 #fff;
+  -moz-border-radius   : 3px;
+  border-radius        : 3px;
+  background           : #eaebec;
+  -webkit-box-shadow   : 0 1px 2px #d1d1d1;
+  -moz-box-shadow      : 0 1px 2px #d1d1d1;
+  box-shadow           : 0 1px 2px #d1d1d1;
+  text-shadow          : 1px 1px 0 #fff;
 }
 
 table th {
-  padding: 10px 25px;
-  border-top: 1px solid #fafafa;
+  padding      : 10px 25px;
+  border-top   : 1px solid #fafafa;
   border-bottom: 1px solid #e0e0e0;
-  background: #ededed;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
-  background: -moz-linear-gradient(top, #ededed, #ebebeb);
+  background   : #ededed;
+  background   : -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+  background   : -moz-linear-gradient(top, #ededed, #ebebeb);
 }
 
 table th:first-child {
   padding-left: 20px;
-  text-align: center;
+  text-align  : center;
 }
 
 table tr:first-child th:first-child {
   -webkit-border-top-left-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  border-top-left-radius: 3px;
+  -moz-border-radius-topleft    : 3px;
+  border-top-left-radius        : 3px;
 }
 
 table tr:first-child th:last-child {
   -webkit-border-top-right-radius: 3px;
-  -moz-border-radius-topright: 3px;
-  border-top-right-radius: 3px;
+  -moz-border-radius-topright    : 3px;
+  border-top-right-radius        : 3px;
 }
 
 table tr {
@@ -114,18 +113,18 @@ table tr {
 }
 
 table td:first-child {
-  text-align: center;
+  text-align : center;
   border-left: 0;
 }
 
 table td {
-  padding: 10px;
-  border-top: 1px solid #fff;
+  padding      : 10px;
+  border-top   : 1px solid #fff;
   border-bottom: 1px solid #e0e0e0;
-  border-left: 1px solid #e0e0e0;
-  background: #fafafa;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
-  background: -moz-linear-gradient(top, #fbfbfb, #fafafa);
+  border-left  : 1px solid #e0e0e0;
+  background   : #fafafa;
+  background   : -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+  background   : -moz-linear-gradient(top, #fbfbfb, #fafafa);
 }
 
 table tr.even td {
@@ -140,14 +139,14 @@ table tr:last-child td {
 
 table tr:last-child td:first-child {
   -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomleft    : 3px;
+  border-bottom-left-radius        : 3px;
 }
 
 table tr:last-child td:last-child {
   -webkit-border-bottom-right-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
-  border-bottom-right-radius: 3px;
+  -moz-border-radius-bottomright    : 3px;
+  border-bottom-right-radius        : 3px;
 }
 
 table tr:hover td {
@@ -155,40 +154,31 @@ table tr:hover td {
   background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
   background: -moz-linear-gradient(top, #f2f2f2, #f0f0f0);
 }
-
 /* tabs styles */
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 h1 {
-  font-size: 20px;
-  font-weight: 400;
+  font-size    : 20px;
+  font-weight  : 400;
   margin-bottom: 5px;
-  padding: 2px 0;
-  text-align: left;
+  padding      : 2px 0;
+  text-align   : left;
   border-bottom: 1px solid #ddd;
 }
 
 h2 {
-  font-size: 12px;
+  font-size  : 12px;
   font-weight: 400;
-  padding: 2px 0;
-  text-align: left;
+  padding    : 2px 0;
+  text-align : left;
 }
 
 p {
   line-height: 1.5;
-  margin: 0 0 20px;
+  margin     : 0 0 20px;
 }
 
 section {
-  display: none;
-  padding: 30px;
+  display   : none;
+  padding   : 30px;
   border-top: 1px solid #ddd;
 }
 
@@ -198,30 +188,30 @@ input {
 
 label {
   font-weight: 600;
-  display: inline-block;
-  margin: 0 0 -1px;
-  padding: 5px 25px;
-  text-align: center;
-  color: #bbb;
-  border: 1px solid transparent;
+  display    : inline-block;
+  margin     : 0 0 -1px;
+  padding    : 5px 25px;
+  text-align : center;
+  color      : #bbb;
+  border     : 1px solid transparent;
 }
 
 label:before {
-  font-family: fontawesome;
-  font-weight: normal;
+  font-family : fontawesome;
+  font-weight : normal;
   margin-right: 10px;
   padding-left: 10px;
 }
 
 label:hover {
   cursor: pointer;
-  color: #888;
+  color : #888;
 }
 
 input:checked+label {
-  color: #555;
-  border: 1px solid #ddd;
-  border-top: 2px solid #d96459;
+  color        : #555;
+  border       : 1px solid #ddd;
+  border-top   : 2px solid #d96459;
   border-bottom: 1px solid #fff;
 }
 
@@ -231,7 +221,6 @@ input:checked+label {
 #tab4:checked~#content4 {
   display: block;
 }
-
 @media (max-width: 780px) {
   .about-me-container {
     padding: 75px 0 0 50px;
@@ -245,7 +234,8 @@ input:checked+label {
     font-size: 10px;
   }
 
-  table thead th, table th {
+  table th,
+  table thead th {
     padding: 10px 20px;
   }
 
@@ -253,7 +243,6 @@ input:checked+label {
     font-size: 15px;
   }
 }
-
 @media (max-width: 570px) {
   .header-container {
     height: 290px;
@@ -291,7 +280,8 @@ input:checked+label {
     font-size: 8px;
   }
 
-  table thead th, table th {
-    padding: 5px 5px;
+  table th,
+  table thead th {
+    padding: 5px;
   }
 }
