@@ -1,5 +1,5 @@
 .timeline-container {
-  padding               : 50px 20px 0 35px;
+  padding               : 50px 20px 0;
   overflow              : auto;
   font-family           : "Effra", Helvetica, sans-serif;
   color                 : #768390;
@@ -297,6 +297,34 @@
 .fa-times-circle {
   color         : tomato;
   text-rendering: optimizeLegibility;
+}
+@media (max-width: 767px) {
+  .timeline-container {
+    padding: 50px 20px 0 35px;
+  }
+
+  .timeline-marker:before {
+    top: 20px;
+  }
+
+  .timeline-marker:after {
+    top: 55px;
+  }
+
+  .timeline-info {
+    font-size   : 10px;
+    padding-left: 0;
+    margin      : 0;
+  }
+
+  .timeline-content > h3,
+  h2 {
+    font-size: 22px;
+  }
+
+  .timeline-content > p {
+    font-size: 10px;
+  }
 }
 @media (min-width: 540px) {
   .carousel-image-portrait {
