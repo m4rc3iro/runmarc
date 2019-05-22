@@ -163,6 +163,10 @@
   cursor       : pointer;
 }
 
+.event:hover {
+  opacity: 0.7;
+}
+
 .color1 {
   background-color: #1976d2;
 }

@@ -7,30 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpcomingComponent implements OnInit {
 
-  // expand0: boolean;
-  // expand1: boolean;
-  // expand2: boolean;
+  events = [
+    { name: 'Jokertrail 50K',             country: 'Heidelberg, Germany' },
+    { name: 'Heidelberg Halbmarathon',    country: 'Heidelberg, Germany' },
+    { name: 'Istria Ultra Trail',         country: 'Istria, Croatia' },
+    { name: 'Cortina Trail',              country: 'Cortina d\'Ampezzo, Italy' },
+    { name: 'Andorra Ultra Trail',        country: 'Andorra, Spain' },
+    { name: 'Ben Navis Ultra',            country: 'Kinlochleven, Scotland' },
+    { name: 'Ultra Pirineu',              country: 'Catalonia, Spain' } ];
 
-  event: string;
-  country: string;
-  popoverTitle: string = 'Event Details';
+  selectedEvent: string;
+  selectedCountry: string;
 
-  constructor() {
-  }
+  constructor() {}
+  ngOnInit() {}
 
-  ngOnInit() {
-
-  }
-
-  toggleWithGreeting(tooltip, event: string, country: string) {
-    this.event = event;
-    this.country = country;
-
-    if (tooltip.isOpen()) {
-      tooltip.close();
-    } else {
-      tooltip.open();
-    }
+  toggleTooltip(tooltip, event) {
+    this.selectedEvent = this.events[event - 1].name;
+    this.selectedCountry = this.events[event - 1].country;
+    tooltip.toggle();
   }
 
 }

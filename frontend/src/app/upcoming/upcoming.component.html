@@ -1,6 +1,6 @@
 <div class="upcoming-container">
   <!-- Tooltip template  -->
-  <ng-template #tipContent><b>{{event}}</b> {{country}}</ng-template>
+  <ng-template #tipContent><b>{{selectedEvent}}</b><br>{{selectedCountry}}</ng-template>
   <!-- Calendar -->
   <div class="container calendar">
     <div class="row">
@@ -95,7 +95,8 @@
             <div class="calendar-day">20</div>
             <div class="calendar-day">21</div>
             <div class="calendar-day">22</div>
-            <div class="calendar-day event color2" [ngbTooltip]="tipContent" #t1="ngbTooltip" (mouseover)="toggleWithGreeting(t1, 'Jokertrail 50K', 'Heidelberg, Germany')">23</div>
+            <!-- register toggle display from mouseover & click event so tooltip supports browser and mobile  -->
+            <div class="calendar-day event color2" [ngbTooltip]="tipContent" #t1="ngbTooltip" (mouseover)="toggleTooltip(t1, 1)" (click)="toggleTooltip(t1, 1)">23</div>
             <div class="calendar-day">24</div>
             <div class="calendar-day">25</div>
             <div class="calendar-day">26</div>
@@ -178,12 +179,12 @@
             <div class="calendar-day">4</div>
             <div class="calendar-day">5</div>
             <div class="calendar-day">6</div>
-            <div class="calendar-day event color4" [ngbTooltip]="tipContent" #t2="ngbTooltip" (mouseover)="toggleWithGreeting(t2, 'Heidelberg Halb Marathon', 'Germany')">7</div>
+            <div class="calendar-day event color4" [ngbTooltip]="tipContent" #t2="ngbTooltip" (mouseover)="toggleTooltip(t2, 2)" (click)="toggleTooltip(t2, 2)">7</div>
             <div class="calendar-day">8</div>
             <div class="calendar-day">9</div>
             <div class="calendar-day">10</div>
             <div class="calendar-day">11</div>
-            <div class="calendar-day event color1" [ngbTooltip]="tipContent" #t3="ngbTooltip" (mouseover)="toggleWithGreeting(t3, 'Istria Ultra Trail', 'Istria, Croatia')">12</div>
+            <div class="calendar-day event color1" [ngbTooltip]="tipContent" #t3="ngbTooltip" (mouseover)="toggleTooltip(t3, 3)" (click)="toggleTooltip(t3, 3)">12</div>
             <div class="calendar-day">13</div>
             <div class="calendar-day">14</div>
             <div class="calendar-day">15</div>
@@ -309,7 +310,7 @@
             <div class="calendar-day">26</div>
             <div class="calendar-day">27</div>
             <div class="calendar-day">28</div>
-            <div class="calendar-day event color3" [ngbTooltip]="tipContent" #t4="ngbTooltip" (mouseover)="toggleWithGreeting(t4, 'Cortina Trail', 'Lavaredo, Italy')">29</div>
+            <div class="calendar-day event color3" [ngbTooltip]="tipContent" #t4="ngbTooltip" (mouseover)="toggleTooltip(t4, 4)" (click)="toggleTooltip(t4, 4)">29</div>
             <div class="calendar-day">30</div>
             <div class="calendar-day Spacer"></div>
           </div>
@@ -347,7 +348,7 @@
             <div class="calendar-day">17</div>
             <div class="calendar-day">18</div>
             <div class="calendar-day">19</div>
-            <div class="calendar-day event color8" [ngbTooltip]="tipContent" #t5="ngbTooltip" (mouseover)="toggleWithGreeting(t5, 'Andorra Ultra Trail', 'Andorra')">20</div>
+            <div class="calendar-day event color8" [ngbTooltip]="tipContent" #t5="ngbTooltip" (mouseover)="toggleTooltip(t5, 5)" (click)="toggleTooltip(t5, 5)">20</div>
             <div class="calendar-day">21</div>
             <div class="calendar-day">22</div>
             <div class="calendar-day">23</div>
@@ -456,8 +457,8 @@
             <div class="calendar-day">17</div>
             <div class="calendar-day">18</div>
             <div class="calendar-day">19</div>
-            <div class="calendar-day">20</div>
-            <div class="calendar-day event color6" [ngbTooltip]="tipContent" #t6="ngbTooltip" (mouseover)="toggleWithGreeting(t6, 'Ben Navis Ultra', 'Kinlochleven, Scotland')">21</div>
+            <div class="calendar-day event color6" [ngbTooltip]="tipContent" #t6="ngbTooltip" (mouseover)="toggleTooltip(t6, 6)" (click)="toggleTooltip(t6, 6)">20</div>
+            <div class="calendar-day">21</div>
             <div class="calendar-day">22</div>
             <div class="calendar-day">23</div>
             <div class="calendar-day">24</div>
@@ -488,7 +489,7 @@
             <div class="calendar-day">2</div>
             <div class="calendar-day">3</div>
             <div class="calendar-day">4</div>
-            <div class="calendar-day event color7" [ngbTooltip]="tipContent" #t7="ngbTooltip" (mouseover)="toggleWithGreeting(t7, 'Ultra Pirineu', 'Catalonia, Spain')">5</div>
+            <div class="calendar-day event color7" [ngbTooltip]="tipContent" #t7="ngbTooltip" (mouseover)="toggleTooltip(t7, 7)" (click)="toggleTooltip(t7, 7)">5</div>
             <div class="calendar-day">6</div>
             <div class="calendar-day">7</div>
             <div class="calendar-day">8</div>
