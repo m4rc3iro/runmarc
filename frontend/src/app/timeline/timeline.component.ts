@@ -157,7 +157,7 @@ export class TimelineComponent implements OnInit {
 
   ngOnInit() {}
 
-  closeGallery(event) {
+  closeGallery() {
     this.gallery = false;
   }
 
