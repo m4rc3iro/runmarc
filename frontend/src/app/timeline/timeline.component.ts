@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 import { Race } from './race';
@@ -50,7 +50,6 @@ export class TimelineComponent implements OnInit {
       this.BASE_URL + 'transylvania2018/transylvania-509.jpg',
     ])
   ];
-
   races2017 = [
     new Race('Trail Des Fantomes - 48 Km', new Date('2017-08-13'), "",[
       this.BASE_URL + 'phantomes2017/sportograf-105992029.jpg',
@@ -98,7 +97,6 @@ export class TimelineComponent implements OnInit {
       this.BASE_URL + 'transgrancanaria2017/Photo 25.02.17-39.jpg',
     ])
   ];
-
   races2016 = [
     new Race('Matterhorn Ultraks - 45K', new Date('2016-08-20'), "A magical track! With a concentration of wild space and high mountains, an ideal course requiring one to combine speed and technique, whithout fearing the climb to 3'100m to Gornergrat, offering a panoramic view of the ever present Matterhorn.",[
       this.BASE_URL + 'ultraks2016/ultraks-0610.jpg',
@@ -133,7 +131,6 @@ export class TimelineComponent implements OnInit {
       this.BASE_URL + 'usm2016/Screenshot 2019-02-11-54.jpg',
     ])
   ];
-
   races2015 = [
     new Race('The Hillary - 34K', new Date('2015-03-14'), "The Trail follows a variety of terrain and scenery – many claim a magical pull of the trail and keep coming back for more. Stunning views throughout the trail, rugged West coast beaches, magnificent native bush including the hundreds of year old native Kauri trees. Past large waterfalls and sand dunes, along cliff tops or through marshlands – there is something for everyone.",[
       // this.BASE_URL + 'hillary2015/',
@@ -152,13 +149,16 @@ export class TimelineComponent implements OnInit {
     ])
   ];
 
-  constructor(config: NgbCarouselConfig) {
+  constructor(config: NgbCarouselConfig, private renderer: Renderer) {
     config.interval = 0;
     config.wrap = true;
     config.keyboard = true;
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  closeGallery(event) {
+    this.gallery = false;
   }
 
   setImageClass(image: string) {

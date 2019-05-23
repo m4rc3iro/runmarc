@@ -77,14 +77,13 @@
 
               <ng-template #loggedOut>
                 <video controls muted>
-                  <source [src]="image" type="video/mp4">
-                </video>
+                  <source [src]="image" type="video/mp4"></video>
               </ng-template>
 
             </ng-template>
           </ngb-carousel>
 
-          <button class="close" (click)="gallery = !gallery;" [ngClass]="{'popup-close' : gallery}"><i class="far fa-times-circle"></i></button>
+          <button (click)="closeGallery()" (keydown.esc)="closeGallery()" class="close" [ngClass]="{'popup-close' : gallery}" autofocus><i class="far fa-times-circle"></i></button>
         </div>
       </div>
 
