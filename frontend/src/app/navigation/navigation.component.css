@@ -17,7 +17,7 @@
 }
 
 .logo-container {
-  margin: -7px 0 0 5px;
+  margin: -7px 0 0 12px;
   float : left;
 }
 
@@ -27,7 +27,7 @@
 
 ul {
   list-style-type: none;
-  margin-right   : 10px;
+  margin-right   : 0;
   padding        : 0;
 }
 

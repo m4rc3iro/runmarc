@@ -1,8 +1,8 @@
 <div class="comments-container">
 
-  <div class="slideout">
+  <div class="slideout" (click)="active = !active;" [ngClass]="{'show-dialog' : active}">
     <img src="../assets/feedback.png" alt="Feedback">
-    <div class="slideout_inner">
+    <div class="slideout_inner" (click)="active = false">
       <div [hidden]="submitted">
         <form #commentForm="ngForm">
           <!-- <h1>Leave your comment</h1>
@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <div class="right-container">
+  <div class="right-container" (click)="active = false">
     <section id="app" class="comments">
       <ng-template ngFor let-comment [ngForOf]="comments" let-i="index">
         <blockquote [ngClass]="colors[i % colors.length]">
