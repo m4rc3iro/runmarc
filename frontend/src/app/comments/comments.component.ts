@@ -23,6 +23,7 @@ export class CommentsComponent implements OnInit {
   comments: Comment[];
 
   // new comment form stuff
+  active: boolean;
   formModel: FormModel = {};
   author: string = '';
   emailAddress: string = '';
