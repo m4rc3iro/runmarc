@@ -25,7 +25,12 @@ export class UpcomingComponent implements OnInit {
   toggleTooltip(tooltip, event) {
     this.selectedEvent = this.events[event - 1].name;
     this.selectedCountry = this.events[event - 1].country;
-    tooltip.toggle();
+    // tooltip.toggle();
+    if (tooltip.isOpen()) {
+      tooltip.close();
+    } else {
+      tooltip.open();
+    }
   }
 
 }
