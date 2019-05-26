@@ -6,10 +6,17 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require('dotenv').config();
 const jsdom = require("jsdom");
+const nodemailer = require("nodemailer");
 const app = express();
-const Comment = require("./models/comment");
 
+const Comment = require("./models/comment");
 const { JSDOM } = jsdom;
+// nodemailer config
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: { user: `${process.env.EMAIL_ACCOUNT_USERNAME}`,
+          pass: `${process.env.EMAIL_ACCOUNT_PASSWORD}` } });
+// ITRA profile site details
 const profileFicheOptions = {
   hostname: 'itra.run',
   path: '/fiche.php',
@@ -20,7 +27,7 @@ const profileFicheOptions = {
   }
 };
 
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 var authenticationTokens = {};
 
 app.use(cors());
@@ -43,6 +50,7 @@ app.listen(port, function () {
  console.log(`Express server listening on port ${port}`);
 });
 
+
 // ******************************************************************//
 // ******************************  APIs  ****************************//
 // ******************************************************************//
@@ -61,10 +69,13 @@ app.post('/api/comments', checkAuthToken, function(req, res) {
       email = req.body.email,
       text = req.body.text;
 
-  if(date && author && email && text){
+  if(date && author && email && text) {
     var comment = Comment({ date: date, author: author, email: email, text: text, display: false });
     comment.save()
-           .then(data => res.status(200).send(data))
+           .then(data => {
+             res.status(200).send(data);
+             sendMail(date, author, email, text);
+           })
            .catch(err => res.status(500).send('Unexpected error occurred while storing feedback comment'));
   } else {
     res.status(500).send('Impossible to create a comment, missing required data');
@@ -212,7 +223,7 @@ function checkAuthCredentials(req, res, next) {
       return next();
     }
   }
-  
+
   res.status(401).send({ message: 'Authentication failed' }); // if there is no token or token is not valid
 };
 
@@ -356,4 +367,13 @@ function _getOtherStatisticalData(data) {
         kmCovered:              rows[5].textContent.trim(),
         eCovered:               rows[6].textContent.trim() };
   return results;
+}
+
+async function sendMail(date, author, email, text) {
+  let info = await transporter.sendMail({ // send mail with defined transport object
+    from: 'runmarc000@gmail.com',
+    to: 'm4rc.3iro@gmail.com',
+    subject: 'New feedback comment!',
+    html: `New comment from <b>${author}</b> - <b>${email}</b> - at <b>${date}</b><br><br>${text}`
+  });  // console.log('Message sent: %s', info.messageId);
 }
