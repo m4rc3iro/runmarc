@@ -13,7 +13,7 @@ const Comment = require("./models/comment");
 const { JSDOM } = jsdom;
 // nodemailer config
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: `${process.env.EMAIL_PROVIDER}`,
   auth: { user: `${process.env.EMAIL_ACCOUNT_USERNAME}`,
           pass: `${process.env.EMAIL_ACCOUNT_PASSWORD}` } });
 // ITRA profile site details
@@ -375,5 +375,5 @@ async function sendMail(date, author, email, text) {
     to: 'm4rc.3iro@gmail.com',
     subject: 'New feedback comment!',
     html: `New comment from <b>${author}</b> - <b>${email}</b> - at <b>${date}</b><br><br>${text}`
-  });  // console.log('Message sent: %s', info.messageId);
+  });   console.log('Message sent: %s', info.messageId);
 }
