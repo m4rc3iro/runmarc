@@ -133,9 +133,9 @@ export class TimelineComponent implements OnInit {
   ];
   races2015 = [
     new Race('The Hillary - 34K', new Date('2015-03-14'), "The Trail follows a variety of terrain and scenery – many claim a magical pull of the trail and keep coming back for more. Stunning views throughout the trail, rugged West coast beaches, magnificent native bush including the hundreds of year old native Kauri trees. Past large waterfalls and sand dunes, along cliff tops or through marshlands – there is something for everyone.",[
-      // this.BASE_URL + 'hillary2015/',
-      // this.BASE_URL + 'hillary2015/',
-      // this.BASE_URL + 'hillary2015/',
+      this.BASE_URL + 'hillary2015/IMG-20131123-WA0000.jpg',
+      this.BASE_URL + 'hillary2015/IMG-20131123-WA0001.jpg',
+      this.BASE_URL + 'hillary2015/IMG-20131123-WA0002.jpg',
     ]),
     new Race('Tarawera Ultramarathon - 100K', new Date('2015-02-07'), "The Tarawera 102k is one of the largest, most competitive and international trail running ultra races in the world. Part of the Ultra-Trail World Tour. It is the most international running race in New Zealand with more than 40 countries represented in this race alone and more than half of the field from outside of New Zealand. The 102k is everything that trail ultra running should be – fun, competitive, challenging, scenic, friendly and inspiring.",[
       this.BASE_URL + 'tarawera2015/tarawera-19.jpg',
