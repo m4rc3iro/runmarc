@@ -92,14 +92,12 @@ app.post('/api/captcha/verify', function(req, res) {
 
       callback = function(response) {
         let body = '';
-
         response.on('data', (chunk) => { body += chunk; });
         response.on('end', () => {
           let googleResponse = JSON.parse(body);
 
           if (googleResponse.success == true) {
-            // store captchaResponse for validation
-            authenticationTokens[captchaResponse] = new Date().getTime();
+            storeAndCleanupAuthTokens(captchaResponse); // store captchaResponse for future validation
             res.send(googleResponse);
           } else {
             res.status(500).send(googleResponse);
@@ -204,12 +202,10 @@ app.get('/api/admin/profile/statistics', checkAuthCredentials, function(req, res
 function checkAuthToken(req, res, next) {
   var token = req.headers['access-token']; // check header for the token
 
-  if (token && authenticationTokens[token]) {
-      // console.log('Access token found and authentication validated successfully');
+  if (token && authenticationTokens[token]) { // check for token on store
       delete authenticationTokens[token];
       return next();
   } else { // if there is no token
-    // console.log('No access token found on the request');
     res.status(401).send({ message: 'Authorization failed' });
   }
 };
@@ -376,4 +372,13 @@ async function sendMail(date, author, email, text) {
     subject: 'New feedback comment!',
     html: `New comment from <b>${author}</b> - <b>${email}</b> - at <b>${date}</b><br><br>${text}`
   });   console.log('Message sent: %s', info.messageId);
+}
+
+function storeAndCleanupAuthTokens(token) {
+  authenticationTokens[token] = new Date().getTime(); // store
+  for (var key in authenticationTokens) { // cleanup; prevents old orphan tokens to stay alive forever
+    if (authenticationTokens[key] < new Date().getTime() - 1800000) { // date older than 30 min
+      delete authenticationTokens[key];
+    }
+  }
 }
