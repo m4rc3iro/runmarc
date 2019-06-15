@@ -2,7 +2,7 @@
 FROM node:11.6.0-alpine AS builder
 COPY . ./app
 WORKDIR /app
-RUN npm i
+RUN npm install --production
 RUN $(npm bin)/ng build --aot --prod
 
 ##### Stage 2

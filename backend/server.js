@@ -367,7 +367,7 @@ function _getOtherStatisticalData(data) {
 
 async function sendMail(date, author, email, text) {
   let info = await transporter.sendMail({ // send mail with defined transport object
-    from: 'runmarc000@gmail.com',
+    from: 'runmarc@sendgrid.com',
     to: 'm4rc.3iro@gmail.com',
     subject: 'New feedback comment!',
     html: `New comment from <b>${author}</b> - <b>${email}</b> - at <b>${date}</b><br><br>${text}`
