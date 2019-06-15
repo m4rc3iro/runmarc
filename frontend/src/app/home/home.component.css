@@ -4,10 +4,11 @@
   background            : white;
   height                : 100%;
   display               : table;
+  padding               : 50px 0;
 }
 
 .news-container {
-  padding    : 0 10%;
+  padding    : 50px 20%;
   font-family: Montserrat, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size  : 12px;
   line-height: 1.65;
@@ -55,12 +56,6 @@
 .single-blog-content {
   text-align: left;
   font-size : 13px;
-  /* border-bottom: 0.5px solid #666; */
-}
-
-.welcome-text h1,
-.welcome-text p {
-  text-align: center;
 }
 
 .first {
@@ -68,10 +63,44 @@
 }
 
 .separator {
-  margin       : 50px 25%;
+  margin       : 15px 25%;
   border-bottom: 1px solid #ced6e0;
+}
+
+.photo-container {
+  width        : 100%;
+  height       : calc(100vh - 50%);
+  margin-bottom: 15px;
+}
+
+.double-column-left {
+  float        : left;
+  width        : 50%;
+  height       : 100%;
+  object-fit   : cover;
+  border-radius: 10px 0 0 10px;
+  box-shadow   : 0 0 1px 1px #d96459;
+  margin-bottom: 15px;
+}
+
+.double-column-right {
+  float        : right;
+  width        : 50%;
+  height       : 100%;
+  object-fit   : cover;
+  border-radius: 0 10px 10px 0;
+  box-shadow   : 0 0 1px 1px #d96459;
+  margin-bottom: 15px;
+}
+
+.end {
+  margin-bottom: 0;
 }
 
 h1 {
   font-size: 30px;
+}
+
+p {
+  text-align: justify;
 }
