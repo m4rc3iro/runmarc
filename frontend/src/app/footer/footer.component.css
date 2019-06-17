@@ -2,6 +2,7 @@
   position        : relative;
   background-color: #d96459;
   height          : 24px;
+  min-width       : 415px;
 }
 
 footer {
@@ -14,26 +15,26 @@ footer {
   padding: 0;
 }
 
-.placeholder {
+.trademark {
   font-family: "maven Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica;
   font-size  : 10px;
-  width      : calc(100vw - 115px);
   padding    : 5px 20px 0 0;
 }
 
 ul {
   list-style-type: none;
   text-align     : right;
+  padding-right  : 13px;
 }
 
 ul li {
-  float: left;
+  float: right;
 }
 
 li a {
   display        : block;
   color          : white;
-  padding        : 0 10px;
+  padding-left   : 15px;
   text-decoration: none;
 }
 
@@ -45,22 +46,27 @@ li a:hover {
     height: 21px;
   }
 
-  .placeholder {
+  .trademark {
     font-size : 9px;
     margin-top: -1px;
-    width     : calc(100vw - 100px);
+    padding   : 5px 0 0;
   }
 
   i {
     font-size: 13px;
   }
 
+  ul {
+    padding-right: 8px;
+  }
+
   ul li {
-    height: 20px;
+    height      : 20px;
+    padding-left: 8px;
   }
 
   li a {
-    margin-top   : -3px;
-    padding-right: 5px;
+    margin-top  : -3px;
+    padding-left: 10px;
   }
 }
