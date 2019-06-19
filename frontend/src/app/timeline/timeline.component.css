@@ -262,7 +262,7 @@
 }
 
 .carousel-image-landscape {
-  /* for optimal rendering of images in screen, do not make them bigger than 2200x1600 pixels */
+  /* for optimal rendering of images in screen, do not make them bigger than 1660x... pixels */
   width    : 80%;
   max-width: 1024px;
 }

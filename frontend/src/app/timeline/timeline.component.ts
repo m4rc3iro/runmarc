@@ -16,6 +16,19 @@ export class TimelineComponent implements OnInit {
   gallery: boolean;
   raceSelected: Race;
 
+  races2019 = [
+    new Race('100 Miles Of Istria - Blue 110k', new Date('2019-04-12'), "The second largest course offers you “the climb”, right in the beginning, from the sea level directly to the top of the Učka mountain at 1400 m above sea level, all that in just 8 km. Reaching the foot of the mountain peak, the 110 km trail merges with the100 miles trail until Buzet. From Buzet, the trail leads you towards Oprtalj. However, the trail is not as easy as it may seem. You will have to climb twice, cross the stream and you’ll see the ruins of the Pietrapelosa castle. While 110 km with +4.394 m probably doesn’t sound very demanding, it is nevertheless very challenging,  especially if you bear in mind that you will have to cross the mountain during the night.",[
+      this.BASE_URL + 'istria2019/IMG_20190411_214920.jpg',
+      this.BASE_URL + 'istria2019/57821669_1383567271791904_8269704888426954752_o.jpg',
+      this.BASE_URL + 'istria2019/58379212_1383722621776369_5245160129417969664_o.jpg',
+      this.BASE_URL + 'istria2019/57852315_1383808708434427_5484173152474890240_o.jpg',
+      this.BASE_URL + 'istria2019/58576173_1385716488243649_6564093587577896960_o.jpg',
+      this.BASE_URL + 'istria2019/58902317_1385716718243626_4961434186117283840_o.jpg',
+      this.BASE_URL + 'istria2019/istria-jingleBells.mov',
+      this.BASE_URL + 'istria2019/photo-finish.jpg',
+      this.BASE_URL + 'istria2019/IMG_20190414_093954.jpg',
+    ])
+  ];
   races2018 = [
     new Race('Utmb® - Ccc®', new Date('2018-08-31'), "A race deep into wilderness using for the most the international path 'Grande Randonnée du Tour du Mont-Blanc (GR TMB)'. Mountain race, with numerous passages in high altitude (>2500m), in difficult weather conditions (night, wind, cold, rain or snow), that needs a very good training, adapted equipment and a real capacity of personal autonomy.",[
       // 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4',
@@ -170,14 +183,11 @@ export class TimelineComponent implements OnInit {
   }
 
   isImage(image: string) {
-    if (image.includes('.mp4')  ||
-        image.includes('.mpg')  ||
-        image.includes('.mpeg') ||
-        image.includes('.m4v')) {
+    if (image.includes('.mp4')  || image.includes('.mpg')  ||
+        image.includes('.mpeg') || image.includes('.mov')  || image.includes('.m4v')) {
       return false;
-    } else {
-      return true;
     }
+    return true;
   }
 
 }

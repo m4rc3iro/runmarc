@@ -7,6 +7,21 @@
           <div class="timeline-info"></div>
           <div class="timeline-marker timeline-marker-first"></div>
           <div class="timeline-content">
+            <h2 class="timeline-title year">2019</h2>
+          </div>
+        </li>
+        <li *ngFor="let race of races2019" class="timeline-item">
+          <div class="timeline-info"><span>{{race.date | date:'d MMMM yyyy'}}</span></div>
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-title race-name" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h3>
+            <p>{{race.description}}</p>
+          </div>
+        </li>
+        <li class="timeline-item period">
+          <div class="timeline-info"></div>
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
             <h2 class="timeline-title year">2018</h2>
           </div>
         </li>
