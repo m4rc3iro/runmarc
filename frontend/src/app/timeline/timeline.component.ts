@@ -17,6 +17,27 @@ export class TimelineComponent implements OnInit {
   raceSelected: Race;
 
   races2019 = [
+    new Race('Andorra Ultra Trail Vallnord - Celestrail', new Date('2019-07-20'), "A beautiful loop of 50 miles, particular and wild (as all our races) but where there are some sections charmingly hilly to recover after three big passes in more of 2.500 m of height.",[
+      this.BASE_URL + 'andorraCelestrail2019/IMG_20190721_170038_845.jpg',
+      this.BASE_URL + 'andorraCelestrail2019/IMG_20190721_170036_228.jpg',
+      this.BASE_URL + 'andorraCelestrail2019/IMG_20190721_170028_776.jpg',
+      this.BASE_URL + 'andorraCelestrail2019/IMG_20190721_170010_978-p.jpg',
+      this.BASE_URL + 'andorraCelestrail2019/IMG_20190721_165306_455.jpg',
+      this.BASE_URL + 'andorraCelestrail2019/IMG_20190721_170025_328.jpg',
+      this.BASE_URL + 'andorraCelestrail2019/IMG_20190721_170015_388.jpg',
+    ]),
+    new Race('La Sportiva Lavaredo Ultra Trail 2019 - Cortina Trail', new Date('2019-06-28'), "Shorter version of the LUT 120, basically the last 50k. +2600 meters of elevation packed in a short ultra trail, all along the beautiful Cortina d'Ampezzo and surrounding national park.",[
+      // this.BASE_URL + 'cortina2019/IMG_20190627_162817.jpg',
+      this.BASE_URL + 'cortina2019/cortina-trail-2019-7504809-60395-172.jpg',
+      this.BASE_URL + 'cortina2019/cortina-trail-2019-7504809-60310-265.jpg',
+      this.BASE_URL + 'cortina2019/cortina-trail-2019-7504809-60310-266.jpg',
+      this.BASE_URL + 'cortina2019/cortina-trail-2019-7504809-60377-133.jpg',
+      this.BASE_URL + 'cortina2019/cortina-trail-2019-7504809-60377-134.jpg',
+      this.BASE_URL + 'cortina2019/cortina-trail-2019-7504809-60308-174.jpg',
+      this.BASE_URL + 'cortina2019/cortina-trail-2019-7504809-60380-263.jpg',
+      this.BASE_URL + 'cortina2019/cortina-trail-2019-7504809-60307-399.jpg',
+      this.BASE_URL + 'cortina2019/marc_lavaredo.mp4',
+    ]),
     new Race('100 Miles Of Istria - Blue 110k', new Date('2019-04-12'), "The second largest course offers you “the climb”, right in the beginning, from the sea level directly to the top of the Učka mountain at 1400 m above sea level, all that in just 8 km. Reaching the foot of the mountain peak, the 110 km trail merges with the100 miles trail until Buzet. From Buzet, the trail leads you towards Oprtalj. However, the trail is not as easy as it may seem. You will have to climb twice, cross the stream and you’ll see the ruins of the Pietrapelosa castle. While 110 km with +4.394 m probably doesn’t sound very demanding, it is nevertheless very challenging,  especially if you bear in mind that you will have to cross the mountain during the night.",[
       this.BASE_URL + 'istria2019/IMG_20190411_214920.jpg',
       this.BASE_URL + 'istria2019/57821669_1383567271791904_8269704888426954752_o.jpg',
