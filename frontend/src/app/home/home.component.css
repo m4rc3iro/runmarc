@@ -112,3 +112,8 @@ video {
   box-shadow   : 0 0 1px 1px #d96459;
   margin-bottom: 15px;
 }
+@media (max-width: 570px) {
+  .news-container {
+    padding: 50px 10%;
+  }
+}

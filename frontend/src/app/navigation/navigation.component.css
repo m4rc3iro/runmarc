@@ -1,5 +1,5 @@
 .navigation-bar {
-  position        : fixed;
+  position        : absolute;
   /* color blue: #1976d2; */
   /*  color red: #d96459 */
   background-color: #d96459;
