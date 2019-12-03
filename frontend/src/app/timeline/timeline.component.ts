@@ -17,6 +17,14 @@ export class TimelineComponent implements OnInit {
   raceSelected: Race;
 
   races2019 = [
+    new Race('Ben Nevis Ultra', new Date('2019-09-20'), "The Ben Nevis Ultra features remote Scottish glens, technical single track, airy ridges, & high mountain passes. Truly, this course is for the boldest all-round ultra-runners.",[
+      this.BASE_URL + '2019-benNevisUltra/benNevis1.jpeg',
+      this.BASE_URL + '2019-benNevisUltra/benNevis2.jpeg',
+      this.BASE_URL + '2019-benNevisUltra/benNevis3.jpeg',
+      this.BASE_URL + '2019-benNevisUltra/benNevis4.jpeg',
+      this.BASE_URL + '2019-benNevisUltra/benNevis5.jpeg',
+      this.BASE_URL + '2019-benNevisUltra/FINISH_BOARD_0015.JPG',
+    ]),
     new Race('Andorra Ultra Trail Vallnord - Celestrail', new Date('2019-07-20'), "A beautiful loop of 50 miles, particular and wild (as all our races) but where there are some sections charmingly hilly to recover after three big passes in more of 2.500 m of height.",[
       this.BASE_URL + 'andorraCelestrail2019/IMG_20190721_170038_845.jpg',
       this.BASE_URL + 'andorraCelestrail2019/IMG_20190721_170036_228.jpg',
