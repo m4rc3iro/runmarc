@@ -2,6 +2,7 @@
   font-family: "Open Sans", sans-serif;
   overflow   : auto;
   min-width  : 420px;
+  min-height : calc(100vh - 31px);
   color      : #555;
   background : #ffffff;
   font-size  : 14px;
@@ -232,6 +233,7 @@ input:checked+label {
 
   .profile-container {
     font-size: 12px;
+    /* height   : calc(100vh - 24px); */
   }
 
   .alert {
