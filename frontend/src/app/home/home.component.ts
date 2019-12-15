@@ -1,4 +1,13 @@
+import { environment } from '../../environments/environment';
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CommentService } from '../comment.service';
+import { HttpClient } from '@angular/common/http';
+import { Comment, CommentType } from '../comment';
+
+export interface FormModel {
+  captcha?: string;
+}
 
 @Component({
   selector: 'app-home',
@@ -7,9 +16,79 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  env = environment;
+
+  // services
+  commentService: CommentService;
+  httpClient: HttpClient;
+
+  closeResult: string;
+  // add comment stuff
+  submitted = false; // to show and hide the thanks for your comment message
+  iAmNotARobot = false;
+  authenticationToken: string;
+  active: boolean;
+  formModel: FormModel = {};
+  author: string = '';
+  emailAddress: string = '';
+  text: string = '';
+  blogPostId: number = 0;
+
+  blogPostComments: Map<number, Comment[]>;
+
+  constructor(private modalService: NgbModal, httpClient: HttpClient, commentService: CommentService) {
+    this.httpClient = httpClient;
+    this.commentService = commentService;
+  }
 
   ngOnInit() {
+    this.commentService.getComments(CommentType.BlogPost).subscribe((data: Comment[]) => {
+      this.blogPostComments = new Map();
+
+      for(let i = 0; i < data.length; i++) {
+        let blogPostId = data[i].blogPostId;
+        if(this.blogPostComments.has(blogPostId)){
+          let comments = this.blogPostComments.get(blogPostId);
+          comments.push(data[i]);
+        } else {
+          this.blogPostComments.set(blogPostId, [data[i]]);
+        }
+      }
+    });
+  }
+
+  openVerticallyCentered(content: string, blogPostId: number) {
+    this.blogPostId = blogPostId
+    this.modalService.open(content, { centered: true });
+    return false; // ret false to cancel 'leave your comment' link behavior
+  }
+
+  resolved(captchaResponse: string) {
+    // If the captcha has expired prior to submitting its value to the server, the component
+    // will reset the captcha, and trigger the resolved event with response === null
+    if (captchaResponse != null) {
+      // verification routed through backend to prevent browser CORS issues
+      let payload = JSON.parse(`{"captchaResponse": "${captchaResponse}"}`);
+      this.httpClient.post<any>(`${this.env.runmarc_api_base_url}/api/captcha/verify`, payload)
+        .subscribe(data => { // console.log('Google captcha verification response: ' + JSON.stringify(data));
+          if (data.success) {
+            this.iAmNotARobot = true;
+            this.authenticationToken = captchaResponse;
+          } else {
+            this.formModel.captcha = ''; // verification failed, reset captcha (you are a robot)
+          }
+      });
+    }
+  }
+
+  addComment() {
+    let comment = new Comment(this.author, this.emailAddress, this.text, CommentType.BlogPost, this.blogPostId);
+    comment.display = true;
+    
+    this.commentService.addComment(comment, this.authenticationToken).subscribe(_data => {
+      this.submitted = true;
+      localStorage.setItem('commentSubmitted', 'true');
+    });
   }
 
 }

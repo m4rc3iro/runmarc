@@ -37,7 +37,7 @@
 
 .meta {
   list-style: none;
-  margin    : 0 0 50px -40px;
+  margin    : 0 0 40px -40px;
   font-size : 0.923em;
   color     : #777;
   border    : none;
@@ -53,9 +53,18 @@
   padding-right: 5px;
 }
 
+.comment {
+  margin-bottom: -15px;
+}
+
+.comment p {
+  margin: 0;
+}
+
 .single-blog-content {
-  text-align: left;
-  font-size : 13px;
+  text-align : left;
+  font-size  : 13px;
+  padding-top: 10px;
 }
 
 .first {
@@ -97,12 +106,64 @@
   margin-bottom: 0;
 }
 
+.g-recaptcha {
+  z-index                 : 1;
+  float                   : left;
+  -webkit-transform       : scale(0.85);
+  transform               : scale(0.85);
+  -webkit-transform-origin: 0 0;
+  transform-origin        : 0 0;
+  margin-top              : 5px;
+}
+
+.modal-footer {
+  float  : right;
+  padding: 0 15px 15px 0;
+}
+
+.modal-footer,
+.modal-header {
+  border: none;
+}
+
+.close {}
+
+button {
+  font-size          : 14px;
+  font-weight        : bold;
+  line-height        : 14px;
+  height             : 30px;
+  /* padding            : 4px 20px 5px; */
+  cursor             : pointer;
+  -webkit-user-select: none;
+  -moz-user-select   : none;
+  -ms-user-select    : none;
+  user-select        : none;
+  text-decoration    : none;
+  /* color              : #fff;
+  border-color       : #1976d2;
+  border-radius      : 3px;
+  background         : #1976d2; */
+}
+
+.alert-danger {
+  height : 25px;
+  padding: 3px 15px;
+}
+
+.comment > .meta > .meta-date {
+  float        : right;
+  margin-right : 0;
+  padding-right: 0;
+}
+
 h1 {
   font-size: 30px;
 }
 
 p {
   text-align: justify;
+  font-size : 12px;
 }
 
 video {
@@ -111,6 +172,17 @@ video {
   border-radius: 10px;
   box-shadow   : 0 0 1px 1px #d96459;
   margin-bottom: 15px;
+}
+
+input {
+  height: 25px;
+}
+
+form,
+input,
+label,
+textarea {
+  font-size: 11.5px;
 }
 @media (max-width: 570px) {
   .news-container {

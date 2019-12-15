@@ -2,7 +2,7 @@ import { environment } from '../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { CommentService } from '../comment.service';
 import { HttpClient } from '@angular/common/http';
-import { Comment } from '../comment';
+import { Comment, CommentType } from '../comment';
 
 export interface FormModel {
   captcha?: string;
@@ -50,7 +50,7 @@ export class CommentsComponent implements OnInit {
       this.comments = <Comment[]>localComments.value;
       this.comments = this.shuffleComments(this.comments);
     } else {
-        this.commentService.getComments().subscribe((data: Comment[]) => {
+        this.commentService.getComments(CommentType.Feedback).subscribe((data: Comment[]) => {
         this.comments = this.shuffleComments(data);
         var object = { value: data,
                        timestamp: new Date().getTime() };
@@ -67,8 +67,8 @@ export class CommentsComponent implements OnInit {
   }
 
   addComment() {
-    let comment = new Comment(null, new Date(), this.author, this.emailAddress, this.text, null);
-    this.commentService.addComment(comment, this.authenticationToken).subscribe(data => {
+    let comment = new Comment(this.author, this.emailAddress, this.text, CommentType.Feedback);
+    this.commentService.addComment(comment, this.authenticationToken).subscribe(_data => {
       this.submitted = true;
       localStorage.setItem('commentSubmitted', 'true');
     });

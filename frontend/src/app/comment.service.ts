@@ -1,9 +1,10 @@
 import { environment } from '../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Comment } from './comment';
+import { Comment, CommentType } from './comment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,9 @@ export class CommentService {
     return this.httpClient.post<any>(`${this.env.runmarc_api_base_url}${this.comments_api_path}`, comment, httpOptions);
   }
 
-  public getComments(): Observable<Comment[]> {
-    return this.httpClient.get<Comment[]>(`${this.env.runmarc_api_base_url}${this.comments_api_path}`);
+  public getComments(type: CommentType): Observable<Comment[]> {
+    let params = new HttpParams().set('type', type.toString());
+    return this.httpClient.get<Comment[]>(`${this.env.runmarc_api_base_url}${this.comments_api_path}`, { params });
   }
 
 }

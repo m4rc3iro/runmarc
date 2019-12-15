@@ -5,7 +5,9 @@ const Comments = mongoose.Schema({
   author: String,
   email: String,
   text: String,
-  display: Boolean
+  type: Number,
+  display: Boolean,
+  blogPostId: Number
 })
 
 const Comment = mongoose.model('Comment', Comments);

@@ -1,3 +1,8 @@
+export enum CommentType {
+  Feedback,
+  BlogPost,
+}
+
 export class Comment {
 
   private id: string
@@ -5,15 +10,17 @@ export class Comment {
   public author: string
   public email: string
   public text: string
+  public type: CommentType
   public display: boolean
+  public blogPostId: number
 
-  constructor(id?: string, date?: Date, author?: string, email?: string, text?: string, display?: boolean) {
-    this.id = id
-    this.date = date
+  constructor(author: string, email: string, text: string, type: CommentType, blogPostId?: number) {
+    this.date = new Date
     this.author = author
     this.email = email
     this.text = text
-    this.display = display
+    this.type = type
+    this.display = false
+    this.blogPostId = blogPostId;
   }
-
 }
