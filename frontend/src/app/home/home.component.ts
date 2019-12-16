@@ -42,19 +42,18 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.commentService.getComments(CommentType.BlogPost).subscribe((data: Comment[]) => {
-      this.blogPostComments = new Map();
+    let localBlogPostComments = JSON.parse(localStorage.getItem('blogPostComments'));
 
-      for(let i = 0; i < data.length; i++) {
-        let blogPostId = data[i].blogPostId;
-        if(this.blogPostComments.has(blogPostId)){
-          let comments = this.blogPostComments.get(blogPostId);
-          comments.push(data[i]);
-        } else {
-          this.blogPostComments.set(blogPostId, [data[i]]);
-        }
-      }
-    });
+    if(localBlogPostComments && !this.expiredComments(localBlogPostComments.timestamp)){
+      this.blogPostComments = new Map(JSON.parse(localBlogPostComments.value));
+    } else {
+      this.commentService.getComments(CommentType.BlogPost).subscribe((data: Comment[]) => {
+        this.blogPostComments = this.parseComments(data); // parse comments data and organise it by blog post
+        var object = { value: JSON.stringify(Array.from(this.blogPostComments.entries())),
+                       timestamp: new Date().getTime() };
+          localStorage.setItem('blogPostComments', JSON.stringify(object));
+      });
+    }
   }
 
   openVerticallyCentered(content: string, blogPostId: number) {
@@ -84,11 +83,31 @@ export class HomeComponent implements OnInit {
   addComment() {
     let comment = new Comment(this.author, this.emailAddress, this.text, CommentType.BlogPost, this.blogPostId);
     comment.display = true;
-    
+
     this.commentService.addComment(comment, this.authenticationToken).subscribe(_data => {
       this.submitted = true;
       localStorage.setItem('commentSubmitted', 'true');
     });
+  }
+
+  expiredComments(commentsTimestamp: string) {
+    let timeDiff = new Date().getTime() - +commentsTimestamp;
+    return timeDiff > 90000 ? true : false; // comments expire after 15 minutes
+  }
+
+  parseComments(data: Comment[]): Map<number, Comment[]> {
+    let blogPostComments = new Map<number, Comment[]>();
+
+    for(let i = 0; i < data.length; i++) {
+      let blogPostId = data[i].blogPostId;
+      if(blogPostComments.has(blogPostId)){
+        let comments = blogPostComments.get(blogPostId);
+        comments.push(data[i]);
+      } else {
+        blogPostComments.set(blogPostId, [data[i]]);
+      }
+    }
+    return blogPostComments;
   }
 
 }
