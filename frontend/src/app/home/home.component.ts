@@ -57,7 +57,8 @@ export class HomeComponent implements OnInit {
   }
 
   openVerticallyCentered(content: string, blogPostId: number) {
-    this.blogPostId = blogPostId
+    this.blogPostId = blogPostId;
+    this.submitted = false;
     this.modalService.open(content, { centered: true });
     return false; // ret false to cancel 'leave your comment' link behavior
   }

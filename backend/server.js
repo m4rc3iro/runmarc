@@ -366,6 +366,7 @@ function _getOtherStatisticalData(data) {
         top10:                  rows[4].textContent.trim(),
         kmCovered:              rows[5].textContent.trim(),
         eCovered:               rows[6].textContent.trim() };
+        
   return results;
 }
 
@@ -382,7 +383,7 @@ async function sendMail(type, date, author, email, text) {
 function storeAndCleanupAuthTokens(token) {
   authenticationTokens[token] = new Date().getTime(); // store
   for (var key in authenticationTokens) { // cleanup; prevents old orphan tokens to stay alive forever
-    if (authenticationTokens[key] < new Date().getTime() - 1800000) { // date older than 30 min
+    if (authenticationTokens[key] < new Date().getTime() - 600000) { // date older than 10 min
       delete authenticationTokens[key];
     }
   }

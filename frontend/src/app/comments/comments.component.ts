@@ -49,21 +49,22 @@ export class CommentsComponent implements OnInit {
     if(localComments && !this.expiredComments(localComments.timestamp)){
       this.comments = <Comment[]>localComments.value;
       this.comments = this.shuffleComments(this.comments);
+      // make sure only one comment can be sent per user session
+      this.submitted = JSON.parse(localStorage.getItem('commentSubmitted'));
     } else {
         this.commentService.getComments(CommentType.Feedback).subscribe((data: Comment[]) => {
         this.comments = this.shuffleComments(data);
         var object = { value: data,
                        timestamp: new Date().getTime() };
         localStorage.setItem('comments', JSON.stringify(object));
+        this.submitted = false; // reset if comments cache is expired
       });
     }
-    // make sure only one comment can be sent per user session
-    this.submitted = JSON.parse(localStorage.getItem('commentSubmitted'));
   }
 
   expiredComments(commentsTimestamp: string) {
     let timeDiff = new Date().getTime() - +commentsTimestamp;
-    return timeDiff > 3600000 ? true : false; // comments expire after an hour
+    return timeDiff > 900000 ? true : false; // comments expire after 15 minutes
   }
 
   addComment() {
