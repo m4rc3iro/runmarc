@@ -30,10 +30,10 @@ app.listen(port, function () {
 // ******************************************************************//
 
 // ------------------------  Comments APIs  -------------------------//
-const commentRoutes = require('./routes/commentAPI.js');
+const commentRoutes = require('./routes/comment-api.js');
 app.use('/api/comments', commentRoutes);
 app.use('/api/captcha', commentRoutes);
 
 // ------------------------  ITRA Profile APIs  -------------------------//
-const profileRoutes = require('./routes/profileAPI.js');
+const profileRoutes = require('./routes/profile-api.js');
 app.use('/api/admin/profile', profileRoutes);
