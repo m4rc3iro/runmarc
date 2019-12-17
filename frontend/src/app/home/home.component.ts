@@ -93,7 +93,7 @@ export class HomeComponent implements OnInit {
 
   expiredComments(commentsTimestamp: string) {
     let timeDiff = new Date().getTime() - +commentsTimestamp;
-    return timeDiff > 90000 ? true : false; // comments expire after 15 minutes
+    return timeDiff > 900000 ? true : false; // comments expire after 15 minutes
   }
 
   parseComments(data: Comment[]): Map<number, Comment[]> {
