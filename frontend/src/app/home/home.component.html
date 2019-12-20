@@ -2,7 +2,7 @@
 <div class="home-container">
   <article class="news-container">
     <header class="single-blog-header">
-      <h1 class="single-post-title entry-title" itemprop="headline"><a name="loremIpsum" id="5">OUTRO</a></h1>
+      <h1 class="single-post-title entry-title" itemprop="headline"><a name="outro" id="5">OUTRO</a></h1>
     </header>
     <ul class="meta">
       <li class="meta-date"><span class="fas fa-clock" aria-hidden="true"></span><time class="updated" datetime="15.12.2019" itemprop="datePublished" pubdate="">15 December 2019</time></li>
@@ -26,6 +26,9 @@
       <li class="meta-comments"><span class="fas fa-comments" aria-hidden="true"></span>
         {{(blogPostComments && blogPostComments.get(5) && blogPostComments.get(5).length) || 0}} Comments</li>
       <li><a href="#" (click)="openVerticallyCentered(content, 5)">Post a comment</a></li>
+      <li class="share-buttons"><a class="twitter-share-button" href="{{getShareURL('twitter', 5)}}" target="_blank"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
+      <li class="share-buttons"><a href="{{getShareURL('facebook', 5)}}" target="_blank"><span class="fab fa-facebook-f" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons">Share</li>
     </ul>
     <div class="single-blog-comments">
       <div class="comment" *ngFor="let comment of blogPostComments && blogPostComments.get(5)">
@@ -53,7 +56,7 @@
       <li class="meta-date"><span class="fas fa-clock" aria-hidden="true"></span><time class="updated" datetime="30.11.2019" itemprop="datePublished" pubdate="">30 November 2019</time></li>
       <li class="meta-author"><span class="fa fa-user" aria-hidden="true"></span><span class="vcard author" itemprop="name"><span class="fn">Marc Eiro</span></span></li>
     </ul>
-    <div class="single-blog-content entry " itemprop="text">
+    <div class="single-blog-content entry" itemprop="text">
       <p>With the trail running season more than over, I felt I should write a few lines about my last experiences on the trail. So what to start with? Well, I thought I would continue where where I left if off in my last post.</p>
       <p>So yes, I ended up going up to Scotland, to the Highlands, to run the Ben Nevis Ultra. Heading there turned out to be a bit of a mission, mainly due to my tight schedule as I planned to get there the day before the race started. I drove all
         the way directly to Kinlochleven and arrived there late in the afternoon. The sun was falling and the last light of the day was shining over the town. There was a big Salomon tent next to the sports hall and some of the organisers were still
@@ -92,6 +95,9 @@
       <li class="meta-comments"><span class="fas fa-comments" aria-hidden="true"></span>
         {{(blogPostComments && blogPostComments.get(4) && blogPostComments.get(4).length) || 0}} Comments</li>
       <li><a href="#" (click)="openVerticallyCentered(content, 4)">Post a comment</a></li>
+      <li class="share-buttons"><a class="twitter-share-button" href="{{getShareURL('twitter', 4)}}" target="_blank"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
+      <li class="share-buttons"><a href="{{getShareURL('facebook', 4)}}" target="_blank"><span class="fab fa-facebook-f" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons">Share</li>
     </ul>
     <div class="single-blog-comments">
       <div class="comment" *ngFor="let comment of blogPostComments && blogPostComments.get(4)">
@@ -132,6 +138,9 @@
       <li class="meta-comments"><span class="fas fa-comments" aria-hidden="true"></span>
         {{(blogPostComments && blogPostComments.get(3) && blogPostComments.get(3).length) || 0}} Comments</li>
       <li><a href="#" (click)="openVerticallyCentered(content, 3)">Post a comment</a></li>
+      <li class="share-buttons"><a class="twitter-share-button" href="{{getShareURL('twitter', 3)}}" target="_blank"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
+      <li class="share-buttons"><a href="{{getShareURL('facebook', 3)}}" target="_blank"><span class="fab fa-facebook-f" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons">Share</li>
     </ul>
     <div class="single-blog-comments">
       <div class="comment" *ngFor="let comment of blogPostComments && blogPostComments.get(3)">
@@ -170,6 +179,9 @@
       <li class="meta-comments"><span class="fas fa-comments" aria-hidden="true"></span>
         {{(blogPostComments && blogPostComments.get(2) && blogPostComments.get(2).length) || 0}} Comments</li>
       <li><a href="#" (click)="openVerticallyCentered(content, 2)">Post a comment</a></li>
+      <li class="share-buttons"><a class="twitter-share-button" href="{{getShareURL('twitter', 2)}}" target="_blank"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
+      <li class="share-buttons"><a href="{{getShareURL('facebook', 2)}}" target="_blank"><span class="fab fa-facebook-f" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons">Share</li>
     </ul>
     <div class="single-blog-comments">
       <div class="comment" *ngFor="let comment of blogPostComments && blogPostComments.get(2)">
@@ -238,6 +250,9 @@
       <li class="meta-comments"><span class="fas fa-comments" aria-hidden="true"></span>
         {{(blogPostComments && blogPostComments.get(1) && blogPostComments.get(1).length) || 0}} Comments</li>
       <li><a href="#" (click)="openVerticallyCentered(content, 1)">Post a comment</a></li>
+      <li class="share-buttons"><a class="twitter-share-button" href="{{getShareURL('twitter', 1)}}" target="_blank"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
+      <li class="share-buttons"><a href="{{getShareURL('facebook', 1)}}" target="_blank"><span class="fab fa-facebook-f" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons">Share</li>
     </ul>
     <div class="single-blog-comments">
       <div class="comment" *ngFor="let comment of blogPostComments && blogPostComments.get(1)">
@@ -272,6 +287,9 @@
       <li class="meta-comments"><span class="fas fa-comments" aria-hidden="true"></span>
         {{(blogPostComments && blogPostComments.get(0) && blogPostComments.get(0).length) || 0}} Comments</li>
       <li><a href="#" (click)="openVerticallyCentered(content, 0)">Post a comment</a></li>
+      <li class="share-buttons"><a class="twitter-share-button" href="{{getShareURL('twitter', 0)}}" target="_blank"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
+      <li class="share-buttons"><a href="{{getShareURL('facebook', 0)}}" target="_blank"><span class="fab fa-facebook-f" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons">Share</li>
     </ul>
     <div class="single-blog-comments">
       <div class="comment" *ngFor="let comment of blogPostComments && blogPostComments.get(0)">
@@ -345,7 +363,7 @@
 
 <!-- <article class="news-container">
     <header class="single-blog-header">
-      <h1 class="single-post-title entry-title" itemprop="headline"><a name="loremIpsum" id="<blogPostID>">OUTRO</a></h1>
+      <h1 class="single-post-title entry-title" itemprop="headline"><a name="<-blogPostName->" id="<-blogPostID->">OUTRO</a></h1>
     </header>
     <ul class="meta">
       <li class="meta-date"><span class="fas fa-clock" aria-hidden="true"></span><time class="updated" datetime="1.1.2020" itemprop="datePublished" pubdate="">1 January 2020</time></li>
@@ -357,11 +375,14 @@
     <br />
     <ul class="meta">
       <li class="meta-comments"><span class="fas fa-comments" aria-hidden="true"></span>
-        {{(blogPostComments && blogPostComments.get(<blogPostID>) && blogPostComments.get(<blogPostID>).length) || 0}} Comments</li>
-      <li><a href="#" (click)="openVerticallyCentered(content, <blogPostID>)">Post a comment</a></li>
+        {{(blogPostComments && blogPostComments.get(<-blogPostID->) && blogPostComments.get(<-blogPostID->).length) || 0}} Comments</li>
+      <li><a href="#" (click)="openVerticallyCentered(content, <-blogPostID->)">Post a comment</a></li>
+      <li class="share-buttons"><a class="twitter-share-button" href="{{getShareURL('twitter', <-blogPostID->)}}" target="_blank"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
+      <li class="share-buttons"><a href="{{getShareURL('facebook', <-blogPostID->)}}" target="_blank"><span class="fab fa-facebook-f" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons">Share</li>
     </ul>
     <div class="single-blog-comments">
-      <div class="comment" *ngFor="let comment of blogPostComments && blogPostComments.get(<blogPostID>)">
+      <div class="comment" *ngFor="let comment of blogPostComments && blogPostComments.get(<-blogPostID->)">
         <ul class="meta">
           <li class="meta-author"><span class="fa fa-user-circle" aria-hidden="true"></span><span class="vcard author" itemprop="name"><span class="fn"><strong>{{comment.author}}</strong> said...</span></span></li>
           <li class="meta-date"><span class="fas fa-clock" aria-hidden="true"></span><time class="updated" itemprop="datePublished" pubdate="">{{comment.date | date:'d MMMM yyyy, HH:mm'}}</time></li>

@@ -16,6 +16,10 @@ export interface FormModel {
 })
 export class HomeComponent implements OnInit {
 
+  DEFAULT_RUNMARC_HOME_URL: string = 'http://www.runmarc.io/home%23';
+  DEFAULT_TWITTER_SHARE_BASE_URL: string = 'https://twitter.com/intent/tweet?text=';
+  DEFAULT_FACEBOOK_SHARE_BASE_URL: string = 'http://facebook.com/sharer.php?u=';
+
   env = environment;
 
   // services
@@ -34,6 +38,7 @@ export class HomeComponent implements OnInit {
   text: string = '';
   blogPostId: number = 0;
 
+  blogPostNames: string[] = [ 'welcomeToRunmarc', 'istriaStories', 'aFriendsVisit', 'skylineTimes', 'raceUpdates_benNevis2019', 'outro' ];
   blogPostComments: Map<number, Comment[]>;
 
   constructor(private modalService: NgbModal, httpClient: HttpClient, commentService: CommentService) {
@@ -109,6 +114,17 @@ export class HomeComponent implements OnInit {
       }
     }
     return blogPostComments;
+  }
+
+  getShareURL(socialNetwork: string, blogPostId: number) {
+    switch(socialNetwork) {
+      case 'twitter': {
+        return this.DEFAULT_TWITTER_SHARE_BASE_URL + this.DEFAULT_RUNMARC_HOME_URL + this.blogPostNames[blogPostId];
+      }
+      case 'facebook': {
+        return this.DEFAULT_FACEBOOK_SHARE_BASE_URL + this.DEFAULT_RUNMARC_HOME_URL + this.blogPostNames[blogPostId];
+      }
+    }
   }
 
 }

@@ -43,6 +43,10 @@
   border    : none;
 }
 
+.meta > .share-buttons{
+  float: right;
+}
+
 .meta li {
   margin       : 0;
   float        : left;
