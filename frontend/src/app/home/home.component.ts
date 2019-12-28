@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommentService } from '../comment.service';
 import { HttpClient } from '@angular/common/http';
 import { Comment, CommentType } from '../comment';
+import { Title, Meta } from '@angular/platform-browser';
 
 export interface FormModel {
   captcha?: string;
@@ -21,10 +22,9 @@ export class HomeComponent implements OnInit {
   DEFAULT_FACEBOOK_SHARE_BASE_URL: string = 'http://facebook.com/sharer.php?u=';
 
   env = environment;
+  title = 'runmarc: Home';
 
   // services
-  commentService: CommentService;
-  httpClient: HttpClient;
 
   closeResult: string;
   // add comment stuff
@@ -41,12 +41,19 @@ export class HomeComponent implements OnInit {
   blogPostNames: string[] = [ 'welcomeToRunmarc', 'istriaStories', 'aFriendsVisit', 'skylineTimes', 'raceUpdates_benNevis2019', 'outro' ];
   blogPostComments: Map<number, Comment[]>;
 
-  constructor(private modalService: NgbModal, httpClient: HttpClient, commentService: CommentService) {
-    this.httpClient = httpClient;
-    this.commentService = commentService;
-  }
+  constructor(private modalService: NgbModal, private httpClient: HttpClient, private commentService: CommentService,
+              private titleService: Title,    private metaService: Meta) {}
 
   ngOnInit() {
+    // title & meta tags
+    this.titleService.setTitle(this.title);
+    this.metaService.addTags([
+      {name: 'keywords', content: 'Runmarc, Home, Blog, Posts'},
+      {name: 'description', content: 'Running blog posts, histories and more'},
+      {name: 'robots', content: 'home, blog, posts'},
+    ]);
+
+    // comments init 
     let localBlogPostComments = JSON.parse(localStorage.getItem('blogPostComments'));
 
     if(localBlogPostComments && !this.expiredComments(localBlogPostComments.timestamp)){
@@ -114,6 +121,14 @@ export class HomeComponent implements OnInit {
       }
     }
     return blogPostComments;
+  }
+
+  getPostName(blogPostId: number) {
+      return this.blogPostNames[blogPostId];
+  }
+
+  getPostURL(blogPostId: number) {
+      return this.DEFAULT_RUNMARC_HOME_URL + this.blogPostNames[blogPostId];
   }
 
   getShareURL(socialNetwork: string, blogPostId: number) {

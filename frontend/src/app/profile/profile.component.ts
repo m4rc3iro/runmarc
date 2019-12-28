@@ -1,7 +1,7 @@
-// Import modules and services
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from './profile.service';
-// class imports
+import { Title, Meta } from '@angular/platform-browser';
+
 import { Profile } from './profile';
 
 @Component({
@@ -13,12 +13,20 @@ export class ProfileComponent implements OnInit {
 
   MY_BIRTH_DATE: string = '1984-06-21';
 
+  title = 'runmarc: Profile';
+
   age: number;
   profile: Profile;
 
-  constructor(private profileService: ProfileService) {}
+  constructor(private profileService: ProfileService, private titleService: Title, private metaService: Meta) {}
 
   ngOnInit() {
+    this.titleService.setTitle(this.title);
+    this.metaService.addTags([
+      {name: 'keywords', content: 'Runmarc, Profile, ITRA'},
+      {name: 'description', content: 'ITRA Profile with Summary of Most Distinctive Events and Results Achieved Until Now'},
+      {name: 'robots', content: 'itra, profile, races, events, qualifications, times'} ]);
+
     this.age = this.calculateAge();
     // Enable to retrieve data from ITRA website using API
     // this.profile = this.profileService.getProfile();

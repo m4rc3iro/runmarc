@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-upcoming',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upcoming.component.css']
 })
 export class UpcomingComponent implements OnInit {
+
+  title = 'runmarc: Calendar';
 
   events = [
     { name: 'Jokertrail 50K',             country: 'Heidelberg, Germany' },
@@ -19,8 +22,15 @@ export class UpcomingComponent implements OnInit {
   selectedEvent: string;
   selectedCountry: string;
 
-  constructor() {}
-  ngOnInit() {}
+  constructor(private titleService: Title, private metaService: Meta) {}
+
+  ngOnInit() {
+    this.titleService.setTitle(this.title);
+    this.metaService.addTags([
+      {name: 'keywords', content: 'Runmarc, Calendar, Events, Races'},
+      {name: 'description', content: 'Race Calendar with some of the Scheduled Yearly Participations'},
+      {name: 'robots', content: 'calendar, races, events'} ]);
+  }
 
   toggleTooltip(tooltip, event) {
     this.selectedEvent = this.events[event - 1].name;
