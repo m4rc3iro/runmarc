@@ -1,4 +1,3 @@
-import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { CommonModule } from '@angular/common';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { BrowserModule } from '@angular/platform-browser';
@@ -33,7 +32,6 @@ const appRoutes: Routes = [
 @NgModule({
   imports:[
     CommonModule,
-    NgtUniversalModule,
     TransferHttpCacheModule,
     HttpClientModule,
     HttpClientModule,

@@ -25,7 +25,6 @@
     "@angular/router": "^7.2.15",
     "@ng-bootstrap/ng-bootstrap": "^4.2.2",
     "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
-    "@ng-toolkit/universal": "^1.1.51",
     "@nguniversal/common": "~6.0.0",
     "@nguniversal/express-engine": "~6.0.0",
     "@nguniversal/module-map-ngfactory-loader": "~6.0.0",
