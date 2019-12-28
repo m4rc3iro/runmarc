@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from './profile.service';
-import { Title, Meta } from '@angular/platform-browser';
+import { SeoService } from '../seo.service';
 
 import { Profile } from './profile';
 
@@ -13,19 +13,18 @@ export class ProfileComponent implements OnInit {
 
   MY_BIRTH_DATE: string = '1984-06-21';
 
-  title = 'runmarc: Profile';
-
   age: number;
   profile: Profile;
 
-  constructor(private profileService: ProfileService, private titleService: Title, private metaService: Meta) {}
+  constructor(private profileService: ProfileService, private seoService: SeoService) {}
 
   ngOnInit() {
-    this.titleService.setTitle(this.title);
-    this.metaService.addTags([
-      {name: 'keywords', content: 'Runmarc, Profile, ITRA'},
-      {name: 'description', content: 'ITRA Profile with Summary of Most Distinctive Events and Results Achieved Until Now'},
-      {name: 'robots', content: 'itra, profile, races, events, qualifications, times'} ]);
+    this.seoService.generateTags({
+      title: 'runmarc: Profile',
+      description: 'ITRA Profile with Summary of Most Distinctive Events and Results Achieved Until Now',
+      image: '../../assets/logo-solo-red.png',
+      keywords: 'Runmarc, Profile, ITRA',
+      robots: 'itra, profile, races, events, qualifications, times' });
 
     this.age = this.calculateAge();
     // Enable to retrieve data from ITRA website using API

@@ -1,6 +1,6 @@
 import { Component, OnInit, Renderer } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Title, Meta } from '@angular/platform-browser';
+import { SeoService } from '../seo.service';
 
 import { Race } from './race';
 
@@ -13,8 +13,6 @@ import { Race } from './race';
 export class TimelineComponent implements OnInit {
 
   BASE_URL: string = 'https://s3.eu-west-2.amazonaws.com/runmarc.io/timeline/';
-
-  title = 'runmarc: Timeline';
 
   gallery: boolean;
   raceSelected: Race;
@@ -194,18 +192,20 @@ export class TimelineComponent implements OnInit {
     ])
   ];
 
-  constructor(config: NgbCarouselConfig, private renderer: Renderer, private titleService: Title, private metaService: Meta) {
+  constructor(config: NgbCarouselConfig, private renderer: Renderer, private seoService: SeoService) {
     config.interval = 0;
     config.wrap = true;
     config.keyboard = true;
   }
 
   ngOnInit() {
-    this.titleService.setTitle(this.title);
-    this.metaService.addTags([
-      {name: 'keywords', content: 'Runmarc, Timeline, Races, Photos'},
-      {name: 'description', content: 'Timeline with Most Distinctive Race Participations and Photo Galleries'},
-      {name: 'robots', content: 'timeline, races, photos, events, gallery, events'} ]);
+    // seo
+    this.seoService.generateTags({
+      title: 'runmarc: Timeline',
+      description: 'Timeline with Most Distinctive Race Participations and Photo Galleries',
+      image: '../../assets/logo-solo-red.png',
+      keywords: 'calendar, races, events',
+      robots: 'timeline, races, photos, events, gallery, events' });
   }
 
   closeGallery() {

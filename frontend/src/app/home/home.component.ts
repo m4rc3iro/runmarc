@@ -4,7 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommentService } from '../comment.service';
 import { HttpClient } from '@angular/common/http';
 import { Comment, CommentType } from '../comment';
-import { Title, Meta } from '@angular/platform-browser';
+import { SeoService } from '../seo.service';
 
 export interface FormModel {
   captcha?: string;
@@ -22,9 +22,6 @@ export class HomeComponent implements OnInit {
   DEFAULT_FACEBOOK_SHARE_BASE_URL: string = 'http://facebook.com/sharer.php?u=';
 
   env = environment;
-  title = 'runmarc: Home';
-
-  // services
 
   closeResult: string;
   // add comment stuff
@@ -42,18 +39,19 @@ export class HomeComponent implements OnInit {
   blogPostComments: Map<number, Comment[]>;
 
   constructor(private modalService: NgbModal, private httpClient: HttpClient, private commentService: CommentService,
-              private titleService: Title,    private metaService: Meta) {}
+              private seoService: SeoService) {}
 
   ngOnInit() {
-    // title & meta tags
-    this.titleService.setTitle(this.title);
-    this.metaService.addTags([
-      {name: 'keywords', content: 'Runmarc, Home, Blog, Posts'},
-      {name: 'description', content: 'Running blog posts, histories and more'},
-      {name: 'robots', content: 'home, blog, posts'},
-    ]);
+    // seo
+    this.seoService.generateTags({
+      title: 'runmarc: Home',
+      description: 'Running blog posts, histories and more',
+      image: '../../assets/logo-solo-red.png',
+      keywords: 'Runmarc, Home, Blog, Posts',
+      robots: 'home, blog, posts'
+    });
 
-    // comments init 
+    // comments init
     let localBlogPostComments = JSON.parse(localStorage.getItem('blogPostComments'));
 
     if(localBlogPostComments && !this.expiredComments(localBlogPostComments.timestamp)){

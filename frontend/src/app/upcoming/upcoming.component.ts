@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { SeoService } from '../seo.service';
 
 @Component({
   selector: 'app-upcoming',
@@ -7,8 +7,6 @@ import { Title, Meta } from '@angular/platform-browser';
   styleUrls: ['./upcoming.component.css']
 })
 export class UpcomingComponent implements OnInit {
-
-  title = 'runmarc: Calendar';
 
   events = [
     { name: 'Jokertrail 50K',             country: 'Heidelberg, Germany' },
@@ -22,14 +20,15 @@ export class UpcomingComponent implements OnInit {
   selectedEvent: string;
   selectedCountry: string;
 
-  constructor(private titleService: Title, private metaService: Meta) {}
+  constructor(private seoService: SeoService) {}
 
   ngOnInit() {
-    this.titleService.setTitle(this.title);
-    this.metaService.addTags([
-      {name: 'keywords', content: 'Runmarc, Calendar, Events, Races'},
-      {name: 'description', content: 'Race Calendar with some of the Scheduled Yearly Participations'},
-      {name: 'robots', content: 'calendar, races, events'} ]);
+    this.seoService.generateTags({
+      title: 'runmarc: Calendar',
+      description: 'Race Calendar with some of the Scheduled Yearly Participations',
+      image: '../../assets/logo-solo-red.png',
+      keywords: 'Runmarc, Calendar, Events, Races',
+      robots: 'calendar, races, events' });
   }
 
   toggleTooltip(tooltip, event) {

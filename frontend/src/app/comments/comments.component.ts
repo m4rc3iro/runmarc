@@ -2,7 +2,7 @@ import { environment } from '../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { CommentService } from '../comment.service';
 import { HttpClient } from '@angular/common/http';
-import { Title, Meta } from '@angular/platform-browser';
+import { SeoService } from '../seo.service';
 import { Comment, CommentType } from '../comment';
 
 export interface FormModel {
@@ -16,7 +16,6 @@ export interface FormModel {
 })
 export class CommentsComponent implements OnInit {
 
-  title = 'runmarc: Feedback';
   env = environment;
 
   commentService: CommentService;
@@ -40,17 +39,18 @@ export class CommentsComponent implements OnInit {
     'aqua', 'bluejeans', 'lavander', 'pinkrose', 'light', 'gray'
   ];
 
-  constructor (private titleService: Title, private metaService: Meta, httpClient: HttpClient, commentService: CommentService) {
+  constructor (private seoService: SeoService, httpClient: HttpClient, commentService: CommentService) {
     this.httpClient = httpClient;
     this.commentService = commentService;
   }
 
   ngOnInit() {
-    this.titleService.setTitle(this.title);
-    this.metaService.addTags([
-      {name: 'keywords', content: 'Runmarc, Timeline, Races, Photos'},
-      {name: 'description', content: 'Timeline with Most Distinctive Race Participations and Photo Galleries'},
-      {name: 'robots', content: 'timeline, races, photos, events, gallery, events'} ]);
+    this.seoService.generateTags({
+      title: 'runmarc: Feedback',
+      description: 'Feedback comments from website visitors',
+      image: '../../assets/logo-solo-red.png',
+      keywords: 'Runmarc, Feedback, Comments, Visitors',
+      robots: 'feedback, comments, users, visitors' });
 
     let localComments = JSON.parse(localStorage.getItem('comments'));
 
