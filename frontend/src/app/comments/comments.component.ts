@@ -52,7 +52,7 @@ export class CommentsComponent implements OnInit {
       keywords: 'Runmarc, Feedback, Comments, Visitors',
       robots: 'feedback, comments, users, visitors' });
 
-    let localComments = JSON.parse(localStorage.getItem('comments'));
+    let localComments = localStorage.getItem('comments') ? JSON.parse(localStorage.getItem('comments')) : undefined;
 
     if(localComments && !this.expiredComments(localComments.timestamp)){
       this.comments = <Comment[]>localComments.value;

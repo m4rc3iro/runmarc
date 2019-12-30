@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
     });
 
     // comments init
-    let localBlogPostComments = JSON.parse(localStorage.getItem('blogPostComments'));
+    let localBlogPostComments = localStorage.getItem('blogPostComments') ? JSON.parse(localStorage.getItem('blogPostComments')) : undefined;
 
     if(localBlogPostComments && !this.expiredComments(localBlogPostComments.timestamp)){
       this.blogPostComments = new Map(JSON.parse(localBlogPostComments.value));
