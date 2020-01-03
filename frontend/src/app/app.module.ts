@@ -10,7 +10,7 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { UpcomingComponent } from './upcoming/upcoming.component';
+import { CalendarComponent } from './calendar/calendar.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -22,7 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 const appRoutes: Routes = [
     {   path: '', component: IntroductionComponent},
     {   path: 'home', component: HomeComponent},
-    {   path: 'upcoming', component: UpcomingComponent},
+    {   path: 'calendar', component: CalendarComponent},
     {   path: 'timeline', component: TimelineComponent},
     {   path: 'profile', component: ProfileComponent},
     {   path: 'feedback', component: FeedbackComponent},
@@ -44,7 +44,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    UpcomingComponent,
+    CalendarComponent,
     NavigationComponent,
     TimelineComponent,
     ProfileComponent,

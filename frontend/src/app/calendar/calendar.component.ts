@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../seo.service';
 
 @Component({
-  selector: 'app-upcoming',
-  templateUrl: './upcoming.component.html',
-  styleUrls: ['./upcoming.component.css']
+  selector: 'app-calendar',
+  templateUrl: './calendar.component.html',
+  styleUrls: ['./calendar.component.css']
 })
-export class UpcomingComponent implements OnInit {
+export class CalendarComponent implements OnInit {
 
   events = [
     { name: 'Jokertrail 50K',             country: 'Heidelberg, Germany' },
