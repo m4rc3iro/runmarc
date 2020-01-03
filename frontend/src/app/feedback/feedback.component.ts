@@ -10,11 +10,11 @@ export interface FormModel {
 }
 
 @Component({
-  selector: 'app-comments',
-  templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.css']
+  selector: 'app-feedback',
+  templateUrl: './feedback.component.html',
+  styleUrls: ['./feedback.component.css']
 })
-export class CommentsComponent implements OnInit {
+export class FeedbackComponent implements OnInit {
 
   env = environment;
 
