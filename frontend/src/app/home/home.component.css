@@ -43,8 +43,14 @@
   border    : none;
 }
 
-.meta > .share-buttons{
-  float: right;
+.meta > .share-buttons {
+  float        : right;
+  padding-right: 0;
+  padding-left : 15px;
+}
+
+.share-text {
+  display: block;
 }
 
 .meta li {
@@ -192,12 +198,24 @@ label,
 textarea {
   font-size: 11.5px;
 }
-@media (max-width: 570px) {
+@media (max-width: 630px) {
   .news-container {
     padding: 50px 10%;
   }
 
   .meta {
     font-size: 9px;
+  }
+
+  .meta li {
+    padding-right: 8px;
+  }
+
+  .meta li span {
+    padding-right: 5px;
+  }
+
+  .share-text {
+    display: none;
   }
 }
