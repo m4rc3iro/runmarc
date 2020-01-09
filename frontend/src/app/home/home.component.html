@@ -1,4 +1,57 @@
 <div class="home-container">
+
+  <article class="news-container">
+    <header class="single-blog-header">
+      <h1 class="single-post-title entry-title" itemprop="headline"><a name="andorraUltraTrail2019" id="6">Home running I - Andorra Ultra Trail 2019</a></h1>
+    </header>
+    <ul class="meta">
+      <li class="meta-date"><span class="fas fa-clock" aria-hidden="true"></span><time class="updated" datetime="1.1.2020" itemprop="datePublished" pubdate="">1 January 2020</time></li>
+      <li class="meta-author"><span class="fa fa-user" aria-hidden="true"></span><span class="vcard author" itemprop="name"><span class="fn">Marc Eiro</span></span></li>
+    </ul>
+    <div class="single-blog-content entry " itemprop="text">
+      <p>Last summer was the year I ran more races in my home country, Catalonia. I was so excited to sign in for the Andorra Ultra Trail (AUT) and Ultra Pirineu (UP). Both events are pretty well consolidated on the running scene (at least in
+        Europe), with countless amounts of national and international runners signing in every year.</p>
+      <p>AUT is rather a smaller event (in comparison to UP nonetheless), where you can breath a more familiar vibe and you don’t suffer from big crowds and massification. The event starts and finishes in Ordino, Andorra, a cute small town
+        surrounded by mountains and valleys. The first time I heard about AUT was back in 2017, from a group of people that participated in the Lavaredo Ultra Trail. I remember they mentioned they would head towards Andorra the following month, but
+        what caught my attention was the insane amount of elevation meters they mentioned the race had (for instance, the Celestrail modality has around 5000+ meters of elevation packed in a bit more than 80 kilometres, but longer ones such as the
+        113 or 170 ones have an insane 9.700+ and 13.500+ climbs). Last year after checking the event races more carefully, I decided to sign up for the Celestrail.</p>
+      <p>Looking back now I could say that AUT is probably the race that I have suffered and struggled the most since I’m racing, but as well where I think I’ve learned one of the most valuable lessons of ultra running: never, never, never,
+        underestimate nutrition. For first time in my life I experienced what in the running is called hitting the wall, probably one of the most intimidating energy management issues you can ever suffer while you are out there running in the wild.
+        I was performing at a great level for the majority of the race, through the night and most of that Saturday 20th of July too, but things twisted around kilometre 60. My body had been for a while experiencing a slow decrease of energy levels,
+        stamina and responsiveness, and my race started slowing down. Even though I felt what was coming, I totally was incapable of addressing the situation. I knew what I was missing, but forcing myself to eat didn’t seem to solve the problem. My
+        psyche was pretty much on the floor and the only thing that would cheer me up a bit was getting into an aid station and seeing my friend Edu, who managed to make it to those last aid stations (Pardines and Armiana) and lift up my spirits.
+        But despite those temporary moments of relief, the last 800+ were awaiting for the end, and that ended up nearly knocking me down. I had no energy to climb up that steep mountain pass and seeing other runners passing me by (to me all still
+        full of energy at that point), made me feel even worse and regretted having neglected my usual eating habits during most part of the race. However, where I had no energy I put willpower, and my stubbornness and eagerness to finish that race
+        gave me a set of little wings that allowed me to take off again. I continued making progress, albeit rather slowly, till I reached the top. A massive milestone at that point, although the 9km of downhill left turned out to be equally
+        tougher. From there on, my low energy levels seemed to slightly recover and with only the finish line in mind, I pushed full on until I reached it.</p>
+      <p>In spite of the hiccups, I had an amazing night and day racing in the mountains, had an awesome weekend and a great time with my friend. As I look back now I get only good memories and fun moments in my head, in part because the bad moments
+        described earlier now have matured into ugly moments instead. Bad stuff happens, is all part of the game, and only when you accept and embrace it you realise not only the good is positive, but the bad as well.</p>
+      <video controls>
+        <source src="https://s3.eu-west-2.amazonaws.com/runmarc.io/home/andorraUltraTrail2019/andorra_ultratrail_2019.mp4" alt="Andorra Ultra Trail recap" type="video/mp4"></video>
+    </div>
+    <br />
+    <ul class="meta">
+      <li class="meta-comments"><span class="fas fa-comments" aria-hidden="true"></span>
+        {{(blogPostComments && blogPostComments.get(6) && blogPostComments.get(6).length) || 0}} Comments</li>
+      <li><a href="#" (click)="openVerticallyCentered(content, 6)">Post a comment</a></li>
+      <li class="meta-comments share-buttons"><a href="{{getMailTo(6)}}" target="_blank"><span class="fas fa-envelope" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons"><a class="twitter-share-button" href="{{getShareURL('twitter', 6)}}" target="_blank"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons"><a href="{{getShareURL('facebook', 6)}}" target="_blank"><span class="fab fa-facebook" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons share-text">Share this: </li>
+    </ul>
+    <div class="single-blog-comments">
+      <div class="comment" *ngFor="let comment of blogPostComments && blogPostComments.get(6)">
+        <ul class="meta">
+          <li class="meta-author"><span class="fa fa-user-circle" aria-hidden="true"></span><span class="vcard author" itemprop="name"><span class="fn"><strong>{{comment.author}}</strong> said...</span></span></li>
+          <li class="meta-date"><span class="fas fa-clock" aria-hidden="true"></span><time class="updated" itemprop="datePublished" pubdate="">{{comment.date | date:'d MMMM yyyy, HH:mm'}}</time></li>
+        </ul><br />
+        <p>{{comment.text}}</p>
+      </div>
+    </div>
+  </article>
+
+  <div class="separator"></div>
+
   <article class="news-container">
     <header class="single-blog-header">
       <h1 class="single-post-title entry-title" itemprop="headline"><a name="outro" id="5">OUTRO</a></h1>
@@ -22,19 +75,19 @@
     </div>
     <br />
     <ul class="meta">
-      <li class="meta-comments"><span class="fas fa-comments" aria-hidden="true"></span>
+      <li class=""><span class="fas fa-comments" aria-hidden="true"></span>
         {{(blogPostComments && blogPostComments.get(5) && blogPostComments.get(5).length) || 0}} Comments</li>
       <li><a href="#" (click)="openVerticallyCentered(content, 5)">Post a comment</a></li>
-      <li class="meta-comments share-buttons"><a href="{{getMailTo(5)}}" target="_blank"><span class="fas fa-envelope" aria-hidden="true"></span></a></li>
-      <li class="meta-comments share-buttons"><a class="twitter-share-button" href="{{getShareURL('twitter', 5)}}" target="_blank"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
-      <li class="meta-comments share-buttons"><a href="{{getShareURL('facebook', 5)}}" target="_blank"><span class="fab fa-facebook" aria-hidden="true"></span></a></li>
-      <li class="meta-comments share-buttons share-text">Share this: </li>
+      <li class="share-buttons"><a href="{{getMailTo(5)}}" target="_blank"><span class="fas fa-envelope" aria-hidden="true"></span></a></li>
+      <li class="share-buttons"><a class="twitter-share-button" href="{{getShareURL('twitter', 5)}}" target="_blank"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
+      <li class="share-buttons"><a href="{{getShareURL('facebook', 5)}}" target="_blank"><span class="fab fa-facebook" aria-hidden="true"></span></a></li>
+      <li class="share-buttons share-text">Share this: </li>
     </ul>
     <div class="single-blog-comments">
       <div class="comment" *ngFor="let comment of blogPostComments && blogPostComments.get(5)">
         <ul class="meta">
-          <li class="meta-author"><span class="fa fa-user-circle" aria-hidden="true"></span><span class="vcard author" itemprop="name"><span class="fn"><strong>{{comment.author}}</strong> said...</span></span></li>
           <li class="meta-date"><span class="fas fa-clock" aria-hidden="true"></span><time class="updated" itemprop="datePublished" pubdate="">{{comment.date | date:'d MMMM yyyy, HH:mm'}}</time></li>
+          <li class="meta-author"><span class="fa fa-user-circle" aria-hidden="true"></span><span class="vcard author" itemprop="name"><span class="fn"><strong>{{comment.author}}</strong> said...</span></span></li>
         </ul><br />
         <p>{{comment.text}}</p>
       </div>

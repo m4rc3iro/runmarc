@@ -18,7 +18,7 @@ export interface FormModel {
 export class HomeComponent implements OnInit {
 
   DEFAULT_RUNMARC_HOME_URL: string = 'http://www.runmarc.io/home%23';
-  DEFAULT_TWITTER_SHARE_BASE_URL: string = 'https://twitter.com/intent/tweet?text=Check%20this%20out:%20%20%20%20';
+  DEFAULT_TWITTER_SHARE_BASE_URL: string = 'https://twitter.com/intent/tweet?text=Check%20this%20out:%20%20';
   DEFAULT_FACEBOOK_SHARE_BASE_URL: string = 'http://facebook.com/sharer.php?u=';
 
   env = environment;
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   text: string = '';
   blogPostId: number = 0;
 
-  blogPostNames: string[] = [ 'welcomeToRunmarc', 'istriaStories', 'aFriendsVisit', 'skylineTimes', 'raceUpdates_benNevis2019', 'outro' ];
+  blogPostNames: string[] = [ 'welcomeToRunmarc', 'istriaStories', 'aFriendsVisit', 'skylineTimes', 'raceUpdates_benNevis2019', 'outro', 'andorraUltraTrail2019' ];
   blogPostComments: Map<number, Comment[]>;
 
   constructor(private modalService: NgbModal, private httpClient: HttpClient, private commentService: CommentService,
@@ -123,7 +123,7 @@ export class HomeComponent implements OnInit {
 
   getMailTo(blogPostId: number) {
       return 'mailto:?subject=runmarc.io%20@%20' + this.blogPostNames[blogPostId]
-            + '&body=Check%20this%20out:%20%20%20%20' + this.DEFAULT_RUNMARC_HOME_URL + this.blogPostNames[blogPostId];
+            + '&body=Check%20this%20out:%20%20' + this.DEFAULT_RUNMARC_HOME_URL + this.blogPostNames[blogPostId];
   }
 
   getShareURL(socialNetwork: string, blogPostId: number) {
