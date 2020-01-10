@@ -7,14 +7,14 @@
           <div class="timeline-info"></div>
           <div class="timeline-marker timeline-marker-first"></div>
           <div class="timeline-content">
-            <h2 class="timeline-title year">2019</h2>
+            <h3 class="timeline-title year">2019</h3>
           </div>
         </li>
         <li *ngFor="let race of races2019" class="timeline-item">
           <div class="timeline-info"><span>{{race.date | date:'d MMMM yyyy'}}</span></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <h3 class="timeline-title race-name" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h3>
+            <h4 class="timeline-title race-name" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h4>
             <p>{{race.description}}</p>
           </div>
         </li>
@@ -22,14 +22,14 @@
           <div class="timeline-info"></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <h2 class="timeline-title year">2018</h2>
+            <h3 class="timeline-title year">2018</h3>
           </div>
         </li>
         <li *ngFor="let race of races2018" class="timeline-item">
           <div class="timeline-info"><span>{{race.date | date:'d MMMM yyyy'}}</span></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <h3 class="timeline-title race-name" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h3>
+            <h4 class="timeline-title race-name" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h4>
             <p>{{race.description}}</p>
           </div>
         </li>
@@ -37,14 +37,14 @@
           <div class="timeline-info"></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <h2 class="timeline-title year">2017</h2>
+            <h3 class="timeline-title year">2017</h3>
           </div>
         </li>
         <li *ngFor="let race of races2017" class="timeline-item">
           <div class="timeline-info"><span>{{race.date | date:'d MMMM yyyy' }}</span></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <h3 class="timeline-title race-name" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h3>
+            <h4 class="timeline-title race-name" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h4>
             <p>{{race.description}}</p>
           </div>
         </li>
@@ -52,14 +52,14 @@
           <div class="timeline-info"></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content year">
-            <h2 class="timeline-title">2016</h2>
+            <h3 class="timeline-title">2016</h3>
           </div>
         </li>
         <li *ngFor="let race of races2016" class="timeline-item">
           <div class="timeline-info"><span>{{race.date | date:'d MMMM yyyy' }}</span></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <h3 class="timeline-title race-name" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h3>
+            <h4 class="timeline-title race-name" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h4>
             <p>{{race.description}}</p>
           </div>
         </li>
@@ -67,14 +67,14 @@
           <div class="timeline-info"></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content year">
-            <h2 class="timeline-title">2015</h2>
+            <h3 class="timeline-title">2015</h3>
           </div>
         </li>
         <li *ngFor="let race of races2015" class="timeline-item">
           <div class="timeline-info"><span>{{race.date | date:'d MMMM yyyy' }}</span></div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <h3 class="timeline-title race-name" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h3>
+            <h4 class="timeline-title race-name" (click)="gallery = !gallery; raceSelected = race;">{{race.name}}</h4>
             <p>{{race.description}}</p>
           </div>
         </li>

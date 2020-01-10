@@ -80,7 +80,7 @@
 }
 /*----- TIMELINE INFO -----*/
 .timeline-info {
-  font-size     : 12px;
+  font-size     : 10px;
   font-weight   : 700;
   letter-spacing: 3px;
   margin        : 0 0 0.5em;
@@ -138,7 +138,7 @@
 
 .timeline-content p {
   font-family: "Comfortaa";
-  font-size  : 13px;
+  font-size  : 12px;
 }
 
 .timeline-content p:last-child {
@@ -312,16 +312,14 @@
   }
 
   .timeline-info {
-    font-size   : 10px;
+    font-size   : 8px;
     padding-left: 0;
     margin      : 0;
   }
-
-  .timeline-content > h3,
-  h2 {
+  /* .timeline-content > h4,
+  h3 {
     font-size: 22px;
-  }
-
+  } */
   .timeline-content > p {
     font-size: 10px;
   }
