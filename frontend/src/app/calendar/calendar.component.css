@@ -1,16 +1,10 @@
-.upcoming-container {
+.calendar-container {
+  overflow  : auto;
   width     : 100%;
   min-height: calc(100vh - 24px);
-  overflow  : auto;
-  padding   : 30px 0;
+  padding   : 80px 0;
   /* allows to align calendar content in the middle of the screen */
   display   : table;
-}
-
-.upcoming-text {
-  position : relative;
-  padding  : 75px 0 0 25px;
-  font-size: 13px;
 }
 
 .date {
@@ -107,7 +101,7 @@
 }
 
 .calendar {
-  padding       : 1% 7% 4%;
+  padding       : 0 7%;
   font-size     : 11px;
   font-weight   : 300;
   text-align    : center;
@@ -124,7 +118,7 @@
 }
 
 .calendar-month-name {
-  font-size  : 12pt;
+  font-size  : 15px;
   font-weight: 400;
   line-height: 0.375in;
   margin-left: 10px;
@@ -199,13 +193,13 @@
   background-color: #3d3d3d;
 }
 @media (max-width: 1000px) {
-  .upcoming-container {
-    padding: 0 0 5%;
+  .calendar-container {
+    /* padding: 0 0 5%; */
   }
 }
 @media (max-width: 766px) {
-  .upcoming-container {
-    padding: 0 0 10%;
+  .calendar-container {
+    /* padding: 0 0 10%; */
   }
 
   .row {
@@ -213,17 +207,17 @@
   }
 }
 @media (max-width: 665px) {
-  .upcoming-container {
-    padding: 0 0 15%;
+  .calendar-container {
+    /* padding: 0 0 15%; */
   }
 }
 @media (max-width: 575px) {
-  .upcoming-container {
-    padding: 0 10% 25%;
+  .calendar-container {
+    /* padding: 0 10% 25%; */
   }
 
   .calendar {
-    padding: 0 5% 15%;
+    padding: 10% 10% 0;
   }
 
   .row {
