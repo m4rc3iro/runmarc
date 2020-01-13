@@ -1,7 +1,7 @@
 .coming-soon {
   position  : absolute;
   width     : 100%;
-  max-height: 100vh;
+  height: 100%;
   opacity   : 0.7;
 }
 
