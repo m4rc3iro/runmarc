@@ -4,23 +4,29 @@
 
 Download source code running the following command: `git clone https://m4rc3iro@bitbucket.org/m4rc3iro/runmarc.git`
 
-## Build and Deployment
+## Development
 
-### Development
+### Dependencies
 
-#### Frontend
+Make sure the following dependencies are available in your system:
+
+- npm
+- angular-cli
+
+### Frontend
 
 - Navigate to the project frontend directory by executing `cd runmarc/frontend`
+- Run `npm install` to download all the project dependencies
 - Run the `ng serve` command
 - Navigate to `http://localhost:4200/`
 
-#### Backend
+### Backend
 
 - Navigate to the project frontend directory by executing `cd runmarc/backend`
 - Run `npm install` to download all the project dependencies
 - Run the `supervisor server.js` command
 
-### Production
+## Production
 
 In order to build and deploy the application into DigitalOcean:
 
