@@ -14,7 +14,7 @@ To run in production, execute `git push heroku master` command. This will push t
 
 # Environmental Variables
 
-Due to the fact that the backend environmental variables contain secrets, they are not versioned in the GIT repository. Therefore, an `.env` file needs to be created in this directory in order to run the backend. MongoDB, ITRA profile connections, etc., won't work without the right parameters.
+Since backend environmental variables contain secrets, they haven't been versioned in Git. Therefore, an `.env` file needs to be created in this directory in order to run the backend. MongoDB, ITRA profile connections, etc., won't work without the right parameters.
 
 - MONGODB_USER, MONGODB_PASS, MONGODB_BASE_URI
 - ITRA_USERNAME, ITRA_PASSWORD

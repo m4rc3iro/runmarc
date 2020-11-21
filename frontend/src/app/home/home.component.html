@@ -2,6 +2,43 @@
 
   <article class="news-container">
     <header class="single-blog-header">
+      <h1 class="single-post-title entry-title" itemprop="headline"><a name="<-blogPostName->" id="7">Injured</a></h1>
+    </header>
+    <ul class="meta">
+      <li class="meta-date"><span class="fas fa-clock" aria-hidden="true"></span><time class="updated" datetime="1.1.2020" itemprop="datePublished" pubdate="">21 November 2020</time></li>
+      <li class="meta-author"><span class="fa fa-user" aria-hidden="true"></span><span class="vcard author" itemprop="name"><span class="fn">Marc Eiro</span></span></li>
+    </ul>
+    <div class="single-blog-content entry " itemprop="text">
+      <p>The latest and greatest: I'm injured. Last week in the woods, while running around with one of my mates, I tripped down and sprained my ankle. It sucks but it happens. It's sad to think I'll be out without runnning for some weeks, but all has a positive side and best is to learn how to read it. A useful skill to put in practice specially in dificult moments. Last time I stopped running for that long was when I sprained my ankle (the same ankle) for first time. That was in 2015. So considering that I started running (seriously) around 2013, I think that is the only time I have taken a break in the last 7-8 years. Here it comes the second, hopefully not that long. So this is time to sit back, relax and enjoy the quietness. Time to recharge, time to reconsider, time to plan. Because I hope to be back on track soon, come back mentally and physically energized and stronger.</p>
+    </div>
+    <br />
+    <div class="photo-container">
+        <img src="assets/injury.svg" alt="injury-icon" class="single-column-centered borderless">
+      </div>
+    <ul class="meta">
+      <li class="meta-comments"><span class="fas fa-comments" aria-hidden="true"></span>
+        {{(blogPostComments && blogPostComments.get(7) && blogPostComments.get(7).length) || 0}} Comments</li>
+      <li><a href="#" (click)="openVerticallyCentered(content, 7)">Post a comment</a></li>
+      <li class="meta-comments share-buttons"><a href="{{getMailTo(7)}}" target="_blank"><span class="fas fa-envelope" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons"><a class="twitter-share-button" href="{{getShareURL('twitter', 7)}}" target="_blank"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons"><a href="{{getShareURL('facebook', 7)}}" target="_blank"><span class="fab fa-facebook" aria-hidden="true"></span></a></li>
+      <li class="meta-comments share-buttons share-text">Share this: </li>
+    </ul>
+    <div class="single-blog-comments">
+      <div class="comment" *ngFor="let comment of blogPostComments && blogPostComments.get(7)">
+        <ul class="meta">
+          <li class="meta-author"><span class="fa fa-user-circle" aria-hidden="true"></span><span class="vcard author" itemprop="name"><span class="fn"><strong>{{comment.author}}</strong> said...</span></span></li>
+          <li class="meta-date"><span class="fas fa-clock" aria-hidden="true"></span><time class="updated" itemprop="datePublished" pubdate="">{{comment.date | date:'d MMMM yyyy, HH:mm'}}</time></li>
+        </ul><br />
+        <p>{{comment.text}}</p>
+      </div>
+    </div>
+  </article> 
+
+  <div class="separator"></div>
+
+  <article class="news-container">
+    <header class="single-blog-header">
       <h1 class="single-post-title entry-title" itemprop="headline"><a name="andorraUltraTrail2019" id="6">Home running I - Andorra Ultra Trail 2019</a></h1>
     </header>
     <ul class="meta">
@@ -449,4 +486,5 @@
         <p>{{comment.text}}</p>
       </div>
     </div>
-  </article> -->
+  </article> 
+  <div class="separator"></div> -->

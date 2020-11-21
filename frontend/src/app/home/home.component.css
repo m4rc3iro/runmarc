@@ -96,6 +96,16 @@ li.share-buttons.last {
   margin-bottom: 15px;
 }
 
+.single-column-centered {
+  width        : 50%;
+  height       : 100%;
+  object-fit   : cover;
+  margin-bottom: 15px;
+  margin-left: 25%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow   : 0 0 1px 1px #d96459;
+}
+
 .double-column-left {
   float        : left;
   width        : 50%;
@@ -114,6 +124,10 @@ li.share-buttons.last {
   border-radius: 0 10px 10px 0;
   box-shadow   : 0 0 1px 1px #d96459;
   margin-bottom: 15px;
+}
+
+.borderless {
+  box-shadow: 0 0 0 0;
 }
 
 .end {

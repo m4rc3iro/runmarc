@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   text: string = '';
   blogPostId: number = 0;
 
-  blogPostNames: string[] = [ 'welcomeToRunmarc', 'istriaStories', 'aFriendsVisit', 'skylineTimes', 'raceUpdates_benNevis2019', 'outro', 'andorraUltraTrail2019' ];
+  blogPostNames: string[] = [ 'welcomeToRunmarc', 'istriaStories', 'aFriendsVisit', 'skylineTimes', 'raceUpdates_benNevis2019', 'outro', 'andorraUltraTrail2019', 'injured' ];
   blogPostComments: Map<number, Comment[]>;
 
   constructor(private modalService: NgbModal, private httpClient: HttpClient, private commentService: CommentService,
