@@ -1,4 +1,4 @@
-<img class="coming-soon" src="/assets/coming_soon.jpg" />
+<!-- <img class="coming-soon" src="/assets/coming_soon.jpg" /> -->
 <div class="calendar-container">
   <!-- Tooltip template  -->
   <ng-template #tipContent><b>{{selectedEvent}}</b><br>{{selectedCountry}}</ng-template>
@@ -18,6 +18,8 @@
             <div class="calendar-day">Su</div>
           </div>
           <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
             <div class="calendar-day">1</div>
@@ -67,11 +69,6 @@
             <div class="calendar-day">Su</div>
           </div>
           <div class="calendar-month-body">
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
             <div class="calendar-day">1</div>
             <div class="calendar-day">2</div>
             <div class="calendar-day">3</div>
@@ -100,7 +97,6 @@
             <div class="calendar-day">26</div>
             <div class="calendar-day">27</div>
             <div class="calendar-day">28</div>
-            <div class="calendar-day">29</div>
           </div>
         </div>
       </div>
@@ -117,12 +113,6 @@
             <div class="calendar-day">Su</div>
           </div>
           <div class="calendar-month-body">
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
             <div class="calendar-day">1</div>
             <div class="calendar-day">2</div>
             <div class="calendar-day">3</div>
@@ -170,6 +160,7 @@
             <div class="calendar-day">Su</div>
           </div>
           <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
             <div class="calendar-day">1</div>
@@ -222,6 +213,7 @@
             <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
             <div class="calendar-day">1</div>
             <div class="calendar-day">2</div>
             <div class="calendar-day">3</div>
@@ -269,6 +261,7 @@
             <div class="calendar-day">Su</div>
           </div>
           <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
             <div class="calendar-day">1</div>
             <div class="calendar-day">2</div>
             <div class="calendar-day">3</div>
@@ -293,7 +286,7 @@
             <div class="calendar-day">22</div>
             <div class="calendar-day">23</div>
             <div class="calendar-day">24</div>
-            <div class="calendar-day">25</div>
+            <div class="calendar-day event color1" [ngbTooltip]="tipContent" #t1="ngbTooltip" (mouseover)="toggleTooltip(t2, 2)" (click)="toggleTooltip(t2, 2)">25</div>
             <div class="calendar-day">26</div>
             <div class="calendar-day">27</div>
             <div class="calendar-day">28</div>
@@ -317,6 +310,7 @@
           <div class="calendar-month-body">
             <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
             <div class="calendar-day">1</div>
             <div class="calendar-day">2</div>
             <div class="calendar-day">3</div>
@@ -347,7 +341,7 @@
             <div class="calendar-day">28</div>
             <div class="calendar-day">29</div>
             <div class="calendar-day">30</div>
-            <div class="calendar-day">31</div>
+            <div class="calendar-day event color2" [ngbTooltip]="tipContent" #t1="ngbTooltip" (mouseover)="toggleTooltip(t1, 1)" (click)="toggleTooltip(t1, 1)">31</div>
           </div>
         </div>
       </div>
@@ -364,6 +358,7 @@
             <div class="calendar-day">Su</div>
           </div>
           <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
@@ -417,6 +412,7 @@
           </div>
           <div class="calendar-month-body">
             <div class="calendar-day Spacer"></div>
+            <div class="calendar-day Spacer"></div>
             <div class="calendar-day">1</div>
             <div class="calendar-day">2</div>
             <div class="calendar-day">3</div>
@@ -463,6 +459,7 @@
             <div class="calendar-day">Su</div>
           </div>
           <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
@@ -513,12 +510,6 @@
             <div class="calendar-day">Su</div>
           </div>
           <div class="calendar-month-body">
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
-            <div class="calendar-day Spacer"></div>
             <div class="calendar-day">1</div>
             <div class="calendar-day">2</div>
             <div class="calendar-day">3</div>
@@ -565,6 +556,7 @@
             <div class="calendar-day">Su</div>
           </div>
           <div class="calendar-month-body">
+            <div class="calendar-day Spacer"></div>
             <div class="calendar-day Spacer"></div>
             <div class="calendar-day">1</div>
             <div class="calendar-day">2</div>

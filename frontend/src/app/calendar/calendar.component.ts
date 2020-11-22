@@ -9,13 +9,9 @@ import { SeoService } from '../seo.service';
 export class CalendarComponent implements OnInit {
 
   events = [
-    { name: 'Jokertrail 50K',             country: 'Heidelberg, Germany' },
-    { name: 'Heidelberg Halbmarathon',    country: 'Heidelberg, Germany' },
-    { name: 'Istria Ultra Trail',         country: 'Istria, Croatia' },
-    { name: 'Cortina Trail',              country: 'Cortina d\'Ampezzo, Italy' },
-    { name: 'Andorra Ultra Trail',        country: 'Andorra, Spain' },
-    { name: 'Ben Navis Ultra',            country: 'Kinlochleven, Scotland' },
-    { name: 'Ultra Pirineu',              country: 'Catalonia, Spain' } ];
+    { name: 'Skyrace Comapedrosa 21K', country: 'Andorra, Spain' },
+    { name: 'Mont Blanc 90K', country: 'Chamonix, France' },
+  ];
 
   selectedEvent: string;
   selectedCountry: string;
