@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { SeoService } from '../seo.service';
 
@@ -192,7 +192,7 @@ export class TimelineComponent implements OnInit {
     ])
   ];
 
-  constructor(config: NgbCarouselConfig, private renderer: Renderer, private seoService: SeoService) {
+  constructor(config: NgbCarouselConfig, private renderer: Renderer2, private seoService: SeoService) {
     config.interval = 0;
     config.wrap = true;
     config.keyboard = true;
