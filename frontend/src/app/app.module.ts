@@ -34,7 +34,6 @@ const appRoutes: Routes = [
     CommonModule,
     TransferHttpCacheModule,
     HttpClientModule,
-    HttpClientModule,
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot(),
     FormsModule,
