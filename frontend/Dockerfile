@@ -1,5 +1,5 @@
 ##### Stage 1
-FROM node:11.6.0-alpine AS builder
+FROM node:14.15.1-alpine AS builder
 COPY . ./app
 WORKDIR /app
 RUN npm install
