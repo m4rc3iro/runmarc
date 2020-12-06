@@ -8,9 +8,13 @@ const nodemailer = require("nodemailer");
 
 // nodemailer init config
 const transporter = nodemailer.createTransport({
-  service: `${process.env.EMAIL_PROVIDER}`,
-  auth: { user: `${process.env.EMAIL_ACCOUNT_USERNAME}`,
-          pass: `${process.env.EMAIL_ACCOUNT_PASSWORD}` } });
+  host: `${process.env.SMTP_HOST}`,
+  port: `${process.env.SMTP_PORT}`,
+  auth: {
+    user: `${process.env.SMTP_USER}`,
+    pass: `${process.env.SMTP_PASSWORD}`
+  }
+});
 
 // store auth tokens to secure comments api
 var authenticationTokens = {};
@@ -108,7 +112,7 @@ function storeAndCleanupAuthTokens(token) {
 async function sendMail(type, date, author, email, text) {
   let commentType = (type == 0) ? 'Feedback' : 'Blogpost';
   let info = await transporter.sendMail({ // send mail with defined transport object
-    from: 'admin@runmarc.com',
+    from: 'm4rc.3iro@gmail.com',
     to: 'm4rc.3iro@gmail.com',
     subject: `New ${commentType} comment!`,
     html: `New ${commentType} comment from <b>${author}</b> - <b>${email}</b> - at ${date}<br><br>${text}`

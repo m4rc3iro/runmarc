@@ -21,7 +21,7 @@ Since backend environmental variables contain secrets, they haven't been version
 - CAPTCHA_SECRET_KEY
 - AUTH_SECRET_KEY
 - API_ADMIN_TOKEN
-- EMAIL_PROVIDER, EMAIL_ACCOUNT_USERNAME, EMAIL_ACCOUNT_PASSWORD
+- SMTP_HOST, SMTP_PORT, SMTP_USER and SMTP_PASSWORD
 
 **Note** Check on 1Password for secret key values (both Dev & Prod).
 
