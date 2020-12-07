@@ -113,7 +113,7 @@ async function sendMail(type, date, author, email, text) {
   let commentType = (type == 0) ? 'Feedback' : 'Blogpost';
   let info = await transporter.sendMail({ // send mail with defined transport object
     from: 'm4rc.3iro@gmail.com',
-    to: 'm4rc.3iro@gmail.com',
+    to: 'marc.eiro@pm.me',
     subject: `New ${commentType} comment!`,
     html: `New ${commentType} comment from <b>${author}</b> - <b>${email}</b> - at ${date}<br><br>${text}`
   });  // console.log('Message sent: %s', info.messageId);
